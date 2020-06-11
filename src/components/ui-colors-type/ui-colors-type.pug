@@ -1,0 +1,39 @@
+include ../logo/logo
+
+mixin ui-colors-type(props = {})
+  .ui-colors-type&attributes(attributes)
+
+    .ui-colors-type__top
+      +logo({ isSimple: true })
+
+    .ui-colors-type__content
+
+      ul.ui-colors-type__colors-list
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--dark-100
+          .ui-colors-type__colors-text Dark Shade 100% <span>#1F2041</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--dark-75
+          .ui-colors-type__colors-text Dark Shade 75% <span>#1F2041</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--dark-50
+          .ui-colors-type__colors-text Dark Shade 50% <span>#1F2041</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--dark-25
+          .ui-colors-type__colors-text Dark Shade 25% <span>#1F2041</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--dark-5
+          .ui-colors-type__colors-text Dark Shade 5% <span>#1F2041</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--purple
+          .ui-colors-type__colors-text Purple <span>#BC9CFF</span>
+        li.ui-colors-type__colors-item.ui-colors-type__colors-item--green
+          .ui-colors-type__colors-text Green <span>#6FCF97</span>
+
+      ul.ui-colors-type__type-list
+        li.ui-colors-type__type-item.ui-colors-type__type-item--h1
+          span.ui-colors-type__type-title H1
+          span This one is the sub-section or<br>widget title
+        li.ui-colors-type__type-item.ui-colors-type__type-item--h2
+          span.ui-colors-type__type-title H2
+          span Next one is the item title inside<br>widgets
+        li.ui-colors-type__type-item.ui-colors-type__type-item--h3
+          span.ui-colors-type__type-title H3
+          span This is a label or CTA text
+        li.ui-colors-type__type-item.ui-colors-type__type-item--body
+          span.ui-colors-type__type-title Body
+          span This is the body text which is used for most<br>of the design, like paragraphs, lists, etc.

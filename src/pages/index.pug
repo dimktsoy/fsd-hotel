@@ -1,13 +1,20 @@
 extends ../templates/layout
 
+include ../components/page-header/page-header
+include ../components/page-content/page-content
+include ../components/page-footer/page-footer
+
 block meta
   title Главная
 
 block header
-  h2 header
+  +page-header()
 
 block content
-  h2 content
+  +page-content()
+    ul
+      li
+        a(href="ui-kit-colors-type.html") Colors & Type
 
 block footer
-  h2 footer
+  +page-footer()

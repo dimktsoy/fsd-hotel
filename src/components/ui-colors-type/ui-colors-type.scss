@@ -1,0 +1,164 @@
+.ui-colors-type {
+  $block-name: &;
+
+  /* Top */
+
+  &__top {
+    padding: 30px 30px 67px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Content */
+
+  &__content {
+    max-width: 1180px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Colors */
+
+  &__colors-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 0 auto;
+  }
+
+  &__colors-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      width: 70px;
+      height: 70px;
+      display: block;
+      border-radius: 6px;
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__colors-item--dark-100 {
+    &::before {
+      background-color: $dark-shade-100;
+    }
+  }
+
+  &__colors-item--dark-75 {
+    &::before {
+      background-color: $dark-shade-75;
+    }
+  }
+
+  &__colors-item--dark-50 {
+    &::before {
+      background-color: $dark-shade-50;
+    }
+  }
+
+  &__colors-item--dark-25 {
+    &::before {
+      background-color: $dark-shade-25;
+    }
+  }
+
+  &__colors-item--dark-5 {
+    &::before {
+      background-color: $dark-shade-5;
+    }
+  }
+
+  &__colors-item--purple {
+    &::before {
+      background-color: $primary-color;
+    }
+  }
+
+  &__colors-item--green {
+    &::before {
+      background-color: $secondary-color;
+    }
+  }
+
+  &__colors-text {
+    font-size: 19px;
+    font-family: Quicksand, $font-family;
+    font-weight: bold;
+    line-height: 29px;
+
+    > span {
+      display: block;
+      font-weight: normal;
+    }
+  }
+
+  /* Type */
+
+  &__type-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 0 1 auto;
+  }
+
+  &__type-item {
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__type-item--h1 {
+    font-family: Quicksand, $font-family;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $dark-shade-100;
+  }
+
+  &__type-item--h2 {
+    font-family: Quicksand, $font-family;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: $dark-shade-100;
+  }
+
+  &__type-item--h3 {
+    font-family: Montserrat, $font-family;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-shade-100;
+  }
+
+  &__type-item--body {
+    font-family: Montserrat, $font-family;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-75;
+  }
+
+  &__type-title {
+    font-family: Montserrat, $font-family;
+    font-weight: normal;
+    color: $dark-shade-25;
+    text-align: right;
+    width: 70px;
+    padding-right: 30px;
+  }
+
+}
