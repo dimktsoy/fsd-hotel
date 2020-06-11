@@ -1,0 +1,15 @@
+mixin logo(props = {})
+  -
+    const { mods, isSimple = false } = props;
+
+    let allMods = '';
+
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `logo--${el.trim()}`).join(' ');
+    }
+
+  a.logo(href="#")
+    if (isSimple)
+      img(src=require("../components/logo/images/logo-simple.svg"), alt="logo", width="48", height="48")
+    else
+      img(src=require("../components/logo/images/logo.svg"), alt="logo", width="105.69", height="40")
