@@ -157,6 +157,10 @@ module.exports = {
       template: './src/pages/ui-kit-colors-type.pug',
       filename: 'ui-kit-colors-type.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/ui-kit-form-elements.pug',
+      filename: 'ui-kit-form-elements.html',
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
