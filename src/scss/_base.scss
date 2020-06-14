@@ -35,6 +35,10 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  font-family: $Montserrat;
+  font-size: 14px;
+  line-height: 1.714;
+  color: $dark-shade-75;
 }
 
 img {
