@@ -1,0 +1,24 @@
+.dropdown {
+
+  /* Input */
+
+  &__field-text {
+    input {
+      padding-right: 58px;
+      cursor: pointer;
+    }
+  }
+
+  /* Arrow */
+
+  &__arrow {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('./images/dropdown-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

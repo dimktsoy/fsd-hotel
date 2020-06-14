@@ -1,0 +1,29 @@
+include ../field-text/field-text
+
+mixin dropdown({ mods = '', title = '', helpText = '', val = '' })
+
+  //- Use:
+    +dropdown({
+      title: 'Название',
+      helpText: 'Подсказка',
+      mods: '',
+      val: ''
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `dropdown--${el.trim()}`).join(' ');
+    }
+
+  .dropdown(class=allMods)&attributes(attributes)
+    +field-text({
+      title,
+      helpText,
+      val,
+      attrs: {
+        readonly: true
+      }
+    })(class="dropdown__field-text")
+      span.dropdown__arrow
+    .dropdown__content
