@@ -1,0 +1,42 @@
+mixin field-checkbox({ mods = '', title = '', checkboxes = [] })
+
+  //- Use:
+    +field-checkbox({
+      title: 'Title group',
+      mods: '',
+      checkboxes: [
+        {
+          title: 'Title checkbox 1',
+          attrs: {
+            name: ''
+          }
+        },
+        {
+          title: 'Title checkbox 2',
+          attrs: {
+            name: ''
+          }
+        }
+      ]
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `field-checkbox--${el.trim()}`).join(' ');
+    }
+
+  .field-checkbox(class=allMods)&attributes(attributes)
+    if (typeof(title) !== 'undefined' && title)
+      .field-checkbox__title!= title
+    each checkbox in checkboxes
+      -
+        const { mods, title, attrs } = checkbox;
+        let allMods = '';
+        if (typeof(mods) !== 'undefined' && mods) {
+          allMods = mods.split(',').map(el => `field-checkbox__input-wrap--${el.trim()}`).join(' ');
+        }
+      .field-checkbox__input-wrap(class=allMods)
+        label.field-checkbox__label
+          input.field-checkbox__input(type='checkbox')&attributes(attrs)
+          span.field-checkbox__text!= title

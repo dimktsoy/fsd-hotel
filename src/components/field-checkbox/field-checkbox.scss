@@ -1,0 +1,91 @@
+.field-checkbox {
+  $block-name: &; // use #{$block-name}__element
+
+  /* Title */
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* Input wrap */
+
+  &__input-wrap {
+    line-height: 1;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  /* Label */
+
+  &__label {
+    display: inline-block;
+    position: relative;
+  }
+
+  /* Input */
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:hover,
+    &:focus {
+      & + #{$block-name}__text {
+        &::before {
+          border-color: $dark-shade-50;
+        }
+      }
+    }
+
+    &:focus {
+      & + #{$block-name}__text {
+        &::before {
+          box-shadow: 0 0 0 2px rgba(188,156,255, .5);
+        }
+      }
+    }
+
+    &:checked {
+      & + #{$block-name}__text {
+        &::before {
+          border-color: $primary-color;
+          background-image: url('./images/field-checkbox-mark.svg');
+        }
+      }
+    }
+  }
+
+  /* Text */
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-shade-50;
+    display: block;
+    position: relative;
+    padding: 1px 0 1px 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $dark-shade-25;
+      border-radius: 4px;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: 4px 3px;
+    }
+  }
+}
