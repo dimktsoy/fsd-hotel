@@ -1,6 +1,16 @@
 .subscribe {
   position: relative;
 
+  /* Input */
+
+  &__field-text {
+    input[type="email"] {
+      padding-right: 58px;
+    }
+  }
+
+  /* Button */
+
   &__button {
     position: absolute;
     top: 0;

@@ -59,35 +59,4 @@
       border-color: $dark-shade-50;
     }
   }
-
-  /* Modifier dropdown */
-
-  &--dropdown {
-    #{$block-name}__input-wrap {
-      &::after {
-        content: '';
-        width: 44px;
-        height: 44px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-image: url('./images/field-text-arrow-down.svg');
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-    }
-
-    #{$block-name}__input {
-      padding-right: 44px;
-      cursor: pointer;
-    }
-  }
-
-  /* Modifier subscribe */
-
-  &--subscribe {
-    #{$block-name}__input {
-      padding-right: 58px;
-    }
-  }
 }
