@@ -2,9 +2,9 @@ mixin field-text({ mods = '', title = '', helpText = '', isTextarea = false, att
 
   //- Use:
     +field-text({
-      title: 'Название',
+      title: 'Title',
       isTextarea: true,
-      helpText: 'Подсказка',
+      helpText: 'Help text',
       mods: '',
       val: '',
       attrs: {
@@ -21,7 +21,7 @@ mixin field-text({ mods = '', title = '', helpText = '', isTextarea = false, att
   label.field-text(class=allMods)&attributes(attributes)
     if (typeof(title) !== 'undefined' && title)
       span.field-text__heading
-        span.field-text__title!= title
+        span.field-text__name!= title
         if (typeof(helpText) !== 'undefined' && helpText)
           span.field-text__help-text!= helpText
     span.field-text__input-wrap
