@@ -1,5 +1,5 @@
 .field-text {
-  $block-name: &;
+  $block-name: &; // use #{$block-name}__element
 
   display: block;
 
