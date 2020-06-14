@@ -1,0 +1,93 @@
+.field-text {
+  $block-name: &;
+
+  display: block;
+
+  /* Heading */
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    font-family: Montserrat, $font-family;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: $dark-shade-100;
+  }
+
+  &__help-text {
+    margin-bottom: 5px;
+    color: $dark-shade-50;
+  }
+
+  /* Input wrap */
+
+  &__input-wrap {
+    display: block;
+    position: relative;
+  }
+
+  /* Input */
+
+  &__input {
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    width: 100%;
+    padding: 12px 14px;
+    font-family: Montserrat, $font-family;
+    color: $dark-shade-75;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: $dark-shade-50;
+    }
+  }
+
+  /* Modifier hovered */
+
+  &--hovered {
+    #{$block-name}__input {
+      border-color: $dark-shade-50;
+    }
+  }
+
+  /* Modifier dropdown */
+
+  &--dropdown {
+    #{$block-name}__input-wrap {
+      &::after {
+        content: '';
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url('./images/field-text-arrow-down.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
+    #{$block-name}__input {
+      padding-right: 44px;
+      cursor: pointer;
+    }
+  }
+
+  /* Modifier subscribe */
+
+  &--subscribe {
+    #{$block-name}__input {
+      padding-right: 58px;
+    }
+  }
+}
