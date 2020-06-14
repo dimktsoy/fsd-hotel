@@ -1,0 +1,42 @@
+mixin toggle({ mods = '', title = '', items = [] })
+
+  //- Use:
+    +field-radio({
+      title: 'Title',
+      mods: '',
+      items: [
+        {
+          title: 'Toggle 1',
+          attrs: {
+            name: ''
+          }
+        },
+        {
+          title: 'Toggle 2',
+          attrs: {
+            name: ''
+          }
+        }
+      ]
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `toggle--${el.trim()}`).join(' ');
+    }
+
+  .toggle(class=allMods)&attributes(attributes)
+    if (typeof(title) !== 'undefined' && title)
+      .toggle__title!= title
+    each item in items
+      -
+        const { mods, title, attrs } = item;
+        let allMods = '';
+        if (typeof(mods) !== 'undefined' && mods) {
+          allMods = mods.split(',').map(el => `toggle__input-wrap--${el.trim()}`).join(' ');
+        }
+      .toggle__input-wrap(class=allMods)
+        label.toggle__label
+          input.toggle__input(type='checkbox')&attributes(attrs)
+          span.toggle__text!= title
