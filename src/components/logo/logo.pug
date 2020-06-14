@@ -8,7 +8,7 @@ mixin logo(props = {})
       allMods = mods.split(',').map(el => `logo--${el.trim()}`).join(' ');
     }
 
-  a.logo(href="#")
+  a.logo(href="/")
     if (isSimple)
       img(src=require("../components/logo/images/logo-simple.svg"), alt="logo", width="48", height="48")
     else
