@@ -3,5 +3,9 @@
 @import './fonts';
 @import './base';
 
+@import '../components/field-text/field-text';
+@import '../components/dropdown/dropdown';
+@import '../components/subscribe/subscribe';
+
 @import '../components/ui-colors-type/ui-colors-type';
 @import '../components/ui-form-elements/ui-form-elements';
