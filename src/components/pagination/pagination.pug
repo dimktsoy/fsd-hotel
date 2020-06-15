@@ -1,0 +1,34 @@
+mixin pagination({ mods = '', title = '', text = '' })
+
+  //- Use:
+    +pagination({
+      title: 'Pagination',
+      text: '1 – 12 из 100+ вариантов аренды'
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `pagination--${el.trim()}`).join(' ');
+    }
+
+  .pagination(class=allMods, aria-label="Page navigation")&attributes(attributes)
+    .pagination__inner
+      if (typeof(title) !== 'undefined' && title)
+        .pagination__title!= title
+      ul.pagination__list
+        li.pagination__item
+          a.pagination__link.pagination__link--active(href="#") 1
+        li.pagination__item
+          a.pagination__link(href="#") 2
+        li.pagination__item
+          a.pagination__link(href="#") 3
+        li.pagination__item
+          span.pagination__more ...
+        li.pagination__item
+          a.pagination__link(href="#") 15
+        li.pagination__item
+          a.pagination__link.pagination__link--next(href="#")
+            img.pagination__icon(src=require("../components/pagination/images/pagination-arrow.svg"), alt="next")
+      if (typeof(text) !== 'undefined' && text)
+        p.pagination__text!= text
