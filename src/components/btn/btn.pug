@@ -1,0 +1,39 @@
+mixin btn({ mods = '', text = 'Button', isInput = false, isIcon = false })
+
+  //- Use:
+    Available mods: primary, outline, link, block, focus
+
+    +btn({
+      text: 'Button',
+      mods: 'mod1, mod2, ...'
+    })
+
+    +btn({
+      text: 'Button',
+      isInput: true
+    })
+
+    +btn({
+      text: 'Button'
+    })(href="#")
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `btn--${el.trim()}`).join(' ');
+    }
+
+  if (attributes.href)
+    a.btn(class=allMods)&attributes(attributes)!= text
+      if (isIcon)
+        img.btn__arrow(src=require('../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
+      block
+
+  else if (typeof(isInput) !== 'undefined' && isInput)
+    input.btn(class=allMods, value=text, type="button")&attributes(attributes)
+
+  else
+    button.btn(class=allMods)&attributes(attributes)!= text
+      if (isIcon)
+        img.btn__arrow(src=require('../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
+      block

@@ -1,0 +1,112 @@
+.btn {
+  $block-name: &;  // use #{$block-name}__element
+
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  background: transparent;
+  border-radius: 22px;
+  color: $primary-color;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  font-family: $Montserrat;
+  text-transform: uppercase;
+  padding: 14px 21px 15px 19px;
+  user-select: none;
+  transition: all .15s ease-in-out;
+  text-align: center;
+
+  &:not([href]):focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(188,156,255, .5);
+  }
+
+  /* Modifier primary */
+
+  &--primary {
+    color: #fff;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    &:hover,
+    &:focus,
+    &.btn--focus {
+      background: linear-gradient(to bottom, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
+    }
+  }
+
+  /* Modifier outline */
+
+  &--outline {
+    position: relative;
+    z-index: 1;
+    color: $primary-color;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 22px;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -2;
+      background: #BC9CFF;
+      background: linear-gradient(to bottom, #BC9CFF 0%,#8BA4F9 100%);
+    }
+
+    &::after {
+      top: 2px;  right: 2px; bottom: 2px;
+      left: 2px;
+      z-index: -1;
+      background-color: #fff;
+      opacity: 1;
+    }
+
+    &:hover
+    &:focus
+    &.btn--focus {
+      &::before {
+        background: linear-gradient(to bottom, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
+      }
+    }
+  }
+
+  /* Modifier hovered */
+
+  &--link {
+    padding: 0;
+
+    &:hover,
+    &:focus,
+    &.btn--focus {
+      color: $dark-shade-50;
+    }
+
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+  }
+
+  /* Modifier block */
+
+  &--block {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 14px;
+  }
+}
