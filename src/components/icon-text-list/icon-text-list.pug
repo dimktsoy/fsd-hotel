@@ -1,0 +1,38 @@
+mixin icon-text-list({ mods = '', items = [] })
+
+  //- Use:
+    +icon-text-list({
+      mods: '',
+      items: [
+        {
+          title: 'Title',
+          text: 'Text...',
+          imageName: 'image.svg'
+        },
+        {
+          title: 'Title',
+          text: 'Text...',
+          imageName: 'image.svg'
+        },
+      ]
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `icon-text-list--${el.trim()}`).join(' ');
+    }
+
+  ul.icon-text-list(class=allMods)&attributes(attributes)
+    each item in items
+      -
+        const { mods = '', title, text, imageName } = item;
+        let allMods = '';
+        if (typeof(mods) !== 'undefined' && mods) {
+          allMods = mods.split(',').map(el => `icon-text-list__item--${el.trim()}`).join(' ');
+        }
+      li.icon-text-list__item(class=allMods)
+        img.icon-text-list__icon(src=require(`../components/icon-text-list/images/${imageName}`), alt=title)
+        span.icon-text-list__text-wrap
+          span.icon-text-list__title!= title
+          span.icon-text-list__text!= text
