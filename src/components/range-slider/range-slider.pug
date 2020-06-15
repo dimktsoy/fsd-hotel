@@ -1,0 +1,12 @@
+mixin range-slider({ title, id })
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `range-slider--${el.trim()}`).join(' ');
+    }
+
+  .range-slider(class=allMods, id=id)&attributes(attributes)
+    .range-slider__heading
+      span.range-slider__title!= title
+      span.range-slider__value
+    .range-slider__control
