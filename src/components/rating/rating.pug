@@ -1,0 +1,34 @@
+mixin rating({ mods = '', currentStars = 0, id = '', isStatic = false, width = '' })
+
+  //- Use:
+    +rating({
+      mods: '',
+      currentStars: 3,
+      id: ''
+    })
+    +rating({
+      mods: '',
+      isStatic: true,
+      width: '96px'
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `rating--${el.trim()}`).join(' ');
+    }
+
+  .rating(class=allMods)&attributes(attributes)
+    span.rating__group
+      if (isStatic)
+        span.rating__static(style=`width: ${width}`)
+      else
+        each val, index in { 1: 'Ужасно', 2: 'Сносно', 3: 'Нормально', 4: 'Хорошо', 5: 'Отлично' }
+          input.rating__input(
+            type="radio",
+            name=id,
+            id=`${id}-${index}`,
+            value=index,
+            checked=(index == currentStars)
+          )
+          label.rating__star(for=`${id}-${index}`, aria-label=val)
