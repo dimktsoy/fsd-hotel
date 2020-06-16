@@ -1,23 +1,14 @@
-mixin btn({ mods = '', text = 'Button', isInput = false, isIcon = false })
-
-  //- Use:
-    Available mods: primary, outline, link, block, focus
-
-    +btn({
-      text: 'Button',
-      mods: 'mod1, mod2, ...'
-    })
-
-    +btn({
-      text: 'Button',
-      isInput: true
-    })
-
-    +btn({
-      text: 'Button'
-    })(href="#")
+mixin btn(props = {})
+  //- mods: primary, outline, link, block, focus
 
   -
+    const { 
+      mods = '',
+      text = 'Button',
+      isInput = false,
+      isIcon = false
+    } = props;
+
     let allMods = '';
     if (typeof(mods) !== 'undefined' && mods) {
       allMods = mods.split(',').map(el => `btn--${el.trim()}`).join(' ');
@@ -28,12 +19,10 @@ mixin btn({ mods = '', text = 'Button', isInput = false, isIcon = false })
       if (isIcon)
         img.btn__arrow(src=require('../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
-
-  else if (typeof(isInput) !== 'undefined' && isInput)
+  else if (isInput)
     input.btn(class=allMods, value=text, type="button")&attributes(attributes)
-
   else
-    button.btn(class=allMods)&attributes(attributes)!= text
+    button.btn(class=allMods, type="button")&attributes(attributes)!= text
       if (isIcon)
         img.btn__arrow(src=require('../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
