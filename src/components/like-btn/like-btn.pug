@@ -1,0 +1,16 @@
+mixin like-btn({ mods = '', count = '' })
+
+  //- Use:
+    +like-btn({
+      mods: '',
+      count: '3'
+    })
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `like-btn--${el.trim()}`).join(' ');
+    }
+
+  button.like-btn(class=allMods, type="button")&attributes(attributes)
+    span.like-btn__count!= count
