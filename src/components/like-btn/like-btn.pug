@@ -1,12 +1,9 @@
-mixin like-btn({ mods = '', count = '' })
-
-  //- Use:
-    +like-btn({
-      mods: '',
-      count: '3'
-    })
-
+mixin like-btn(props = {})
+  //- mods: active
+  
   -
+    const { mods = '', count = 0 } = props;
+
     let allMods = '';
     if (typeof(mods) !== 'undefined' && mods) {
       allMods = mods.split(',').map(el => `like-btn--${el.trim()}`).join(' ');
