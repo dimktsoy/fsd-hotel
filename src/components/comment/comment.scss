@@ -1,0 +1,45 @@
+.comment {
+  $block-name: &;
+
+  display: flex;
+
+  /* User avatar wrap */
+  
+  &__user-avatar-wrap {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  /* User avatar */
+
+  &__user-avatar {
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0px 10px 20px $dark-shade-10;
+    object-fit: cover;
+  }
+
+  /* Like btn */
+
+  &__like-btn {
+    display: block;
+    line-height: 1;
+  }
+
+  /* User name */
+
+  &__user-name {
+    display: block;
+    font-weight: bold;
+  }
+
+  /* Date */
+
+  &__date {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
