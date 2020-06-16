@@ -1,5 +1,5 @@
 .field-checkbox {
-  $block-name: &; // use #{$block-name}__element
+  $block-name: &;
 
   /* Title */
 
@@ -87,6 +87,26 @@
       background-color: #fff;
       background-repeat: no-repeat;
       background-position: 4px 3px;
+    }
+  }
+
+  /* Additional text */
+
+  &__add-text {
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-shade-50;
+    display: block;
+    margin-top: 5px;
+    padding-left: 30px;
+  }
+
+  /* Modifier rich */
+
+  &--rich {
+    #{$block-name}__text {
+      color: $dark-shade-75;
+      font-weight: bold;
     }
   }
 }

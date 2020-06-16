@@ -1,18 +1,22 @@
 mixin field-checkbox({ mods = '', title = '', checkboxes = [] })
 
+  //- Available mods: rich
+
   //- Use:
     +field-checkbox({
-      title: 'Title group',
       mods: '',
+      title: 'Title',
       checkboxes: [
         {
-          title: 'Title checkbox 1',
+          title: 'Title 1',
+          text: '',
           attrs: {
             name: ''
           }
         },
         {
-          title: 'Title checkbox 2',
+          title: 'Title 2',
+          text: '',
           attrs: {
             name: ''
           }
@@ -31,7 +35,7 @@ mixin field-checkbox({ mods = '', title = '', checkboxes = [] })
       .field-checkbox__title!= title
     each checkbox in checkboxes
       -
-        const { mods, title, attrs } = checkbox;
+        const { mods = '', title = '', text = '', attrs = {} } = checkbox;
         let allMods = '';
         if (typeof(mods) !== 'undefined' && mods) {
           allMods = mods.split(',').map(el => `field-checkbox__input-wrap--${el.trim()}`).join(' ');
@@ -40,3 +44,5 @@ mixin field-checkbox({ mods = '', title = '', checkboxes = [] })
         label.field-checkbox__label
           input.field-checkbox__input(type='checkbox')&attributes(attrs)
           span.field-checkbox__text!= title
+          if (typeof(text) !== 'undefined' && text)
+            span.field-checkbox__add-text!= text
