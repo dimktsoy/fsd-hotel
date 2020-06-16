@@ -1,0 +1,19 @@
+mixin expand({ mods = '', title = '' })
+
+  //- Use:
+    +expand({
+      mods: '',
+      title: 'Title'
+    })
+      block content
+
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `expand--${el.trim()}`).join(' ');
+    }
+
+  .expand(class=allMods)&attributes(attributes)
+    .expand__title!= title
+    .expand__content
+      block
