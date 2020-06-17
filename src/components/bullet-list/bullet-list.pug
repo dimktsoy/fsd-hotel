@@ -1,15 +1,11 @@
-mixin bullet-list({ mods = '', list = [] })
-
-  //- Use:
-    +bullet-list({
-      mods: '',
-      list: [
-        'Item 1',
-        'Item 2'
-      ]
-    })
+mixin bullet-list(props = {})
 
   -
+    const { 
+      mods = '',
+      list = ['Трум-пурум-пурум-пум-пум', 'Пара-ра-ра трум-пумпум']
+    } = props;
+
     let allMods = '';
     if (typeof(mods) !== 'undefined' && mods) {
       allMods = mods.split(',').map(el => `bullet-list--${el.trim()}`).join(' ');
