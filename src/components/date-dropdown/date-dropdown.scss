@@ -1,0 +1,207 @@
+@import '../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+
+.date-dropdown {
+  max-width: 320px;
+
+  /* Group */
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10px;
+  }
+
+  /* Item */
+
+  &__item {
+    padding: 0 10px;
+    width: 50%;
+  }
+
+  /* Name */
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: $dark-shade-100;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  /* Input wrap */
+
+  &__input-wrap {
+    display: block;
+    position: relative;
+    background-color: #fff;
+
+    &::before {
+      content: '';
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  /* Input */
+
+  &__input {
+    background-color: transparent;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    width: 100%;
+    padding: 12px 14px;
+    font-family: $Montserrat;
+    color: $dark-shade-75;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+/* Overwrite datepicker styles */
+
+.datepicker {
+  font-family: $Montserrat;
+  width: 320px;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  border: 1px solid $dark-shade-25;
+  color: $dark-shade-50;
+}
+
+.datepicker--nav {
+  border-bottom: 0;
+  min-height: 32px;
+  padding: 20px;
+}
+
+.datepicker--nav-title {
+  font-size: 19px;
+  font-family: $Quicksand;
+  font-weight: bold;
+  color: $dark-shade-100;
+}
+
+.datepicker--day-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: $primary-color;
+  text-transform: none;
+}
+
+/* Cell name */
+
+.datepicker--days-names {
+  margin: 0;
+  padding: 8px 0;
+}
+
+/* Cell */
+
+.datepicker--cell {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+}
+
+.datepicker--cell.-current- {
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.datepicker--cell.-selected-,
+.datepicker--cell.-selected-.-current- {
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.datepicker--cell.-range-from-,
+.datepicker--cell.-range-to- {
+  border-radius: 50%;
+  position: relative;
+  border: 0;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  font-weight: bold;
+  color: #fff;
+  
+  &::before {
+    content: '';
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.datepicker--cell.-range-from- {
+  &::before {
+    right: 0;
+  }
+}
+
+.datepicker--cell.-range-to- {
+  &::before {
+    left: 0;
+  }
+}
+
+.datepicker--cell.-selected-.-focus- {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.datepicker--cell.-in-range- {
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+  color: $dark-shade-50;
+}
+
+.datepicker--cell.-current-.-focus- {
+  color: #fff;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.datepicker--cell.-current-.-in-range- {
+  color: $dark-shade-75;
+}
+
+.datepicker--cell.-disabled-.-focus-.-range-from- {
+  color: #fff;
+}
+
+.datepicker--cell.-disabled- {
+  color: $dark-shade-25;
+}
+
+// .datepicker--cell.-focus- {
+//   border: 0;
+// }
+
+// .datepicker--cell.-focus-,
+// .datepicker--cell.-selected-.-focus-,
+// .datepicker--cell.-selected-,
+// .datepicker--cell.-selected-.-current- {
+//   color: #fff;
+//   font-weight: bold;
+//   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+// }
+
+// .datepicker--cell.-range-from-,
+// .datepicker--cell.-range-to- {
+//   border-radius: 50%;
+// }
+
+.datepicker--content {
+  padding: 0 18.94px 20.44px 21.19px;
+  width: 280px;
+}

@@ -1,0 +1,30 @@
+include ../field-text/field-text
+
+mixin date-dropdown(props = {})
+
+  -
+    const { 
+      inputStart = {
+        title: 'Date dropdown',
+        attrs: {
+          placeholder: 'ДД.ММ.ГГГГ'
+        }
+      },
+      inputEnd = {
+        title: 'Date dropdown',
+        attrs: {
+          placeholder: 'ДД.ММ.ГГГГ'
+        }
+      }
+    } = props;
+
+  .date-dropdown
+    .date-dropdown__group
+      .date-dropdown__item
+        span.date-dropdown__name!= inputStart.title
+        span.date-dropdown__input-wrap
+          input.date-dropdown__input(class="date-dropdown__input-start", type="text", readonly=true)&attributes(inputStart.attrs)
+      .date-dropdown__item
+        span.date-dropdown__name!= inputEnd.title
+        span.date-dropdown__input-wrap
+          input.date-dropdown__input(class="date-dropdown__input-end", type="text", readonly=true)&attributes(inputEnd.attrs)
