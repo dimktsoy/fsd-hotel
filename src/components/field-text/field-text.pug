@@ -1,18 +1,15 @@
-mixin field-text({ mods = '', title = '', helpText = '', isTextarea = false, attrs = {}, val })
-
-  //- Use:
-    +field-text({
-      title: 'Title',
-      isTextarea: true,
-      helpText: 'Help text',
-      mods: '',
-      val: '',
-      attrs: {
-        name: 'comment',
-      }
-    })
+mixin field-text(props = {})
 
   -
+    const { 
+      mods = '', 
+      title = '',
+      helpText = '',
+      isTextarea = false,
+      attrs = {},
+      val 
+    } = props;
+    
     let allMods = '';
     if (typeof(mods) !== 'undefined' && mods) {
       allMods = mods.split(',').map(el => `field-text--${el.trim()}`).join(' ');
