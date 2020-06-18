@@ -10,6 +10,6 @@ mixin logo(props = {})
 
   a.logo(href="/")
     if (isSimple)
-      img(src=require("../../components/logo/images/logo-simple.svg"), alt="logo", width="48", height="48")
+      img.logo__img(src=require("../../components/logo/images/logo-simple.svg"), alt="logo", width="48", height="48")
     else
-      img(src=require("../../components/logo/images/logo.svg"), alt="logo", width="105.69", height="40")
+      img.logo__img(src=require("../../components/logo/images/logo.svg"), alt="logo", width="105.69", height="40")
