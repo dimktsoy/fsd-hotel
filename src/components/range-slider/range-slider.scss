@@ -1,19 +1,19 @@
 @import '../../scss/variables';
 
 .range-slider {
-  padding-bottom: 3px;
+  padding-bottom: 0.3rem;
 
   &__heading {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 7px;
+    margin-bottom: 0.7rem;
     text-transform: uppercase;
   }
 
   &__title {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     font-weight: bold;
     color: $dark-shade-100;
   }
@@ -111,29 +111,29 @@
   */
 
   &__horizontal {
-    height: 6px;
+    height: 0.6rem;
   }
 
   &__horizontal .range-slider__handle {
-    width: 16px;
-    height: 16px;
-    right: -7px;
-    top: -6px;
+    width: 1.6rem;
+    height: 1.6rem;
+    right: -0.7rem;
+    top: -0.6rem;
   }
 
   &__vertical {
-    width: 14px;
+    width: 1.4rem;
   }
 
   &__vertical .range-slider__handle {
-    width: 14px;
-    height: 14px;
-    right: -5px;
-    top: -7px;
+    width: 1.4rem;
+    height: 1.4rem;
+    right: -0.5rem;
+    top: -0.7rem;
   }
 
   &__txt-dir-rtl.range-slider__horizontal .range-slider__handle {
-    left: -17px;
+    left: -1.7rem;
     right: auto;
   }
 
@@ -143,15 +143,15 @@
 
   &__target {
     background: #fff;
-    border-radius: 3px;
+    border-radius: 0.3rem;
     border: 1px solid #ccc;
   }
   &__connects {
-    border-radius: 3px;
+    border-radius: 0.3rem;
   }
   &__connect {
-    top: -1px;
-    height: 6px;
+    top: -0.1rem;
+    height: 0.6rem;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   }
 
@@ -168,9 +168,9 @@
 
   &__handle {
     border: 2px solid #fff;
-    border-radius: 10px;
+    border-radius: 1rem;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    cursor: default;
+    cursor: pointer;
   }
 
   /* Disabled state;
@@ -199,17 +199,17 @@
   */
 
   &__value {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     text-transform: uppercase;
     color: $dark-shade-50;
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
     white-space: nowrap;
   }
 
   &__value-sub {
     color: #ccc;
-    font-size: 10px;
+    font-size: 1rem;
   }
 
   /* Markings;
@@ -234,8 +234,8 @@
   */
 
   &__pips-horizontal {
-    padding: 10px 0;
-    height: 80px;
+    padding: 1rem 0;
+    height: 8rem;
     top: 100%;
     left: 0;
     width: 100%;
@@ -252,17 +252,17 @@
   }
 
   &__marker-horizontal.range-slider__marker {
-    margin-left: -1px;
-    width: 2px;
-    height: 5px;
+    margin-left: -0.1rem;
+    width: 0.2rem;
+    height: 0.5rem;
   }
 
   &__marker-horizontal.range-slider__marker-sub {
-    height: 10px;
+    height: 1rem;
   }
 
   &__marker-horizontal.range-slider__marker-large {
-    height: 15px;
+    height: 1.5rem;
   }
 
   /* Vertical layout;
@@ -270,7 +270,7 @@
   */
 
   &__pips-vertical {
-    padding: 0 10px;
+    padding: 0 1rem;
     height: 100%;
     top: 0;
     left: 100%;
@@ -279,7 +279,7 @@
   &__value-vertical {
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
-    padding-left: 25px;
+    padding-left: 2.5rem;
   }
 
   &__rtl .range-slider__value-vertical {
@@ -288,27 +288,27 @@
   }
 
   &__marker-vertical.range-slider__marker {
-    width: 5px;
-    height: 2px;
-    margin-top: -1px;
+    width: 0.5rem;
+    height: 0.2rem;
+    margin-top: -0.1rem;
   }
 
   &__marker-vertical.range-slider__marker-sub {
-    width: 10px;
+    width: 1rem;
   }
 
   &__marker-vertical.range-slider__marker-large {
-    width: 15px;
+    width: 1.5rem;
   }
 
   &__tooltip {
     display: block;
     position: absolute;
     border: 1px solid #D9D9D9;
-    border-radius: 3px;
+    border-radius: 0.3rem;
     background: #fff;
     color: #000;
-    padding: 5px;
+    padding: 0.5rem;
     text-align: center;
     white-space: nowrap;
   }
