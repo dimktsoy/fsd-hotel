@@ -5,18 +5,15 @@ mixin date-dropdown(props = {})
   -
     const {
       mods = '',
-      inputStart = {
-        title: 'Date dropdown',
-        attrs: {
-          placeholder: 'ДД.ММ.ГГГГ'
+      filter,
+      range = [
+        {
+          title: 'Dropdown date',
+        },
+        {
+          title: 'Dropdown date'
         }
-      },
-      inputEnd = {
-        title: 'Date dropdown',
-        attrs: {
-          placeholder: 'ДД.ММ.ГГГГ'
-        }
-      }
+      ]
     } = props;
 
     let allMods = '';
@@ -25,12 +22,25 @@ mixin date-dropdown(props = {})
     }
 
   .date-dropdown(class=allMods)&attributes(attributes)
-    .date-dropdown__group
-      .date-dropdown__item
-        span.date-dropdown__name!= inputStart.title
-        span.date-dropdown__input-wrap
-          input.date-dropdown__input(class="date-dropdown__input-start", type="text", readonly=true)&attributes(inputStart.attrs)
-      .date-dropdown__item
-        span.date-dropdown__name!= inputEnd.title
-        span.date-dropdown__input-wrap
-          input.date-dropdown__input(class="date-dropdown__input-end", type="text", readonly=true)&attributes(inputEnd.attrs)
+    if (typeof(filter) !== 'undefined' && filter)
+      +field-text({
+        ...filter,
+        attrs: {
+          class: 'date-dropdown__input-filter',
+          readonly: true,
+          placeholder: 'дд М - дд М',
+        }
+      })(class="date-dropdown__field-wrap")
+
+    else
+      .date-dropdown__group
+        each item, i in range
+          +field-text({
+            ...item,
+            attrs: {
+              class: `date-dropdown__${i === 0 ? 'input-start' : 'input-end'}`,
+              type: "text",
+              placeholder: 'ДД.ММ.ГГГГ',
+              readonly: true
+            }
+          })(class="date-dropdown__field-wrap")

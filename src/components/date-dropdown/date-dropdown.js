@@ -1,11 +1,16 @@
 import 'air-datepicker';
-import '../../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+
+import '../../../node_modules/air-datepicker/src/sass/datepicker.scss';
+import '../../../node_modules/air-datepicker/src/sass/cell.scss';
+import '../../../node_modules/air-datepicker/src/sass/navigation.scss';
+import '../../../node_modules/air-datepicker/src/sass/timepicker.scss';
 import './date-dropdown.scss';
 
-// const $begin = $('#datepicker-begin', '.date-dropdown'), $end = $('#datepicker-end', '.date-dropdown');
 const config = {
   clearButton: 'true',
   range: 'true',
+  minDate: new Date(),
+  multipleDatesSeparator: ' - ',
   navTitles: {
     days: 'MM yyyy'
   },
@@ -25,27 +30,28 @@ const config = {
 }
 
 const $dateDropdown = $('.date-dropdown');
-
+const $inputFilter = $dateDropdown.find('.date-dropdown__input-filter');
 const $inputStart = $dateDropdown.find('.date-dropdown__input-start');
 const $inputEnd = $dateDropdown.find('.date-dropdown__input-end');
 
+// Range
+
 $inputStart.each(function() {
   const $this = $(this);
-  $this.datepicker({ 
-    range: 'true',
-    navTitles: {
-      days: 'MM yyyy'
-    },
-    clearButton: true,
-    minDate: new Date(),
-    multipleDatesSeparator: '-',
+  $this.datepicker(Object.assign({}, config, {
     onSelect: function (fd, d, picker) { 
-      $this.val(fd.split('-')[0]);
+      $this.val(fd.split(' - ')[0]);
       $this.closest('.date-dropdown').find('.date-dropdown__input-end').val(fd.split('-')[1]);
     }
-  });
+  }));
 })
 
 $inputEnd.on('click', function() {
   $(this).closest('.date-dropdown').find('.date-dropdown__input-start').focus();
 });
+
+// Filter
+
+$inputFilter.datepicker(Object.assign({}, config, {
+  dateFormat: 'dd M',
+}));

@@ -1,68 +1,33 @@
 @import '../../scss/variables';
 
 .date-dropdown {
-  max-width: 320px;
+  max-width: 32rem;
 
   /* Group */
 
   &__group {
     display: flex;
     justify-content: space-between;
-    margin: 0 -10px;
   }
 
-  /* Item */
-
-  &__item {
-    padding: 0 10px;
+  &__group &__field-wrap {
     width: 50%;
   }
 
-  /* Name */
-
-  &__name {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: $dark-shade-100;
-    text-transform: uppercase;
-    font-size: 12px;
-  }
-
-  /* Input wrap */
-
-  &__input-wrap {
-    display: block;
-    position: relative;
-    background-color: #fff;
-
-    &::before {
-      content: '';
-      width: 44px;
-      height: 44px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
+  &__field-wrap + &__field-wrap {
+    margin-left: 2rem;
   }
 
   /* Input */
 
-  &__input {
-    background-color: transparent;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 18px;
-    width: 100%;
-    padding: 12px 14px;
-    font-family: $Montserrat;
-    color: $dark-shade-75;
-    outline: none;
-    cursor: pointer;
-    position: relative;
+  &__field-wrap {
+    input {
+      padding-right: 4.4rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center right 1.6rem;
+      cursor: pointer;
+    }
   }
 }
 
@@ -70,7 +35,7 @@
 
 .datepicker {
   font-family: $Montserrat;
-  width: 320px;
+  width: 32rem;
   box-shadow: 0px 10px 20px $dark-shade-5;
   border: 1px solid $dark-shade-25;
   color: $dark-shade-50;
@@ -78,19 +43,19 @@
 
 .datepicker--nav {
   border-bottom: 0;
-  min-height: 32px;
-  padding: 20px;
+  min-height: 3.2rem;
+  padding: 2rem;
 }
 
 .datepicker--nav-title {
-  font-size: 19px;
+  font-size: 1.9rem;
   font-family: $Quicksand;
   font-weight: bold;
   color: $dark-shade-100;
 }
 
 .datepicker--day-name {
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: bold;
   color: $primary-color;
   text-transform: none;
@@ -100,16 +65,16 @@
 
 .datepicker--days-names {
   margin: 0;
-  padding: 8px 0;
+  padding: .8rem 0;
 }
 
 /* Cell */
 
 .datepicker--cell {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 12px;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.2rem;
 }
 
 .datepicker--cell.-current- {
@@ -138,7 +103,7 @@
     content: '';
     top: 0;
     bottom: 0;
-    width: 20px;
+    width: 2rem;
     background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
     position: absolute;
     z-index: -1;
@@ -183,25 +148,52 @@
   color: $dark-shade-25;
 }
 
-// .datepicker--cell.-focus- {
-//   border: 0;
-// }
-
-// .datepicker--cell.-focus-,
-// .datepicker--cell.-selected-.-focus-,
-// .datepicker--cell.-selected-,
-// .datepicker--cell.-selected-.-current- {
-//   color: #fff;
-//   font-weight: bold;
-//   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-// }
-
-// .datepicker--cell.-range-from-,
-// .datepicker--cell.-range-to- {
-//   border-radius: 50%;
-// }
-
 .datepicker--content {
-  padding: 0 18.94px 20.44px 21.19px;
-  width: 280px;
+  padding: 0 1.894rem 2.044rem 2.119rem;
+  width: 28rem;
+}
+
+/* Arrow buttons */
+
+.datepicker--nav-action {
+  width: 2.4rem;
+}
+
+.datepicker--nav-action path {
+  fill: #BC9CFF;
+  stroke-width: 0;
+}
+
+.datepicker--nav-action svg {
+  width: 1.7rem;
+  height: 1.8rem;
+}
+
+/* Buttons */
+
+.datepicker--buttons {
+  border-top: 0;
+  padding: 0 2rem 2rem;
+  justify-content: space-between;
+}
+
+.datepicker--button {
+  font-size: 1.2rem;
+  height: auto;
+  line-height: 1.5rem;
+  color: $dark-shade-50;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    background: none;
+  }
+
+  &-apply {
+    color: $primary-color;
+  } 
+}
+
+.datepicker--buttons .datepicker--button  {
+  flex: 0 0 auto;
 }
