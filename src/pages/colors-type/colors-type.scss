@@ -1,9 +1,11 @@
-.ui-colors-type {
+@import '../../scss/variables';
+
+.page-colors-type {
   $block-name: &;
 
-  /* Top */
+  /* Header */
 
-  &__top {
+  &__header {
     padding: 30px 30px 67px;
     max-width: 1400px;
     margin: 0 auto;
@@ -13,7 +15,7 @@
 
   &__content {
     max-width: 1180px;
-    padding: 0 20px;
+    padding: 0 20px 60px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -160,5 +162,4 @@
     width: 70px;
     padding-right: 30px;
   }
-
 }

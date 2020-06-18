@@ -1,0 +1,22 @@
+extends ../../templates/layout
+
+include ../../components/page-header/page-header
+include ../../components/page-content/page-content
+include ../../components/page-footer/page-footer
+
+block meta
+  title Главная
+
+block header
+  +page-header()
+
+block content
+  +page-content()
+    ul
+      li
+        a(href="colors-type.html") Colors & Type
+      li
+        a(href="form-elements.html") Form elements
+
+block footer
+  +page-footer()

@@ -1,0 +1,125 @@
+@import '../../scss/variables';
+
+.page-form-elements {
+  $block-name: &;
+
+  /* Header */
+
+  &__header {
+    padding: 30px 30px 65px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Content */
+
+  &__content {
+    max-width: 1190px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 320px 320px;
+    grid-column-gap: 72px;
+    grid-row-gap: 100px;
+  }
+
+  /* Column */
+
+  &__column {
+    &--comment {
+      grid-column: 2 / 4;
+    }
+  }
+
+  /* Title */
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-shade-100;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+  }
+
+  /* Field text default */
+
+  &__field-text-default {
+    max-width: 320px;
+    margin-bottom: 20.44px;
+  }
+
+  /* Field text hover */
+
+  &__field-text-hover {
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+
+  /* Field text hover */
+
+  &__field-text-hover {
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown default */
+
+  &__dropdown-default {
+    max-width: 320px;
+    margin-bottom: 22.56px;
+  }
+
+  /* Field text masked */
+
+  &__field-text-masked {
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
+
+  /* Date dropdown */
+
+  &__date-dropdown {
+    margin-bottom: 40.56px;
+  }
+
+  /* Filter date dropdown */
+
+  &__filter-date-dropdown {
+    margin-bottom: 41px;
+  }
+
+  /* Subscribe */
+
+  &__subscribe {
+    max-width: 267px;
+  }
+
+  /* Checkbox buttons */
+
+  &__checkbox-buttons {
+    max-width: 223px;
+    margin-bottom: 40.88px;
+  }
+
+  /* Radio buttons */
+
+  &__radio-buttons {
+    margin-bottom: 30.56px;
+  }
+
+  /* Toggle */
+
+  &__toggle {
+    margin-bottom: 44.44px;
+  }
+  /* Like btn */
+
+  &__like-btn {
+    display: flex;
+    margin-bottom: 40px;
+    
+    > button {
+      margin-right: 10px;
+    }
+  }
+}

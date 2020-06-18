@@ -1,0 +1,56 @@
+extends ../../templates/layout
+
+include ../../components/logo/logo
+
+block meta
+  title Colors & Type
+
+block content
+
+  .page-colors-type
+
+    .page-colors-type__header
+      +logo({ isSimple: true })
+
+    .page-colors-type__content
+
+      ul.page-colors-type__colors-list
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--dark-100
+          .page-colors-type__colors-text Dark Shade 100% <span>#1F2041</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--dark-75
+          .page-colors-type__colors-text Dark Shade 75% <span>#1F2041</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--dark-50
+          .page-colors-type__colors-text Dark Shade 50% <span>#1F2041</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--dark-25
+          .page-colors-type__colors-text Dark Shade 25% <span>#1F2041</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--dark-5
+          .page-colors-type__colors-text Dark Shade 5% <span>#1F2041</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--purple
+          .page-colors-type__colors-text Purple <span>#BC9CFF</span>
+
+        li.page-colors-type__colors-item.page-colors-type__colors-item--green
+          .page-colors-type__colors-text Green <span>#6FCF97</span>
+
+      ul.page-colors-type__type-list
+
+        li.page-colors-type__type-item.page-colors-type__type-item--h1
+          span.page-colors-type__type-title H1
+          span This one is the sub-section or<br>widget title
+
+        li.page-colors-type__type-item.page-colors-type__type-item--h2
+          span.page-colors-type__type-title H2
+          span Next one is the item title inside<br>widgets
+
+        li.page-colors-type__type-item.page-colors-type__type-item--h3
+          span.page-colors-type__type-title H3
+          span This is a label or CTA text
+
+        li.page-colors-type__type-item.page-colors-type__type-item--body
+          span.page-colors-type__type-title Body
+          span This is the body text which is used for most<br>of the design, like paragraphs, lists, etc.
