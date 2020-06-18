@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -7,6 +8,18 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 const devMode = process.env.NODE_ENV === 'development';
 const prodMode = process.env.NODE_ENV === 'production';
+
+const generateHtmlPlugins = (templateDir) => {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map((page) => {
+    return new HtmlWebpackPlugin({
+      filename: `${page}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${page}/${page}.pug`)
+    });
+  });
+}
+
+const htmlPlugins = generateHtmlPlugins('./src/pages');
 
 module.exports = {
   mode: 'development',
@@ -73,6 +86,7 @@ module.exports = {
             options: {
               esModule: false,
               name: '[name].[ext]',
+              outputPath: 'images/',
             }
           },
           {
@@ -147,23 +161,12 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: devMode ? 'styles/[name].css' : 'styles/[name].[contenthash].css',
-      chunkFilename: 'styles/[id].css',
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/index.pug',
-      filename: 'index.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-colors-type.pug',
-      filename: 'ui-kit-colors-type.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/pages/ui-kit-form-elements.pug',
-      filename: 'ui-kit-form-elements.html',
+      chunkFilename: devMode ? 'styles/[name].css' : 'styles/[name].[contenthash].css',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
-  ],
+  ]
+  .concat(htmlPlugins),
 };
