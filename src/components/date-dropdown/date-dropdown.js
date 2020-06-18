@@ -1,4 +1,6 @@
 import 'air-datepicker';
+import '../../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+import './date-dropdown.scss';
 
 // const $begin = $('#datepicker-begin', '.date-dropdown'), $end = $('#datepicker-end', '.date-dropdown');
 const config = {
@@ -22,32 +24,28 @@ const config = {
   }
 }
 
-export default function dateDropdown() {
-  const $dateDropdown = $('.date-dropdown');
-  const $inputStart = $dateDropdown.find('.date-dropdown__input-start');
-  const $inputEnd = $dateDropdown.find('.date-dropdown__input-end');
+const $dateDropdown = $('.date-dropdown');
 
+const $inputStart = $dateDropdown.find('.date-dropdown__input-start');
+const $inputEnd = $dateDropdown.find('.date-dropdown__input-end');
 
-  $inputStart.each(function() {
-    const $this = $(this);
-    $this.datepicker({ 
-      range: 'true',
-      navTitles: {
-        days: 'MM yyyy'
-      },
-      clearButton: true,
-      minDate: new Date(),
-      multipleDatesSeparator: '-',
-      onSelect: function (fd, d, picker) { 
-        $this.val(fd.split('-')[0]);
-        $this.closest('.date-dropdown').find('.date-dropdown__input-end').val(fd.split('-')[1]);
-      }
-    });
-  })
-
-  $inputEnd.on('click', function() {
-    $(this).closest('.date-dropdown').find('.date-dropdown__input-start').focus();
+$inputStart.each(function() {
+  const $this = $(this);
+  $this.datepicker({ 
+    range: 'true',
+    navTitles: {
+      days: 'MM yyyy'
+    },
+    clearButton: true,
+    minDate: new Date(),
+    multipleDatesSeparator: '-',
+    onSelect: function (fd, d, picker) { 
+      $this.val(fd.split('-')[0]);
+      $this.closest('.date-dropdown').find('.date-dropdown__input-end').val(fd.split('-')[1]);
+    }
   });
-}
+})
 
-
+$inputEnd.on('click', function() {
+  $(this).closest('.date-dropdown').find('.date-dropdown__input-start').focus();
+});

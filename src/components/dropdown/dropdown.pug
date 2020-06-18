@@ -2,14 +2,6 @@ include ../field-text/field-text
 
 mixin dropdown({ mods = '', title = '', helpText = '', val = '' })
 
-  //- Use:
-    +dropdown({
-      title: 'Название',
-      helpText: 'Подсказка',
-      mods: '',
-      val: ''
-    })
-
   -
     let allMods = '';
     if (typeof(mods) !== 'undefined' && mods) {

@@ -1,5 +1,7 @@
+@import '../../scss/variables';
+
 .field-radio {
-  $block-name: &; // use #{$block-name}__element
+  $block-name: &;
 
   /* Title */
 

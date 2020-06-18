@@ -1,5 +1,7 @@
+@import '../../scss/variables';
+
 .btn {
-  $block-name: &;  // use #{$block-name}__element
+  $block-name: &;
 
   display: inline-block;
   vertical-align: middle;

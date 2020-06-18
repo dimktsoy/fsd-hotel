@@ -1,0 +1,1 @@
+import './field-checkbox.scss';

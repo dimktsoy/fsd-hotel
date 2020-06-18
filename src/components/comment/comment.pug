@@ -18,7 +18,7 @@ mixin comment(props = {})
 
   .comment(class=allMods)&attributes(attributes)
     .comment__user-avatar-wrap
-      img.comment__user-avatar(src=require(`../components/comment/images/${avatar}`), alt="avatar", width="48", height="48")
+      img.comment__user-avatar(src=require(`../../components/comment/images/${avatar}`), alt="avatar", width="48", height="48")
       span.comment__like-btn
         +like-btn(likeBtn)
     .comment__body

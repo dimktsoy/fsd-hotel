@@ -3,7 +3,8 @@ include ../field-text/field-text
 mixin date-dropdown(props = {})
 
   -
-    const { 
+    const {
+      mods = '',
       inputStart = {
         title: 'Date dropdown',
         attrs: {
@@ -18,7 +19,12 @@ mixin date-dropdown(props = {})
       }
     } = props;
 
-  .date-dropdown
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      allMods = mods.split(',').map(el => `dropdown--${el.trim()}`).join(' ');
+    }
+
+  .date-dropdown(class=allMods)&attributes(attributes)
     .date-dropdown__group
       .date-dropdown__item
         span.date-dropdown__name!= inputStart.title
