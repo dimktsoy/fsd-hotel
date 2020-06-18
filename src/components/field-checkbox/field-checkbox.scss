@@ -6,11 +6,11 @@
   /* Title */
 
   &__title {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
     color: $dark-shade-100;
   }
 
@@ -20,7 +20,7 @@
     line-height: 1;
 
     & + & {
-      margin-top: 10px;
+      margin-top: 1rem;
     }
   }
 
@@ -52,7 +52,7 @@
     &:focus {
       & + #{$block-name}__text {
         &::before {
-          box-shadow: 0 0 0 2px rgba(188,156,255, .5);
+          box-shadow: 0 0 0 0.2rem rgba(188,156,255, .5);
         }
       }
     }
@@ -61,7 +61,7 @@
       & + #{$block-name}__text {
         &::before {
           border-color: $primary-color;
-          background-image: url('./images/field-checkbox-mark.svg');
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='11' viewBox='0 0 10 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.46439 4.40768L5.70703 8.65032L4.29282 10.0645L0.0501771 5.82189L1.46439 4.40768Z' fill='url(%23paint0_linear)'/%3E%3Cpath d='M8.53546 2.99347L9.94967 4.40768L4.29282 10.0645L2.8786 8.65032L8.53546 2.99347Z' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='7.82835' y1='2.28636' x2='2.1715' y2='7.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='7.82835' y1='2.28636' x2='2.1715' y2='7.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
         }
       }
     }
@@ -70,37 +70,36 @@
   /* Text */
 
   &__text {
-    font-size: 14px;
-    line-height: 18px;
+    line-height: 1.8rem;
     color: $dark-shade-50;
     display: block;
     position: relative;
-    padding: 1px 0 1px 30px;
+    padding: 0.1rem 0 0.1rem 3rem;
 
     &::before {
       content: '';
       position: absolute;
       left: 0;
       top: 0;
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
       border: 1px solid $dark-shade-25;
-      border-radius: 4px;
+      border-radius: 0.4rem;
       background-color: #fff;
       background-repeat: no-repeat;
-      background-position: 4px 3px;
+      background-position: top 47% right 50%;
     }
   }
 
   /* Additional text */
 
   &__add-text {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
     color: $dark-shade-50;
     display: block;
-    margin-top: 5px;
-    padding-left: 30px;
+    margin-top: 0.5rem;
+    padding-left: 3rem;
   }
 
   /* Modifier rich */
