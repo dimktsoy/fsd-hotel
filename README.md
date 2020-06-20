@@ -1,11 +1,13 @@
 # Toxin Hotel
 
-Практика вёрстки. Макет страниц по поиску номеров в отеле
+Макет страниц по поиску номеров в отеле
 
 ## Используемые ресурсы и инструменты:
-- [Webpack 4.43.0](https://webpack.js.org/)
-- [Pug 3.0.0](https://pugjs.org/api/getting-started.html)
-- [Sass](https://sass-lang.com/)
+- [Разработка и сборка проекта - Webpack 4.43.0](https://webpack.js.org/)
+- [Html шаблонизатор - Pug 3.0.0](https://pugjs.org/api/getting-started.html)
+- [CSS препроцессор - Sass](https://sass-lang.com/)
+- [Генератор фавиконки - Favicon Generator](https://realfavicongenerator.net/)
+- [Генератор шрифта - Transfonter](https://transfonter.org/)
 
 ## Используемые библиотеки:
 - [jQuery 3.5.1](https://jquery.com/)
