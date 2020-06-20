@@ -1,5 +1,6 @@
 import 'normalize.css';
 import './scss/main.scss';
+import './assets/favicons/favicons.js';
 
 function importAll(r) {
   return r.keys().forEach(r);
