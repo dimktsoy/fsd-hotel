@@ -1,23 +1,23 @@
 //- Default template
 
 doctype html
-html(lang='ru')
+html(lang="ru")
 
   head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
     //- For mobile browser
-    meta(name='format-detection', content='telephone=no')
-    meta(name='format-detection', content='date=no')
-    meta(name='format-detection', content='address=no')
-    meta(name='format-detection', content='email=no')
-    meta(content='notranslate', name='google')
-
-    block meta
-      title Home
+    meta(name="format-detection", content="telephone=no")
+    meta(name="format-detection", content="date=no")
+    meta(name="format-detection", content="address=no")
+    meta(name="format-detection", content="email=no")
+    meta(content="notranslate", name="google")
 
     block head
+    title= pageTitle || ""
+    meta(name="description", content=pageDescription || "")
+    meta(name="keywords", content=pageKeywords || "")
 
   body
     
