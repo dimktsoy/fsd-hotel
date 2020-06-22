@@ -1,42 +1,15 @@
-mixin field-radio({ mods = '', title = '', radiobuttons = [] })
-
-  //- Use:
-    +field-radio({
-      title: 'Title group',
-      mods: '',
-      radiobuttons: [
-        {
-          title: 'Title radio button 1',
-          attrs: {
-            name: ''
-          }
-        },
-        {
-          title: 'Title radio button 2',
-          attrs: {
-            name: ''
-          }
-        }
-      ]
-    })
-
+mixin field-radio(props = {})
   -
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `field-radio--${el.trim()}`).join(' ');
-    }
+    const { title = '', radiobuttons } = props;
 
-  .field-radio(class=allMods)&attributes(attributes)
+  .field-radio&attributes(attributes)
     if (typeof(title) !== 'undefined' && title)
       .field-radio__title!= title
     each checkbox in radiobuttons
       -
-        const { mods, title, attrs } = checkbox;
-        let allMods = '';
-        if (typeof(mods) !== 'undefined' && mods) {
-          allMods = mods.split(',').map(el => `field-radio__input-wrap--${el.trim()}`).join(' ');
-        }
-      .field-radio__input-wrap(class=allMods)
+        const { title, attrs } = checkbox;
+
+      .field-radio__input-wrap
         label.field-radio__label
-          input.field-radio__input(type='radio')&attributes(attrs)
+          input.field-radio__input(type="radio")&attributes(attrs)
           span.field-radio__text!= title

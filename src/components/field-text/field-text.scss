@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .field-text {
   $block-name: &;
@@ -10,20 +11,16 @@
   &__heading {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    text-transform: uppercase;
   }
 
-  &__name {
-    font-weight: bold;
-    margin-bottom: .5rem;
-    color: $dark-shade-100;
+  &__title {
+    @include title;
+
+    display: block;
   }
 
   &__help-text {
-    margin-bottom: .5rem;
-    color: $dark-shade-50;
+    @include help-text;
   }
 
   /* Input wrap */
@@ -36,23 +33,7 @@
   /* Input */
 
   &__input {
-    background-color: #fff;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-    width: 100%;
-    padding: .9rem 1.4rem .9rem;
-    color: $dark-shade-75;
-    outline: none;
-
-    &:hover,
-    &:focus {
-      border-color: $dark-shade-50;
-    }
-    &:focus {
-      box-shadow: 0 0 0 2px rgba(188,156,255, .5);
-    }
+    @include input;
   }
 
   /* Modifier hovered */

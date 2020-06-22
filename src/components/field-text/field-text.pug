@@ -1,29 +1,26 @@
 mixin field-text(props = {})
-
   -
     const { 
-      mods = '', 
       title = '',
       helpText = '',
       isTextarea = false,
-      attrs = {},
-      val 
+      isHovered = false,
+      attrs
     } = props;
-    
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `field-text--${el.trim()}`).join(' ');
-    }
 
-  label.field-text(class=allMods)&attributes(attributes)
-    if (typeof(title) !== 'undefined' && title)
+    let fieldTextClassName = 'field-text';
+    fieldTextClassName += isHovered ? ' field-text--hovered' : '';
+    
+  label(class=fieldTextClassName)&attributes(attributes)
+    if (title && !helpText)
+      span.field-text__title!= title
+    else if (title && helpText)
       span.field-text__heading
-        span.field-text__name!= title
-        if (typeof(helpText) !== 'undefined' && helpText)
-          span.field-text__help-text!= helpText
+        span.field-text__title!= title
+        span.field-text__help-text!= helpText
     span.field-text__input-wrap
-      if (typeof(isTextarea) !== 'undefined' && isTextarea)
-        textarea.field-text__input&attributes(attrs)= val
+      if (isTextarea)
+        textarea(class=fieldTextClassName)&attributes(attrs)
       else
-        input.field-text__input(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text', value=val)&attributes(attrs)
+        input.field-text__input(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
       block

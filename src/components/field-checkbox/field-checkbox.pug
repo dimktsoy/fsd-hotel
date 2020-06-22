@@ -1,48 +1,28 @@
-mixin field-checkbox({ mods = '', title = '', checkboxes = [] })
-
-  //- Available mods: rich
-
-  //- Use:
-    +field-checkbox({
-      mods: '',
-      title: 'Title',
-      checkboxes: [
-        {
-          title: 'Title 1',
-          text: '',
-          attrs: {
-            name: ''
-          }
-        },
-        {
-          title: 'Title 2',
-          text: '',
-          attrs: {
-            name: ''
-          }
-        }
-      ]
-    })
-
+mixin field-checkbox(props = {})
   -
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `field-checkbox--${el.trim()}`).join(' ');
-    }
+    const { 
+      isRich = false,
+      title = '',
+      checkboxes
+    } = props;
 
-  .field-checkbox(class=allMods)&attributes(attributes)
-    if (typeof(title) !== 'undefined' && title)
+    let fieldCheckboxClassName = 'field-checkbox';
+    fieldCheckboxClassName += isRich ? ' field-checkbox--rich' : '';
+
+  div(class=fieldCheckboxClassName)&attributes(attributes)
+    if (title)
       .field-checkbox__title!= title
     each checkbox in checkboxes
       -
-        const { mods = '', title = '', text = '', attrs = {} } = checkbox;
-        let allMods = '';
-        if (typeof(mods) !== 'undefined' && mods) {
-          allMods = mods.split(',').map(el => `field-checkbox__input-wrap--${el.trim()}`).join(' ');
-        }
+        const { 
+          title = '',
+          text = '',
+          attrs
+        } = checkbox;
+
       .field-checkbox__input-wrap(class=allMods)
         label.field-checkbox__label
-          input.field-checkbox__input(type='checkbox')&attributes(attrs)
+          input.field-checkbox__input(type="checkbox")&attributes(attrs)
           span.field-checkbox__text!= title
-          if (typeof(text) !== 'undefined' && text)
+          if (text)
             span.field-checkbox__add-text!= text
