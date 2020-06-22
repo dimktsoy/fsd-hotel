@@ -1,13 +1,9 @@
 mixin like-btn(props = {})
-  //- mods: active
-  
   -
-    const { mods = '', count = 0 } = props;
+    const { isActive = false, count = 0 } = props;
 
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `like-btn--${el.trim()}`).join(' ');
-    }
+    let likeBtnClassName = 'like-btn js-like-btn';
+    likeBtnClassName += isActive ? ' like-btn--active' : '';
 
-  button.like-btn(class=allMods, type="button")&attributes(attributes)
-    span.like-btn__count!= count
+  button(class=likeBtnClassName, type="button")&attributes(attributes)
+    span.like-btn__count.js-like-btn__count!= count
