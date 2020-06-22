@@ -1,26 +1,22 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .toggle {
   $block-name: &;
+  line-height: 1;
 
   /* Title */
 
   &__title {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-    color: $dark-shade-100;
-    margin-bottom: 16px;
-    text-transform: uppercase;
+    @include title(1rem);
   }
 
   /* Input wrap */
 
   &__input-wrap {
-    line-height: 1;
-    margin-bottom: 14px;
+    margin-bottom: 0.875rem;
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 0;
     }
   }
@@ -29,17 +25,16 @@
 
   &__label {
     display: inline-block;
+    vertical-align: top;
     position: relative;
+    cursor: pointer;
+    padding-left: 3.125rem;
   }
 
   /* Input */
 
   &__input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+    @include input-hidden;
 
     &:hover {
       & + #{$block-name}__text {
@@ -62,8 +57,9 @@
         &::before {
           border-color: $primary-color;
         }
+
         &::after {
-          transform: translateX(20px);
+          transform: translateX(1.25rem);
           background: linear-gradient(#BC9CFF 0%, #8BA4F9 100%);
         }
       }
@@ -73,32 +69,34 @@
   /* Text */
 
   &__text {
-    font-size: 14px;
-    line-height: 18px;
+    line-height: 1.125rem;
+    padding: 0.0625rem 0 0.0625rem;
     color: $dark-shade-75;
     display: block;
-    position: relative;
-    padding: 1px 0 1px 50px;
+
+    /* Mask */
 
     &::before {
       content: '';
       position: absolute;
       left: 0;
       top: 0;
-      width: 40px;
-      height: 20px;
+      width: 2.5rem;
+      height: 1.25rem;
       border: 1px solid $dark-shade-25;
-      border-radius: 10px;
+      border-radius: 0.625rem;
       background-color: #fff;
     }
+
+    /* Mark */
 
     &::after {
       content: '';
       position: absolute;
-      left: 4px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
+      left: 0.25rem;
+      top: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
       border-radius: 50%;
       background-color: $dark-shade-25;
       transition: transform .3s;
