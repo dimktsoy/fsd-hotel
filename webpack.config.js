@@ -4,7 +4,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 const devMode = process.env.NODE_ENV === 'development';
 const prodMode = process.env.NODE_ENV === 'production';
@@ -17,45 +17,48 @@ const generateHtmlPlugins = (templateDir) => {
       template: path.resolve(__dirname, `${templateDir}/${page}/${page}.pug`)
     });
   });
-}
+};
 
 const htmlPlugins = generateHtmlPlugins('./src/pages');
 
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js',
+    main: './src/index.js'
   },
   output: {
     filename: devMode ? 'js/[name].js' : 'js/[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   devtool: devMode ? 'source-map' : '',
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     port: 9000,
-    hot: false,
+    hot: false
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: 'all'
     },
     minimize: prodMode,
-    minimizer: [
-      new TerserWebpackPlugin(),
-    ],
+    minimizer: [new TerserWebpackPlugin()]
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           },
-        },
+          {
+            loader: 'eslint-loader'
+          }
+        ]
       },
       {
         test: /\.pug$/,
@@ -63,10 +66,10 @@ module.exports = {
           {
             loader: 'pug-loader',
             query: {
-              pretty: true,
-            },
-          },
-        ],
+              pretty: true
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2)$/,
@@ -74,9 +77,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts/',
-          },
-        },
+            outputPath: 'fonts/'
+          }
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -86,7 +89,7 @@ module.exports = {
             options: {
               esModule: false,
               name: '[name].[ext]',
-              outputPath: 'images/',
+              outputPath: 'images/'
             }
           },
           {
@@ -97,18 +100,18 @@ module.exports = {
                 quality: 65
               },
               optipng: {
-                enabled: false,
+                enabled: false
               },
               pngquant: {
-                quality: [0.65, 0.90],
+                quality: [0.65, 0.9],
                 speed: 4
               },
               gifsicle: {
-                interlaced: false,
-              },
-            },
-          },
-        ],
+                interlaced: false
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(css|s[ac]ss)$/i,
@@ -116,31 +119,31 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../',
-            },
+              publicPath: '../'
+            }
           },
-          { 
+          {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-            },
-          },
-          { 
-            loader: 'postcss-loader', 
-            options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
-            loader: 'resolve-url-loader',
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
           },
           {
-            loader: 'sass-loader', 
-            options: {
-              sourceMap: true,
-            },
+            loader: 'resolve-url-loader'
           },
-        ],
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       },
       {
         test: require.resolve('jquery'),
@@ -152,21 +155,20 @@ module.exports = {
           {
             loader: 'expose-loader',
             options: '$'
-          },
-        ],
-      },
-    ],
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: devMode ? 'styles/[name].css' : 'styles/[name].[contenthash].css',
-      chunkFilename: devMode ? 'styles/[name].css' : 'styles/[name].[contenthash].css',
+      chunkFilename: devMode ? 'styles/[name].css' : 'styles/[name].[contenthash].css'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
-    }),
-  ]
-  .concat(htmlPlugins),
+      jQuery: 'jquery'
+    })
+  ].concat(htmlPlugins)
 };
