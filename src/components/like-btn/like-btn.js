@@ -1,8 +1,9 @@
 import './like-btn.scss';
+import $ from 'jquery';
 
 const $likeBtn = $('.js-like-btn');
 
-function handleClick(e) {
+function handleClick() {
   const $count = $(this).find('.like-btn__count');
   const isActive = $(this).hasClass('like-btn--active');
   let countValue = parseInt($count.text(), 10);
@@ -20,6 +21,8 @@ function handleClick(e) {
   $(this).toggleClass('like-btn--active');
 
   $count.text(countValue);
+
+  return false;
 }
 
 $likeBtn.on('click', handleClick);
