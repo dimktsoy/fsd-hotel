@@ -1,7 +1,7 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .date-dropdown {
-  max-width: 32rem;
 
   /* Group */
 
@@ -10,23 +10,56 @@
     justify-content: space-between;
   }
 
-  &__group &__field-wrap {
+  &__group &__label {
     width: 50%;
   }
 
-  &__field-wrap + &__field-wrap {
-    margin-left: 2rem;
+  /* Label */
+
+  &__label {
+    display: block;
+  }
+
+  &__label + &__label {
+    margin-left: 1.25rem;
+  }
+
+  /* Title */
+
+  &__title {
+    @include title;
+
+    display: block;
   }
 
   /* Input */
 
-  &__field-wrap {
-    input {
-      padding-right: 4.4rem;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+  &__input-wrap {
+    position: relative;
+    display: block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2.75rem;
+      background-image: url('./img/date-dropdown-arrow.svg');
       background-repeat: no-repeat;
-      background-position: top 1.8rem right 1.6rem;
-      cursor: pointer;
+      background-position: top 52% right 50%;
+    }
+  }
+
+  &__input {
+    @include input;
+
+    text-transform: lowercase;
+    cursor: pointer;
+    padding-right: 2.75rem;
+
+    &::placeholder { 
+      text-transform: uppercase;
     }
   }
 }
@@ -35,27 +68,40 @@
 
 .datepicker {
   font-family: $Montserrat;
-  width: 32rem;
+  width: 20rem;
   box-shadow: 0px 10px 20px $dark-shade-5;
   border: 1px solid $dark-shade-25;
   color: $dark-shade-50;
 }
 
+.datepicker--pointer {
+  display: none;
+}
+
 .datepicker--nav {
   border-bottom: 0;
-  min-height: 3.2rem;
-  padding: 2rem;
+  min-height: 0;
+  padding: 0.857142857142857rem 1.405rem 1.642857142857143rem 1.371428571428571rem;
+  align-items: center;
 }
 
 .datepicker--nav-title {
-  font-size: 1.9rem;
+  font-size: 1.1875em;
+  line-height: 2;
   font-family: $Quicksand;
   font-weight: bold;
   color: $dark-shade-100;
+
+  &:hover {
+    background: none;
+    color: $dark-shade-75;
+  }
 }
 
 .datepicker--day-name {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  padding: 0.78125rem 0;
   font-weight: bold;
   color: $primary-color;
   text-transform: none;
@@ -65,16 +111,15 @@
 
 .datepicker--days-names {
   margin: 0;
-  padding: .8rem 0;
 }
 
 /* Cell */
 
 .datepicker--cell {
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  font-size: 1.2rem;
+  width: 2.4925rem;
+  height: 2.5rem;
+  font-size: 0.75rem;
 }
 
 .datepicker--cell.-current- {
@@ -98,15 +143,17 @@
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   font-weight: bold;
   color: #fff;
-  
-  &::before {
-    content: '';
-    top: 0;
-    bottom: 0;
-    width: 2rem;
-    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-    position: absolute;
-    z-index: -1;
+
+  &.datepicker--cell-day  {
+    &::before {
+      content: '';
+      top: 0;
+      bottom: 0;
+      width: 1.25rem;
+      background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+      position: absolute;
+      z-index: -1;
+    }
   }
 }
 
@@ -148,15 +195,30 @@
   color: $dark-shade-25;
 }
 
+.datepicker--cells-years,
+.datepicker--years,
+.datepicker--cells-months {
+  height: auto;
+}
+
+.datepicker--cell.-range-from-.-range-to- {
+  border-radius: 50%;
+}
+
 .datepicker--content {
-  padding: 0 1.894rem 2.044rem 2.119rem;
-  width: 28rem;
+  padding: 0 1.18375rem 1.25rem 1.325rem;
 }
 
 /* Arrow buttons */
 
 .datepicker--nav-action {
-  width: 2.4rem;
+  width: 1.49625rem;
+  height: 1.5rem;
+
+  &:hover {
+    background: none;
+    opacity: .5;
+  }
 }
 
 .datepicker--nav-action path {
@@ -165,22 +227,22 @@
 }
 
 .datepicker--nav-action svg {
-  width: 1.7rem;
-  height: 1.8rem;
+  width: 1.0625rem;
+  height: 1.125rem;
 }
 
 /* Buttons */
 
 .datepicker--buttons {
   border-top: 0;
-  padding: 0 2rem 2rem;
+  padding: 0 1.1875rem 1.1875rem;
   justify-content: space-between;
 }
 
 .datepicker--button {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   height: auto;
-  line-height: 1.5rem;
+  line-height: 1.25;
   color: $dark-shade-50;
   font-weight: bold;
   text-transform: uppercase;

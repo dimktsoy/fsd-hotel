@@ -1,46 +1,29 @@
-include ../field-text/field-text
-
 mixin date-dropdown(props = {})
-
   -
-    const {
-      mods = '',
-      filter,
-      range = [
-        {
-          title: 'Dropdown date',
-        },
-        {
-          title: 'Dropdown date'
-        }
-      ]
+    const { 
+      isFilter = false,
+      titleFilter = '',
+      titleStart = '',
+      titleEnd = '',
+      attrs
     } = props;
-
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `dropdown--${el.trim()}`).join(' ');
-    }
-
-  .date-dropdown(class=allMods)&attributes(attributes)
-    if (typeof(filter) !== 'undefined' && filter)
-      +field-text({
-        ...filter,
-        attrs: {
-          class: 'date-dropdown__input-filter',
-          readonly: true,
-          placeholder: 'дд М - дд М',
-        }
-      })(class="date-dropdown__field-wrap")
-
+    
+  .date-dropdown.js-date-dropdown&attributes(attributes)
+    if (!isFilter)
+      span.date-dropdown__group
+        label.date-dropdown__label
+          if (titleStart)
+            span.date-dropdown__title!= titleStart
+          span.date-dropdown__input-wrap
+            input.date-dropdown__input.js-date-dropdown__input-start(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
+        label.date-dropdown__label
+          if (titleEnd)
+            span.date-dropdown__title!= titleEnd
+          span.date-dropdown__input-wrap
+            input.date-dropdown__input.js-date-dropdown__input-end(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
     else
-      .date-dropdown__group
-        each item, i in range
-          +field-text({
-            ...item,
-            attrs: {
-              class: `date-dropdown__${i === 0 ? 'input-start' : 'input-end'}`,
-              type: "text",
-              placeholder: 'ДД.ММ.ГГГГ',
-              readonly: true
-            }
-          })(class="date-dropdown__field-wrap")
+      label.date-dropdown__label
+        if (titleFilter)
+          span.date-dropdown__title!= titleFilter
+        span.date-dropdown__input-wrap
+          input.date-dropdown__input.js-date-dropdown__input-filter(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
