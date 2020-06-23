@@ -1,28 +1,29 @@
 mixin btn(props = {})
-  //- mods: primary, outline, link, block, focus
-
   -
     const { 
-      mods = '',
       text = 'Кнопка',
-      isInput = false,
-      isIcon = false
+      isPrimary = false,
+      isOutline = false,
+      isSimple = false,
+      isSizeFull = false,
+      isWithIcon = false,
+      isHover = false
     } = props;
 
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `btn--${el.trim()}`).join(' ');
-    }
+    let btnClassName = 'btn';
+    btnClassName += isPrimary ? ' btn--theme-primary' : '';
+    btnClassName += isOutline ? ' btn--theme-outline' : '';
+    btnClassName += isSimple ? ' btn--theme-simple' : '';
+    btnClassName += isSizeFull ? ' btn--size-full' : '';
+    btnClassName += isHover ? ' btn--view-hovered' : '';
 
   if (attributes.href)
-    a.btn(class=allMods)&attributes(attributes)!= text
-      if (isIcon)
+    a(class=btnClassName)&attributes(attributes)!= text
+      if (isWithIcon)
         img.btn__arrow(src=require('../../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
-  else if (isInput)
-    input.btn(class=allMods, value=text, type="button")&attributes(attributes)
   else
-    button.btn(class=allMods, type="button")&attributes(attributes)!= text
-      if (isIcon)
+    button(class=btnClassName, type="button")&attributes(attributes)!= text
+      if (isWithIcon)
         img.btn__arrow(src=require('../../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
