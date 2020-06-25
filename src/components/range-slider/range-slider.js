@@ -4,35 +4,50 @@ import $ from 'jquery';
 import 'nouislider/distribute/nouislider.css';
 import './range-slider.scss';
 
-const $rangeSlider = $('.js-range-slider');
+class RangeSlider {
+  constructor($component) {
+    this.$component = $component;
+    this.init();
+    this.attachEventHandlers();
+  }
 
-function rangeSliderInit() {
-  const control = $(this).find('.range-slider__control').get(0);
-  const value = $(this).find('.range-slider__value').get(0);
+  init() {
+    this.control = this.$component.find('.js-range-slider__control').get(0);
+    this.value = this.$component.find('.js-range-slider__value').get(0);
 
-  noUiSlider.create(control, {
-    start: [5000, 10000],
-    connect: true,
-    step: 100,
-    range: {
-      min: [0],
-      max: [16000]
-    },
-    format: {
-      to(val) {
-        return `${parseInt(val, 10)}₽`;
+    noUiSlider.create(this.control, {
+      start: [5000, 10000],
+      connect: true,
+      step: 100,
+      range: {
+        min: [0],
+        max: [16000]
       },
-      from(val) {
-        return parseInt(val, 10);
+      format: {
+        to(value) {
+          return `${parseInt(value, 10)}₽`;
+        },
+        from(value) {
+          return parseInt(value, 10);
+        }
       }
-    }
-  });
+    });
+  }
 
-  control.noUiSlider.on('update', (values) => {
-    value.innerHTML = values
+  attachEventHandlers() {
+    this.control.noUiSlider.on('update', this.handleRangeUpdate.bind(this));
+  }
+
+  handleRangeUpdate(values) {
+    this.value.innerHTML = values
       .map((num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '))
       .join(' - ');
-  });
+  }
 }
 
-$rangeSlider.each(rangeSliderInit);
+$(() => {
+  $('.js-range-slider').each((index, node) => {
+    const rangeSlider = new RangeSlider($(node));
+    return rangeSlider;
+  });
+});
