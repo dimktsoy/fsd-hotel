@@ -14,6 +14,8 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['prettier'],
   rules: {
+    'no-underscore-dangle': [2, { allowAfterThis: true }],
+    'no-new': 0,
     'prettier/prettier': ['error']
   }
 };
