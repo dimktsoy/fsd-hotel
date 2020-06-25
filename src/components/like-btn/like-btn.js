@@ -1,28 +1,38 @@
-import './like-btn.scss';
 import $ from 'jquery';
+import './like-btn.scss';
 
-const $likeBtn = $('.js-like-btn');
-
-function handleClick() {
-  const $count = $(this).find('.like-btn__count');
-  const isActive = $(this).hasClass('like-btn--active');
-  let countValue = parseInt($count.text(), 10);
-
-  if (countValue === 0) {
-    return false;
+class LikeBtn {
+  constructor($component) {
+    this.$component = $component;
+    this.attachEventHandlers();
   }
 
-  if (isActive) {
-    countValue -= 1;
-  } else {
-    countValue += 1;
+  attachEventHandlers() {
+    this.$component.on('click', this.handleButtonClick);
   }
 
-  $(this).toggleClass('like-btn--active');
+  // eslint-disable-next-line class-methods-use-this
+  handleButtonClick(event) {
+    const $likeBtn = $(event.currentTarget);
+    const $likeBntCount = $likeBtn.find('.js-like-btn__count');
+    const oldValue = parseInt($likeBntCount.text(), 10);
+    let newValue = 0;
 
-  $count.text(countValue);
+    $likeBtn.toggleClass('like-btn--active');
 
-  return false;
+    if ($likeBtn.hasClass('like-btn--active')) {
+      newValue = oldValue + 1;
+    } else {
+      newValue = oldValue - 1;
+    }
+
+    $likeBntCount.text(newValue);
+  }
 }
 
-$likeBtn.on('click', handleClick);
+$(() => {
+  $('.js-like-btn').each((index, node) => {
+    const likeBtn = new LikeBtn($(node));
+    return likeBtn;
+  });
+});
