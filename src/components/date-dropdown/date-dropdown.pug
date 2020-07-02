@@ -15,15 +15,15 @@ mixin date-dropdown(props = {})
           if (titleStart)
             span.date-dropdown__title!= titleStart
           span.date-dropdown__input-wrap
-            input.date-dropdown__input.js-date-dropdown__input-start(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
+            input.date-dropdown__input.js-date-dropdown__input-start(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text', readonly=true)&attributes(attrs)
         label.date-dropdown__label
           if (titleEnd)
             span.date-dropdown__title!= titleEnd
           span.date-dropdown__input-wrap
-            input.date-dropdown__input.js-date-dropdown__input-end(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
+            input.date-dropdown__input.js-date-dropdown__input-end(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text', readonly=true, tabindex='-1')&attributes(attrs)
     else
       label.date-dropdown__label
         if (titleFilter)
           span.date-dropdown__title!= titleFilter
         span.date-dropdown__input-wrap
-          input.date-dropdown__input.js-date-dropdown__input-filter(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
+          input.date-dropdown__input.js-date-dropdown__input-filter(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text', readonly=true)&attributes(attrs)
