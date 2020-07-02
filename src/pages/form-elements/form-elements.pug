@@ -74,8 +74,10 @@ block content
           +field-text({
             title: 'Masked text field',
             helpText: 'Default',
+            isMask: true,
             attrs: {
-              placeholder: 'ДД.ММ.ГГГГ'
+              placeholder: 'ДД.ММ.ГГГГ',
+              'data-inputmask': "'placeholder': 'ДД.ММ.ГГГГ', 'alias': 'datetime', 'inputFormat': 'dd.mm.yyyy'"
             }
           })
         .page-form-elements__date-dropdown
