@@ -3,7 +3,17 @@ mixin field-checkbox(props = {})
     const { 
       isRich = false,
       title = '',
-      checkboxes
+      checkboxes = [
+        { 
+          title: 'Можно с питомцами',
+        },
+        { 
+          title: 'Можно с питомцами',
+          attrs: {
+              checked: true
+          }
+        }
+      ]
     } = props;
 
     let fieldCheckboxClassName = 'field-checkbox';

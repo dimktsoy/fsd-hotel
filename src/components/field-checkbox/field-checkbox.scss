@@ -15,6 +15,10 @@
 
   &__input-wrap {
     margin-bottom: 0.665rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   /* Label */
@@ -65,7 +69,7 @@
   /* Text */
 
   &__text {
-    line-height: 1.125rem;
+    line-height: 1.2858;
     color: $dark-shade-50;
     display: block;
     padding: 0.0625rem 0 0.0625rem;
@@ -97,7 +101,7 @@
       background-image: url('./img/field-checkbox-mark.svg');
       background-repeat: no-repeat;
       background-size: 0.625rem 0.6875rem;
-      background-position: top 47% right 50%;
+      background-position: top 47% right 51%;
     }
   }
 
@@ -105,11 +109,10 @@
 
   &__add-text {
     font-size: 0.75rem;
-    line-height: 1.166666666666667;
+    line-height: 1.1667;
     color: $dark-shade-50;
     display: block;
     margin-top: 0.3125rem;
-    padding-left: 1.875rem;
   }
 
   /* Modifier rich */
