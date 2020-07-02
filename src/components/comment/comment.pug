@@ -3,22 +3,16 @@ include ../like-btn/like-btn
 mixin comment(props = {})
   -
     const { 
-      mods = '',
       username = 'Имя пользователя',
-      text = 'Комментарий',
+      text = 'Великолепный матрас на кровати в основной спальне!',
       avatar = 'comment-noavatar.gif',
       date = 'сегодня',
       likeBtn = { count: 0 }
     } = props;
 
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `comment--${el.trim()}`).join(' ');
-    }
-
-  .comment(class=allMods)&attributes(attributes)
+  .comment&attributes(attributes)
     .comment__user-avatar-wrap
-      img.comment__user-avatar(src=require(`../../components/comment/images/${avatar}`), alt="avatar", width="48", height="48")
+      img.comment__user-avatar(src=require(`../../components/comment/img/${avatar}`), alt="avatar", width="48", height="48")
       span.comment__like-btn
         +like-btn(likeBtn)
     .comment__body
