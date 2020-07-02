@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .bullet-list {
   $block-name: &;
@@ -11,16 +12,16 @@
 
   &__item {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
+    padding-left: 1.30375rem;
+    margin-bottom: 0.625rem;
 
     &::before {
       content: '';
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
       position: absolute;
       left: 0;
-      top: 7px;
+      top: 0.4375rem;
       background-color: $dark-shade-25;
       border-radius: 50%;
     }

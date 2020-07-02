@@ -20,10 +20,10 @@ mixin btn(props = {})
   if (attributes.href)
     a(class=btnClassName)&attributes(attributes)!= text
       if (isWithIcon)
-        img.btn__arrow(src=require('../../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
+        img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
   else
     button(class=btnClassName, type="button")&attributes(attributes)!= text
       if (isWithIcon)
-        img.btn__arrow(src=require('../../components/btn/images/btn-arrow.svg'), alt="arrow", width="18", height="18")
+        img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block

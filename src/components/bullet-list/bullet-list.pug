@@ -1,16 +1,7 @@
 mixin bullet-list(props = {})
-
   -
-    const { 
-      mods = '',
-      list = ['Трум-пурум-пурум-пум-пум', 'Пара-ра-ра трум-пумпум']
-    } = props;
+    const { list = [] } = props;
 
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `bullet-list--${el.trim()}`).join(' ');
-    }
-
-  ul.bullet-list(class=allMods)&attributes(attributes)
+  ul.bullet-list&attributes(attributes)
     each item in list
       li.bullet-list__item!= item
