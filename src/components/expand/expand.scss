@@ -1,50 +1,45 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
 .expand {
   $block-name: &;
 
-  /* Title */
+  /* Trigger */
 
-  &__title {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-    color: $dark-shade-100;
-    position: relative;
-    text-transform: uppercase;
+  &__trigger {
+    @include title(0);
+
     cursor: pointer;
+    position: relative;
 
     &::after {
       content: '';
-      width: 12px;
-      height: 8px;
+      width: 0.75rem;
+      height: 0.5rem;
       top: 50%;
-      right: 16px;
-      margin-top: -4px;
+      right: 1rem;
+      margin-top: -0.25rem;
       position: absolute;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
+      background-image: url('./img/expand-arrow.svg');
       background-repeat: no-repeat;
       background-position: 0 0;
+      transition: transform .3s ease-in-out;
     }
   }
 
   /* Content */
 
   &__content {
-    display: none;
-    margin-top: 17px;
+    margin-top: 1.09rem;
   }
 
   /* Modifier open */
 
   &--open {
-    #{$block-name}__title {
+    #{$block-name}__trigger {
       &::after {
         transform: rotate(180deg);
       }
-    }
-    #{$block-name}__content {
-      display: block;
     }
   }
 }

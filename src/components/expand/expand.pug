@@ -1,19 +1,11 @@
-mixin expand({ mods = '', title = '' })
-
-  //- Use:
-    +expand({
-      mods: '',
-      title: 'Title'
-    })
-      block content
-
+mixin expand(props = {})
   -
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `expand--${el.trim()}`).join(' ');
-    }
+    const { title = 'Expand', isOpen = false } = props;
 
-  .expand(class=allMods)&attributes(attributes)
-    .expand__title!= title
-    .expand__content
+    let classes = 'expand js-expand';
+    classes += isOpen ? ' expand--open' : '';
+
+  div(class=classes)&attributes(attributes)
+    .expand__trigger.js-expand__trigger!= title
+    .expand__content.js-expand__content
       block
