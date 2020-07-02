@@ -1,21 +1,52 @@
-include ../field-text/field-text
+include ../btn/btn
 
-mixin dropdown({ mods = '', title = '', helpText = '', val = '' })
-
+mixin dropdown(props = {})
   -
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `dropdown--${el.trim()}`).join(' ');
-    }
+    const { 
+      title = '',
+      helpText = '',
+      placeholder = '',
+      options = [],
+      isOpen = false,
+      isDetails = false,
+      isButtons = false
+    } = props;
 
-  .dropdown(class=allMods)&attributes(attributes)
-    +field-text({
-      title,
-      helpText,
-      val,
-      attrs: {
-        readonly: true
-      }
-    })(class="dropdown__field-text")
-      span.dropdown__arrow
-    .dropdown__content
+    let classes = 'dropdown js-dropdown';
+    classes += isDetails ? ' js-dropdown-details' : ' js-dropdown-guests'
+    classes += isOpen ? ' dropdown--open' : '';
+
+  div(class=classes)&attributes(attributes)
+    if (title & helpText)
+      span.dropdown__title-wrap
+        span.dropdown__title!= title
+        span.dropdown__help-text!= helpText
+    else if (title)
+      span.dropdown__title!= title
+    span.dropdown__trigger.js-dropdown__trigger
+      input.dropdown__input.js-dropdown__input(type="text", readonly=true, placeholder=placeholder)
+    .dropdown__content.js-dropdown__content
+      ul.dropdown__list.js-dropdown__list
+        each option in options
+          -
+            const { title = '', value = '', isBaby = false, data } = option;
+            let classes = 'dropdown__item-count js-dropdown__item-count';
+            classes += isBaby ? ' js-dropdown__item-count-baby' : '';
+
+          li.dropdown__item
+            span.dropdown__item-title!= title
+            span.dropdown__item-controls
+              button.dropdown__item-button.js-dropdown__item-button(type="button") -
+              input(class=classes, type="text", value=value, readonly=true, tabindex="-1" data-dropdown=data)
+              button.dropdown__item-button.js-dropdown__item-button(type="button") +
+      if (isButtons)
+        .dropdown__buttons-group
+          +btn({
+            text: 'очистить',
+            isSimple: true,
+            isHover: true
+          })(class="js-dropdown__button-clear")
+          +btn({
+            text: 'применить',
+            isSimple: true
+          })(class="js-dropdown__button-apply")
