@@ -1,26 +1,9 @@
-include ../field-text/field-text
-
 mixin subscribe(props = {})
+  - const { placeholder = '', title = '' } = props;
 
-  //- Use:
-    +subscription({
-      title: 'Название',
-      mods: ''
-    })
-
-  -
-    const { mods, title = '' } = props;
-    let allMods = '';
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `subscribe--${el.trim()}`).join(' ');
-    }
-
-  .subscribe(class=allMods)&attributes(attributes)
-    +field-text({ 
-      title,
-      attrs: {
-        type: 'email',
-        placeholder: 'Email'
-      }
-    })(class="subscribe__field-text")
+  .subscribe&attributes(attributes)
+    if (title)
+      .subscribe__title!= title
+    span.subscribe__input-wrap
+      input.subscribe__input(type="email", placeholder=placeholder)
       button.subscribe__button(type="submit")
