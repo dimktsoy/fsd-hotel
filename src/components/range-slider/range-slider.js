@@ -1,5 +1,5 @@
-import noUiSlider from 'nouislider';
 import $ from 'jquery';
+import noUiSlider from 'nouislider';
 
 import 'nouislider/distribute/nouislider.css';
 import './range-slider.scss';
@@ -8,13 +8,16 @@ class RangeSlider {
   constructor($component) {
     this.$component = $component;
     this.init();
+    this.render();
     this.attachEventHandlers();
   }
 
   init() {
     this.control = this.$component.find('.js-range-slider__control').get(0);
     this.value = this.$component.find('.js-range-slider__value').get(0);
+  }
 
+  render() {
     noUiSlider.create(this.control, {
       start: [5000, 10000],
       connect: true,
