@@ -6,7 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build": "cross-env NODE_ENV=production webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "expose-loader": "^0.7.5",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "image-webpack-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.9.0",
