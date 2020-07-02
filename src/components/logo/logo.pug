@@ -1,15 +1,9 @@
 mixin logo(props = {})
   -
-    const { mods, isSimple = false } = props;
-
-    let allMods = '';
-
-    if (typeof(mods) !== 'undefined' && mods) {
-      allMods = mods.split(',').map(el => `logo--${el.trim()}`).join(' ');
-    }
+    const { isSimple = false } = props;
 
   a.logo(href="/")
     if (isSimple)
-      img.logo__img(src=require("../../components/logo/images/logo-simple.svg"), alt="logo", width="48", height="48")
+      img.logo__img(src=require("../../components/logo/img/logo-simple.svg"), alt="logo", width="48", height="48")
     else
-      img.logo__img(src=require("../../components/logo/images/logo.svg"), alt="logo", width="105.69", height="40")
+      img.logo__img(src=require("../../components/logo/img/logo.svg"), alt="logo", width="105.69", height="40")
