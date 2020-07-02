@@ -2,11 +2,21 @@
 
 Макет страниц по поиску номеров в отеле
 
-## Старт проекта
+## Старт проекта:
 - Клонируйте репозиторий: `git clone https://github.com/dimktsoy/fsd-hotel.git`
 - Перейдите в папку с проектом `cd fsd-hotel`
 - Установите зависимости: `npm i`
 - Запустите проект: `npm start`
+
+## Команды:
+- Запуск в режиме разработки с webpack-dev-server: `npm start`
+- Сборка для разработки: `npm run dev`
+- Сборка для продакшн: `npm run build`
+- Деплой на github pages: `npm run deploy`
+
+## Демо:
+- [Colors & Type](https://dimktsoy.github.io/fsd-hotel/colors-type.html)
+- [Form Elements](https://dimktsoy.github.io/fsd-hotel/form-elements.html)
 
 ## Используемые ресурсы и инструменты:
 - [Разработка и сборка проекта - Webpack 4.43.0](https://webpack.js.org/)
