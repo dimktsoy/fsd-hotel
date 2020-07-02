@@ -5,13 +5,18 @@ mixin field-text(props = {})
       helpText = '',
       isTextarea = false,
       isHovered = false,
+      isMask = false,
       attrs
     } = props;
 
-    let fieldTextClassName = 'field-text';
-    fieldTextClassName += isHovered ? ' field-text--hovered' : '';
+    let classes = 'field-text';
+    classes += isHovered ? ' field-text--hovered' : '';
+
+    let classesInput = 'field-text__input';
+    classesInput += isMask ? ' js-field-text-mask' : '';
     
-  label(class=fieldTextClassName)&attributes(attributes)
+    
+  label(class=classes)&attributes(attributes)
     if (title && !helpText)
       span.field-text__title!= title
     else if (title && helpText)
@@ -20,7 +25,7 @@ mixin field-text(props = {})
         span.field-text__help-text!= helpText
     span.field-text__input-wrap
       if (isTextarea)
-        textarea(class=fieldTextClassName)&attributes(attrs)
+        textarea(class=classes)&attributes(attrs)
       else
-        input.field-text__input(type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
+        input(class=classesInput, type=(typeof(attrs) !== 'undefined' && attrs.type) ? attrs.type : 'text')&attributes(attrs)
       block
