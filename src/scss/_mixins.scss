@@ -1,11 +1,11 @@
 @mixin input {
   background-color: #fff;
   border: 1px solid $dark-shade-25;
-  border-radius: 0.285714285714286em; // 4px
+  border-radius: 4px;
   color: $dark-shade-75;
-  font-size: 0.875rem; // 14px
+  font-size: 0.875rem;
   display: block;
-  line-height: 1.5; // 21px
+  line-height: 1.5;
   width: 100%;
   padding: 0.65625rem 0.875rem;
   outline: none;

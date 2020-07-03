@@ -16,19 +16,6 @@
   box-sizing: inherit;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $dark-shade-25;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $dark-shade-25;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: $dark-shade-25;
-}
-
 :root, 
 body {
   height: 100%;
@@ -43,7 +30,30 @@ body {
   color: $dark-shade-75;
 }
 
+::placeholder {
+  color: $dark-shade-25;
+  opacity: 1; /* Firefox */
+}
+
 img {
   max-width: 100%;
   height: auto;
+}
+
+h1 {
+  font-family: $Quicksand;
+  font-size: $font-size-h1;
+  line-height: 1.25;
+}
+
+h2 {
+  font-family: $Quicksand;
+  font-size: $font-size-h2;
+  line-height: 1.2631;
+}
+
+h3, h4, h5, h6 {
+  font-family: $Montserrat;
+  font-size: $font-size-h3;
+  line-height: 1.25;
 }
