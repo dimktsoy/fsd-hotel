@@ -60,7 +60,7 @@ class Dropdown {
     if (this.$component.hasClass('dropdown--open')) {
       this.$component.removeClass('dropdown--open');
     } else {
-      $('.js-dropdown').removeClass('dropdown--open')
+      $('.js-dropdown').removeClass('dropdown--open');
       this.$component.addClass('dropdown--open');
     }
   }

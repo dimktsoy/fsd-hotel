@@ -59,17 +59,7 @@
     cursor: pointer;
     padding-right: 2.75rem;
 
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      text-transform: uppercase;
-      color: $dark-shade-75;
-    }
-    
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-      text-transform: uppercase;
-      color: $dark-shade-75;
-    }
-    
-    &::-ms-input-placeholder { /* Microsoft Edge */
+    &::placeholder {
       text-transform: uppercase;
       color: $dark-shade-75;
     }

@@ -10,7 +10,7 @@ class Expand {
     this.bindEventHandlers();
     this.atachEventHandlers();
   }
-  
+
   init() {
     this.$trigger = this.$component.find('.js-expand__trigger');
     this.$content = this.$component.find('.js-expand__content');
