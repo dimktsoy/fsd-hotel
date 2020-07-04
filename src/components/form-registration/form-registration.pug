@@ -1,0 +1,46 @@
+include ../btn/btn
+include ../field-text/field-text
+include ../field-radio/field-radio
+include ../toggle/toggle
+
+
+mixin form-registration(props = {})
+  -
+    const {
+      title = '',
+      inputFirstName,
+      inputLastName,
+      radioSex,
+      inputBirthDate,
+      inputEmail,
+      inputPassword,
+      toggleSpecial,
+      btnSubmit,
+      login
+    } = props;
+
+  .form-registration
+    form.form-registration__form
+      if (title)
+        h3.form-registration__title!= title
+      .form-registration__group
+        .form-registration__item
+          +field-text(inputFirstName)
+        .form-registration__item
+          +field-text(inputLastName)
+        .form-registration__item
+          +field-radio(radioSex)
+      .form-registration__group
+        +field-text(inputBirthDate)
+      .form-registration__group
+        .form-registration__item
+          +field-text(inputEmail)
+        .form-registration__item
+          +field-text(inputPassword)
+        .form-registration__item
+          +toggle(toggleSpecial)
+      .form-registration__footer
+        +btn(btnSubmit)
+        .form-registration__login
+          p.form-registration__login-text!= login.text
+          +btn(login.btn)

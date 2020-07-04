@@ -1,0 +1,53 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.form-registration {
+  $block-name: &;
+
+  @include form-card;
+
+  /* Title */
+
+  &__title {
+    @include title-h1;
+  }
+
+  /* Group */
+
+  &__group {
+    margin-top: 1.25rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  /* Item */
+
+  &__item {
+    margin-top: 0.625rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  /* Footer */
+
+  &__footer {
+    margin-top: 1.5rem;
+  }
+
+  &__login {
+    margin-top: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      margin: 0;
+      color: #000;
+      padding-right: 1.875rem;
+    }
+  }
+}
