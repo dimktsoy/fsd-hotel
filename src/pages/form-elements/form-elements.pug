@@ -19,7 +19,9 @@ include ../../components/comment/comment
 include ../../components/date-dropdown/date-dropdown
 
 block head
-  title Form Elements
+  - const pageTitle = "Form Elements";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
 
 block content
 
@@ -208,13 +210,15 @@ block content
         .page-form-elements__buttons
           +btn({
             text: 'Click me',
-            isSimple: true
-          })(href="#")
+            isSimple: true,
+            isLink: true
+          })
           +btn({
             text: 'Click me',
             isSimple: true,
-            isHover: true
-          })(href="#")
+            isHover: true,
+            isLink: true
+          })
         .page-form-elements__buttons.page-form-elements__buttons--full
           +btn({
             text: 'Перейти к оплате',
