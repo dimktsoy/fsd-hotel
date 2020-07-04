@@ -1,0 +1,30 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.form-filter {
+  $block-name: &;
+
+  @include form-card;
+
+  /* Title */
+
+  &__title {
+    @include title-h1;
+  }
+
+  /* Item */
+
+  &__item {
+    margin-top: 1.25rem;
+    
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  /* Footer */
+
+  &__footer {
+    margin-top: 1.9375rem;
+  }
+}
