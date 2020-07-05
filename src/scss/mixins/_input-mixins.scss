@@ -1,0 +1,30 @@
+@mixin input {
+  background-color: #fff;
+  border: 1px solid $dark-shade-25;
+  border-radius: 4px;
+  color: $dark-shade-75;
+  font-size: 0.875rem;
+  display: block;
+  line-height: 1.5;
+  width: 100%;
+  padding: 0.65625rem 0.875rem;
+  outline: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $dark-shade-50;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(188,156,255, .5);
+  }
+}
+
+@mixin input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
