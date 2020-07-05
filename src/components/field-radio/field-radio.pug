@@ -1,9 +1,9 @@
 mixin field-radio(props = {})
   -
-    const { title = '', radiobuttons } = props;
+    const { title = '', radiobuttons = [] } = props;
 
   .field-radio&attributes(attributes)
-    if (typeof(title) !== 'undefined' && title)
+    if (title)
       .field-radio__title!= title
     each checkbox in radiobuttons
       -
