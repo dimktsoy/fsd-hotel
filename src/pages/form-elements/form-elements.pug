@@ -173,12 +173,13 @@ block content
         h3.page-form-elements__title Rate button
         .page-form-elements__rating
           +rating({
-            id: 'test',
+            id: 'dynamic',
             currentStars: 4
           })
           +rating({
-            isStatic: true,
-            width: '120px'
+            id: 'static',
+            currentStars: 5,
+            isStatic: true
           })
 
       .page-form-elements__column
