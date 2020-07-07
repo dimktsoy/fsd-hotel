@@ -8,16 +8,16 @@ mixin form-filter(props = {})
       title = '',
       dateDropdown,
       dropdownGuests,
-      btn
+      btnSubmit
     } = props;
 
-  .form-filter
+  .form-filter&attributes(attributes)
     form.form-filter__form
       if (title)
         h3.form-filter__title!= title
-      .form-filter__item
+      .form-filter__input-group
         +date-dropdown(dateDropdown)
-      .form-filter__item
+      .form-filter__input-group
         +dropdown(dropdownGuests)
       .form-filter__footer
-        +btn(btn)
+        +btn(btnSubmit)

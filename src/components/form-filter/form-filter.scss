@@ -12,14 +12,10 @@
     @include title-h1;
   }
 
-  /* Item */
+  /* Input Group */
 
-  &__item {
+  &__input-group {
     margin-top: 1.25rem;
-    
-    &:first-of-type {
-      margin-top: 0;
-    }
   }
 
   /* Footer */
