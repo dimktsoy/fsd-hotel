@@ -1,23 +1,28 @@
 mixin rating(props = {})
   -
     const {
-      id = 'rating', 
+      id, 
       currentStars = 0,
-      isStatic = false
+      isStatic = true
     } = props;
 
-    let classes = 'rating__star';
-    classes += isStatic ? ' rating__star--static' : '';
-
   .rating&attributes(attributes)
-    span.rating__group
-      each val, index in { 1: 'Ужасно', 2: 'Сносно', 3: 'Нормально', 4: 'Хорошо', 5: 'Отлично' }
-        input.rating__input(
-          type="radio",
-          name=id,
-          id=`${id}-${index}`,
-          value=index,
-          checked=(index == currentStars)
-          disabled=(isStatic)
-        )
-        label(class=classes, for=`${id}-${index}`, aria-label=val)
+    if (!isStatic)
+      span.rating__group
+        each val, index in { 1: 'Ужасно', 2: 'Сносно', 3: 'Нормально', 4: 'Хорошо', 5: 'Отлично' }
+          input.rating__input(
+            type="radio",
+            name=id,
+            id=`${id}-${index}`,
+            value=index,
+            checked=(index == currentStars)
+            disabled=(isStatic)
+          )
+          label.rating__star(for=`${id}-${index}`, aria-label=val)
+    else
+      span.rating__group-static
+        each val, index in [1, 2, 3, 4, 5]
+          -
+            let classes = 'rating__star-static';
+            classes += (index + 1) <= currentStars ? ' rating__star-static--active': '';
+          span(class=classes)
