@@ -12,23 +12,19 @@
     @include title-h1;
   }
 
-  /* Group */
+  /* Input Group */
 
-  &__group {
+  &__input-group {
     margin-top: 1.25rem;
-
-    &:first-of-type {
-      margin-top: 0;
-    }
   }
 
-  /* Item */
+  /* Input Item */
 
-  &__item {
+  &__input-item {
     margin-top: 0.625rem;
 
-    &:first-of-type {
-      margin-top: 0;
+    &--radio {
+      margin-bottom: 1.5625rem;
     }
   }
 
@@ -42,9 +38,9 @@
     margin-top: 1.875rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     &-text {
+      flex: 1;
       margin: 0;
       color: #000;
       padding-right: 1.875rem;
