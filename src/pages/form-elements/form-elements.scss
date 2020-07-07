@@ -103,25 +103,37 @@
     }
   }
 
+  /* Field Text Default */
+
   &__field-text-default {
     margin-bottom: 1.29rem;
   }
+
+  /* Field Text Hover */
 
   &__field-text-hover {
     margin-bottom: 1.25rem;
   }
 
+  /* Dropdown Default */
+
   &__dropdown-default {
     margin-bottom: 1.41rem;
   }
+
+  /* Field Text Masked */
 
   &__field-text-masked {
     margin-bottom: 2.5rem;
   }
 
+  /* Date Dropdown */
+
   &__date-dropdown {
     margin-bottom: 2.535rem;
   }
+
+  /* Filter Date Dropdown */
 
   &__filter-date-dropdown {
     max-width: none;
@@ -132,6 +144,8 @@
     }
   }
 
+  /* Subscribe */
+
   &__subscribe {
     max-width: none;
 
@@ -140,17 +154,25 @@
     }
   }
 
+  /* Checkbox Buttons */
+
   &__checkbox-buttons {
     margin-bottom: 2.5rem;
   }
+
+  /* Radio Buttons */
 
   &__radio-buttons {
     margin-bottom: 2.5rem;
   }
 
+  /* Toggle */
+
   &__toggle {
     margin-bottom: 2.7775rem;
   }
+  
+  /* Like btn */
 
   &__like-btn {
     display: flex;
@@ -163,6 +185,8 @@
     }
   }
 
+  /* Rating */
+
   &__rating {
     display: flex;
     align-items: flex-start;
@@ -172,6 +196,8 @@
     }
   }
 
+  /* Range Slider */
+
   &__range-slider {
     margin-bottom: 2.7225rem;
     max-width: none;
@@ -180,6 +206,8 @@
       max-width: 16.625rem;
     }
   }
+
+  /* Buttons */
 
   &__buttons {
     display: flex;
@@ -203,6 +231,8 @@
     }
   }
 
+  /* Dropdown */
+
   &__dropdown {
     max-width: none;
 
@@ -215,6 +245,8 @@
     }
   }
 
+  /* Expand */
+
   &__expand {
     max-width: 266px;
     
@@ -222,6 +254,8 @@
       margin-top: 3.0625rem;
     }
   }
+
+  /* Icon Text List */
 
   &__icon-text-list {
     margin-top: -2px;
