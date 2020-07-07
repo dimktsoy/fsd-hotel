@@ -1,6 +1,16 @@
 mixin toggle(props = {})
   -
-    const { title = '', items } = props;
+    const { 
+      title = '',
+      items = [
+        {
+          title: 'Получать спецпредложения',
+          attrs: {
+            checked: true
+          }
+        }
+      ]
+    } = props;
 
   .toggle&attributes(attributes)
     if (title)
