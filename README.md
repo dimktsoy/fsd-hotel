@@ -15,8 +15,9 @@
 - Деплой на github pages: `npm run deploy`
 
 ## Демо:
-- [Colors & Type](https://dimktsoy.github.io/fsd-hotel/colors-type.html)
-- [Form Elements](https://dimktsoy.github.io/fsd-hotel/form-elements.html)
+- [UI kit. Colors & Type](https://dimktsoy.github.io/fsd-hotel/colors-type.html)
+- [UI kit. Form Elements](https://dimktsoy.github.io/fsd-hotel/form-elements.html)
+- [UI kit. Cards](https://dimktsoy.github.io/fsd-hotel/cards.html)
 
 ## Используемые ресурсы и инструменты:
 - [Разработка и сборка проекта - Webpack 4.43.0](https://webpack.js.org/)
