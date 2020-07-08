@@ -1,0 +1,38 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.form-login {
+  $block-name: &;
+
+  @include form-card;
+
+  /* Title */
+
+  &__title {
+    @include title-h1;
+  }
+
+  /* Input Item */
+
+  &__input-item {
+    margin-top: 0.625rem;
+  }
+
+  /* Footer */
+
+  &__footer {
+    margin-top: 1.25rem;
+  }
+
+  &__registration {
+    margin-top: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      padding-right: 1.875rem;
+      margin: 0;
+    }
+  }
+}
