@@ -30,8 +30,8 @@ block content
     .page-form-elements__header
       +logo({ isSimple: true })
 
-    .page-form-elements__content
-      .page-form-elements__column.page-form-elements__column--left
+    .page-form-elements__grid
+      .page-form-elements__item.page-form-elements__item--left
         .page-form-elements__field-text-default
           +field-text({
             title: 'Text Field',
@@ -105,7 +105,7 @@ block content
             placeholder: 'Email'
           })
 
-      .page-form-elements__column
+      .page-form-elements__item
         .page-form-elements__checkbox-buttons
           +field-checkbox({
             title: 'Checkbox Buttons',
@@ -181,7 +181,7 @@ block content
             currentStars: 5
           })
 
-      .page-form-elements__column
+      .page-form-elements__item
         .page-form-elements__range-slider
           +range-slider({
             title: 'Range slider',
@@ -230,7 +230,7 @@ block content
           title: 'Pagination',
           text: '1 – 12 из 100+ вариантов аренды'
         })
-      .page-form-elements__column.page-form-elements__column--dropdown
+      .page-form-elements__item.page-form-elements__item--dropdown
         .page-form-elements__column
           .page-form-elements__dropdown
             +dropdown({
@@ -328,7 +328,7 @@ block content
             ]
           })
 
-      .page-form-elements__column.page-form-elements__column--left
+      .page-form-elements__item.page-form-elements__item--left
         .page-form-elements__expand
           +expand({
             title: 'Expandable checkbox list'
@@ -400,7 +400,7 @@ block content
                 }
               ]
             })
-      .page-form-elements__column
+      .page-form-elements__item
         +field-checkbox({
           isRich: true,
           title: 'Rich Checkbox Buttons',
@@ -415,7 +415,7 @@ block content
             }
           ]
         })
-      .page-form-elements__column
+      .page-form-elements__item
         .page-form-elements__title.page-form-elements__title--bullet Bullet list
         +bullet-list({
           list: [
@@ -424,7 +424,7 @@ block content
             'Время прибытия — после 13:00, а&nbsp;выезд&nbsp;до 12:00'
           ]
         })
-      .page-form-elements__column.page-form-elements__column--left
+      .page-form-elements__item.page-form-elements__item--left
         .page-form-elements__icon-text-list
           +icon-text-list({
             items: [
@@ -446,7 +446,7 @@ block content
               }
             ]
           })
-      .page-form-elements__column.page-form-elements__column--comment
+      .page-form-elements__item.page-form-elements__item--comment
         +comment({
           username: 'Мурад Сарафанов',
           date: '5 дней назад',

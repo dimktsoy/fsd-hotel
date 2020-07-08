@@ -14,9 +14,9 @@
     margin: 0 auto;
   }
 
-  /* Content */
+  /* Grid */
 
-  &__content {
+  &__grid {
     max-width: 74.25rem;
     padding: 0 0.9375rem;
     margin: 0 auto;
@@ -41,9 +41,9 @@
     }
   }
 
-  /* Column */
+  /* Item */
 
-  &__column {
+  &__item {
     &--left {
       max-width: none;
 
