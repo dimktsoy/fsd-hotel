@@ -6,7 +6,7 @@ include ../btn/btn
 mixin form-registration(props = {})
   -
     const {
-      title = '',
+      title,
       inputFirstName,
       inputLastName,
       radioSex,
@@ -20,8 +20,7 @@ mixin form-registration(props = {})
 
   .form-registration&attributes(attributes)
     form.form-registration__form
-      if (title)
-        h3.form-registration__title!= title
+      h3.form-registration__title!= title
       .form-registration__input-group
         .form-registration__input-item
           +field-text(inputFirstName)

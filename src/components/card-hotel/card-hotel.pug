@@ -3,31 +3,11 @@ include ../rating/rating
 mixin card-hotel(props = {})
   -
     const {
-      title = {
-        number: 888,
-        text: 'люкс'
-      },
-      cost = {
-        value: '9 990&#8381;',
-        text: 'в сутки'
-      },
-      images = [
-        {
-          name: 'card-hotel-01.jpg',
-          alt: 'hotel image'
-        },
-        {
-          name: 'card-hotel-02.jpg',
-          alt: 'hotel image'
-        }
-      ],
-      rating = {
-        currentStars: 5
-      },
-      reviews = {
-        count: 145,
-        text: 'Отзывов'
-      }
+      title,
+      cost,
+      images,
+      rating,
+      reviews
     } = props;
     
   .card-hotel.js-card-hotel

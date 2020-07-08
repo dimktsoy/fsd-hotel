@@ -5,9 +5,9 @@ include ../dropdown/dropdown
 mixin form-filter(props = {})
   -
     const {
-      title = '',
+      title,
       dateDropdown,
-      dropdownGuests,
+      dropdown,
       btnSubmit
     } = props;
 
@@ -18,6 +18,6 @@ mixin form-filter(props = {})
       .form-filter__input-group
         +date-dropdown(dateDropdown)
       .form-filter__input-group
-        +dropdown(dropdownGuests)
+        +dropdown(dropdown)
       .form-filter__footer
         +btn(btnSubmit)

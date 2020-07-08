@@ -5,71 +5,13 @@ include ../btn/btn
 mixin form-order(props = {})
   -
     const {
-      title = {
-        symbol: '&#8470',
-        number: '888',
-        text: 'люкс'
-      },
-      cost = {
-        value: '9 990&#8381;',
-        text: 'в сутки'
-      },
-      dateDropdown = {
-        titleStart: 'Прибытие',
-        titleEnd: 'Выезд',
-        attrs: {
-          placeholder: 'дд.мм.гггг'
-        }
-      },
-      dropdown = {
-        title: 'Гости',
-        placeholder: 'Сколько гостей',
-        isButtons: true,
-        options: [
-          {
-            title: 'взрослые',
-            value: 2
-          },
-          {
-            title: 'дети',
-            value: 1
-          },
-          {
-            title: 'младенцы',
-            value: 0,
-            isBaby: true
-          }
-        ]
-      },
-      costList = [
-        {
-          description: '9 990&#8381; x 4 суток',
-          cost: '39 960&#8381;'
-        },
-        {
-          description: 'Сбор за услуги: скидка 2 179&#8381;',
-          cost: '0&#8381;',
-          isIcon: true
-        },
-        {
-          description: 'Сбор за дополнительные услуги',
-          cost: '300&#8381;',
-          isIcon: true
-        }
-      ],
-      totalCost = {
-        text: 'Итого',
-        value: '38 081&#8381;'
-      },
-      btnSubmit = {
-        text: 'Забронировать',
-        isPrimary: true,
-        isSizeFull: true,
-        isWithIcon: true,
-        attrs: {
-          type: 'submit'
-        }
-      }
+      title,
+      cost,
+      dateDropdown,
+      dropdown,
+      costList,
+      totalCost,
+      btnSubmit
     } = props;
   
   .form-order&attributes(attributes)
