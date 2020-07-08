@@ -1,0 +1,38 @@
+@mixin title($marginBottom: 0.3125rem) {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: $dark-shade-100;
+  margin-bottom: $marginBottom;
+  font-weight: bold;
+}
+
+@mixin help-text {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: $dark-shade-50;
+  margin-bottom: 5px;
+}
+
+@mixin title-h1() {
+  font-family: $Quicksand;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  color: $dark-shade-100;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@mixin title-h2() {
+  font-family: $Quicksand;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  color: $dark-shade-100;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+}
+

@@ -1,0 +1,49 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.form-registration {
+  $block-name: &;
+
+  @include form-card;
+
+  /* Title */
+
+  &__title {
+    @include title-h1;
+  }
+
+  /* Input Group */
+
+  &__input-group {
+    margin-top: 1.25rem;
+  }
+
+  /* Input Item */
+
+  &__input-item {
+    margin-top: 0.625rem;
+
+    &--radio {
+      margin-bottom: 1.5625rem;
+    }
+  }
+
+  /* Footer */
+
+  &__footer {
+    margin-top: 1.5rem;
+  }
+
+  &__login {
+    margin-top: 1.875rem;
+    display: flex;
+    align-items: center;
+
+    &-text {
+      flex: 1;
+      margin: 0;
+      color: #000;
+      padding-right: 1.875rem;
+    }
+  }
+}

@@ -72,7 +72,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|woff2)$/,
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        exclude: /img/,
         use: {
           loader: 'file-loader',
           options: {
@@ -83,6 +84,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
+        exclude: /fonts/,
         use: [
           {
             loader: 'file-loader',

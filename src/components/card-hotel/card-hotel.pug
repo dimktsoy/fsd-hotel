@@ -1,0 +1,30 @@
+include ../rating/rating
+
+mixin card-hotel(props = {})
+  -
+    const {
+      title,
+      cost,
+      images,
+      rating,
+      reviews
+    } = props;
+    
+  .card-hotel.js-card-hotel
+    .card-hotel__carousel.js-card-hotel__carousel
+      each item in images
+        img.card-hotel__carousel-img(src=require(`../../components/card-hotel/img/${item.name}`), alt=item.alt)
+    .card-hotel__heading
+      h3.card-hotel__title
+        span.card-hotel__title-symbol &#8470;
+        span.card-hotel__title-number!= title.number
+        spam.card-hotel__title-text!= title.text
+      .card-hotel__cost
+        span.card-hotel__cost-value!= cost.value
+        span.card-hotel__cost-text!= cost.text
+    .card-hotel__meta
+      .card-hotel__rating
+        +rating(rating)
+      a.card-hotel__reviews(href="#")
+        span.card-hotel__reviews-count!= reviews.count
+        span.card-hotel__reviews-text!= reviews.text

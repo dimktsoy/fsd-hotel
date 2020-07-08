@@ -31,6 +31,7 @@
   &--theme-primary {
     color: #fff;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    min-width: 6.1875rem;
 
     &:hover,
     &:focus,
@@ -45,6 +46,8 @@
     position: relative;
     z-index: 1;
     color: $primary-color;
+    padding: 0.875rem 1.125rem 0.9375rem 1.125rem;
+    min-width: 6.1875rem;
 
     &::before,
     &::after {

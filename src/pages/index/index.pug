@@ -5,7 +5,9 @@ include ../../components/page-content/page-content
 include ../../components/page-footer/page-footer
 
 block head
-  title Главная
+  - const pageTitle = "Главная";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
 
 block content
   .page-index
@@ -16,3 +18,5 @@ block content
           a(href="colors-type.html") Colors & Type
         li
           a(href="form-elements.html") Form elements
+        li
+          a(href="cards.html") Cards

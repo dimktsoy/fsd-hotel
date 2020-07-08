@@ -1,0 +1,25 @@
+include ../field-text/field-text
+include ../btn/btn
+
+mixin form-login(props = {})
+  -
+    const {
+      title,
+      inputEmail,
+      inputPassword,
+      btnSubmit,
+      registration
+    } = props;
+  
+  .form-login&attributes(attributes)
+    form.form-login__form
+      h3.form-login__title!= title
+      .form-login__input-item
+        +field-text(inputEmail)
+      .form-login__input-item
+        +field-text(inputPassword)
+      .form-login__footer
+        +btn(btnSubmit)
+        .form-login__registration
+          p.form-login__registration-text!= registration.text
+          +btn(registration.btn)

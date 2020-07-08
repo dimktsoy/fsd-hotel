@@ -1,0 +1,51 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../btn/btn
+
+mixin form-order(props = {})
+  -
+    const {
+      title,
+      cost,
+      dateDropdown,
+      dropdown,
+      costList,
+      totalCost,
+      btnSubmit
+    } = props;
+  
+  .form-order&attributes(attributes)
+    form.form-order__form
+      .form-order__heading
+        h3.form-order__title
+          span.form-order__title-symbol!= title.symbol
+          span.form-order__title-number!= title.number
+          span.form-order__title-text!= title.text
+        .form-order__cost
+          strong!= cost.value
+          | 
+          != cost.text
+      .form-order__input-group
+        +date-dropdown(dateDropdown)
+      .form-order__input-group
+        +dropdown(dropdown)
+      ul.form-order__cost-list
+        each item in costList
+          -
+            const {
+              description,
+              cost,
+              isIcon = false
+            } = item;
+
+            let classes = 'form-order__cost-list-left';
+            classes += isIcon ? ' form-order__cost-list-left--icon' : '';
+
+          li.form-order__cost-list-item
+            span(class=classes)!= description
+            span.form-order__cost-list-right!= cost
+      .form-order__cost-total
+        span.form-order__cost-total-left!= totalCost.text
+        span.form-order__cost-total-right!= totalCost.value
+      .form-order__footer
+        +btn(btnSubmit)

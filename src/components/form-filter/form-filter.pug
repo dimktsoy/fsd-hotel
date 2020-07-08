@@ -1,0 +1,23 @@
+include ../btn/btn
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+
+mixin form-filter(props = {})
+  -
+    const {
+      title,
+      dateDropdown,
+      dropdown,
+      btnSubmit
+    } = props;
+
+  .form-filter&attributes(attributes)
+    form.form-filter__form
+      if (title)
+        h3.form-filter__title!= title
+      .form-filter__input-group
+        +date-dropdown(dateDropdown)
+      .form-filter__input-group
+        +dropdown(dropdown)
+      .form-filter__footer
+        +btn(btnSubmit)

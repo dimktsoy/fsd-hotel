@@ -7,8 +7,11 @@ mixin date-dropdown(props = {})
       titleEnd = '',
       attrs
     } = props;
+
+    let classes = 'date-dropdown';
+    classes += isFilter ? ' js-date-dropdown-filter' : ' js-date-dropdown';
     
-  .date-dropdown.js-date-dropdown&attributes(attributes)
+  div(class=classes)&attributes(attributes)
     if (!isFilter)
       span.date-dropdown__group
         label.date-dropdown__label

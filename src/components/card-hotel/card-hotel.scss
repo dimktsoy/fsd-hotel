@@ -1,0 +1,231 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.card-hotel {
+  background-color: #fff;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0 1.0625rem 1.1875rem 1.25rem;
+
+  /* Heading */
+
+  &__heading {
+    display: flex;
+    padding-top: 1.3125rem;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  /* Title */
+
+  &__title {
+    margin: 0;
+    color: $dark-shade-100;
+    font-family: $Quicksand;
+    padding-right: 0.625rem;
+    flex: 0 0 50%;
+
+    &-symbol {
+      font-size: 0.875rem;
+      margin-right: 0.25rem;
+    }
+
+    &-number {
+      font-size: 1.1875rem;
+      margin-right: 0.125rem;
+    }
+
+    &-text {
+      font-family: $Montserrat;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: $primary-color;
+    }
+  }
+
+  /* Cost */
+
+  &__cost {
+    color: $dark-shade-50;
+    line-height: 1.2857;
+    padding-left: 0.625rem;
+
+    &-value {
+      font-weight: bold;
+    }
+
+    &-text {
+      margin-left: 0.3125rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Meta */
+
+  &__meta {
+    border-top: 1px solid $dark-shade-10;
+    margin-top: 0.625rem;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+   /* Rating */
+
+   &__rating {
+     margin-right: 0.9375rem;
+   }
+
+  /* Reviews */
+
+  &__reviews {
+    text-decoration: none;
+    color: $dark-shade-50;
+    line-height: 1.2857;
+    margin-top: 0.2225rem;
+
+    &:hover {
+      color: $dark-shade-75;
+    }
+
+    &-count {
+      font-weight: bold;
+      margin-right: 0.3125rem;
+    }
+  }
+
+  /* Carousel */
+
+  &__carousel {
+    margin-left: -1.25rem;
+    margin-right: -1.0625rem;
+  }
+
+  &__carousel-img {
+    vertical-align: top;
+  }
+}
+
+/* Overwrite slick styles */
+
+/* Slick Slider */
+
+.slick-slider {
+  &.slick-dotted {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    .slick-next {
+      transform: translateX(0);
+    }
+    .slick-prev {
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Slick Next Prev */
+
+.slick-next,
+.slick-prev {
+  top: 0;
+  height: 100%;
+  width: 2.625rem;
+  transition: transform 0.15s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.8125rem;
+    background-image: url('./img/card-hotel-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    top:50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+}
+
+.slick-prev {
+  left: 0;
+  z-index: 1;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+
+  &:focus,
+  &:hover {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+.slick-next {
+  right: 0;
+  transform: translate(100%, 0);
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &:focus,
+  &:hover {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+/* Slick Dots */
+
+.slick-dots {
+  z-index: 2;
+  bottom: 0.8125rem;
+  left: auto;
+  right: 0.8125rem;
+  width: auto;
+  line-height: 0;
+
+  li {
+    margin: 0;
+
+    &.slick-active button {
+      &::before {
+        opacity: 1;
+        background-color: #fff;
+      }
+    }
+  }
+
+  li,
+  li button {
+    width: 0.703125rem;
+    height: 0.703125rem;
+  }
+
+  li button {
+    padding: 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      top: 50%;
+      margin-top: -0.25rem;
+      left: 50%;
+      margin-left: -0.25rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      opacity: 1;
+      box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+    }
+
+    &.slick-next button {
+      &::before {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+}
