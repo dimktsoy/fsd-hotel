@@ -4,11 +4,14 @@ module.exports = {
       grid: true
     }),
     require('cssnano')({
-      preset: ['default', {
-        discardComments: {
-          removeAll: true,
-        },
-      }]
-    }),
+      preset: [
+        'default',
+        {
+          discardComments: {
+            removeAll: true
+          }
+        }
+      ]
+    })
   ]
 };
