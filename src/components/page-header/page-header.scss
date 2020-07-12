@@ -1,0 +1,136 @@
+@import '../../scss/variables';
+
+.page-header {
+  background-color: #fff;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  padding: 0.9375rem 0;
+  position: relative;
+
+  @media (min-width: 992px) {
+    padding: 0;
+  }
+
+  /* Inner */
+
+  &__inner {
+    max-width: 74.375rem;
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (min-width: 992px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  /* Logo */
+
+  &__logo {
+    flex: 0 0 auto;
+  }
+
+  /* Menu Trigger */
+
+  &__menu-trigger {
+    margin-left: auto;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    width: 1.875rem;
+    height: 1.875rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  /* Collapse */
+
+  &__collapse {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    background-color: #fff;
+    display: none;
+    margin-top: 0.9375rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $dark-shade-25;
+    }
+
+    &--open {
+      display: flex;
+    }
+
+    @media (min-width: 992px) {
+      display: flex;
+      margin-left: auto;
+      flex-direction: row;
+      flex: 0 1 auto;
+      align-items: center;
+      margin-top: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  /* Login Sign Up */
+
+  &__login-signup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0.625rem;
+  }
+
+  &__login {
+    margin-right: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__signup {
+    margin-bottom: 1.25rem;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+  /* User */
+
+  &__user {
+    border-top: 1px solid $dark-shade-10;
+    padding-top: 0.9375rem;
+    margin-left: 0.625rem;
+
+    @media (min-width: 992px) {
+      border-top: 0;
+      padding: 0.3125rem 0 0.3125rem 1.25rem;
+      border-left: 1px solid $dark-shade-10;
+    }
+    
+    &-name {
+      color: $dark-shade-50;
+      text-decoration: none;
+      transition: color .15s ease-out;
+    
+      &:hover {
+        color: $dark-shade-100;
+      }
+    }
+  }
+}
