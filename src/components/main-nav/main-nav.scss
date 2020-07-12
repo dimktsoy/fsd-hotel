@@ -1,0 +1,132 @@
+@import '../../scss/variables';
+
+.main-nav {
+  $block-name: &;
+
+  margin-top: 0.9375rem;
+  margin-bottom: 0.9375rem;
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  } 
+  
+  /* List */
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
+  }
+
+  /* Item */
+  
+  &__item {
+    position: relative;
+
+    &--active {
+      #{$block-name}__link {
+        color: $dark-shade-75;
+        font-weight: bold;
+      }
+    }
+    
+    &--dropdown {
+      #{$block-name}__link {
+        position: relative;
+        padding-right: 2.125rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          margin-top: -3px;
+          right: 0.625rem;
+          width: 1.5rem;
+          height: 8px;
+          background-image: url('./img/main-nav-arrow.svg');
+          background-repeat: no-repeat;
+          background-position: center 0;
+        }
+      }
+    }
+
+    &--open {
+      #{$block-name}__link {
+        color: $dark-shade-100;
+        background-color: transparent;
+
+        @media (min-width: 992px) {
+          background-color: #f1f1f1;
+        }
+      }
+
+      #{$block-name}__submenu-list {
+        display: block;
+      }
+    }
+  }
+
+  /* Link */
+
+  &__link {
+    display: inline-block;
+    padding: 0.5rem 0.625rem;
+    color: $dark-shade-50;
+    text-decoration: none;
+
+    &:hover {
+      color: $dark-shade-100;
+    }
+
+    @media (min-width: 992px) {
+      display: block;
+      padding: 1.4375rem 0.625rem;
+    } 
+  }
+
+  /* Submenu List */
+
+  &__submenu-list {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    margin: 0 0 1.25rem;
+    padding: 0.625rem 0;
+    list-style-type: none;
+    line-height: 1.5;
+    border-radius: 4px;
+    z-index: 1;
+
+    @media (min-width: 992px) {
+      position: absolute;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+
+  /* Submenu Link */
+
+  &__submenu-link {
+    display: block;
+    padding: 0.3125rem 0.9375rem;
+    text-decoration: none;
+    color: $dark-shade-50;
+    min-width: 9.375rem;
+
+    @media (min-width: 992px) {
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: #dedede;
+    }
+  }
+}
