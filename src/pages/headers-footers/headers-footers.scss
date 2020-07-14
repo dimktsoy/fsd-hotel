@@ -1,0 +1,22 @@
+.headers-footers {
+  $block-name: &;
+
+  flex: 1;
+  background-color: #E5E5E5;
+  padding-bottom: 8.75rem;
+
+  /* Header */
+
+  &__header {
+    max-width: 88.125rem;
+    margin: 0 auto;
+    padding: 1.875rem 0.9375rem 3.875rem;
+  }
+
+
+  /* Component */
+
+  &__component {
+    margin-bottom: 2.5rem;
+  }
+}
