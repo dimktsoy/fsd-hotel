@@ -17,7 +17,10 @@ block content
 
   .page-cards
     .page-cards__header
-      +logo({ isSimple: true })
+      +logo({ 
+        isSimple: true,
+        href: 'index.html'
+      })
 
     .page-cards__grid
       .page-cards__item
@@ -135,7 +138,10 @@ block content
               btn: {
                 text: 'Войти',
                 isOutline: true,
-                isLink: true
+                isSizeFull: true,
+                attrs: {
+                  href: 'sign-in.html'
+                }
               }
             }
           })
@@ -237,6 +243,7 @@ block content
               btn: {
                 text: 'Создать',
                 isOutline: true,
+                isSizeFull: true,
                 isLink: true
               }
             }
