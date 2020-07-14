@@ -21,7 +21,7 @@
 
 ## Используемые ресурсы и инструменты:
 - [Разработка и сборка проекта - Webpack 4.43.0](https://webpack.js.org/)
-- [Html шаблонизатор - Pug 3.0.0](https://pugjs.org/api/getting-started.html)
+- [Html шаблонизатор - Pug 2.0.4](https://pugjs.org/api/getting-started.html)
 - [CSS препроцессор - Sass](https://sass-lang.com/)
 - [Генератор фавиконки - Favicon Generator](https://realfavicongenerator.net/)
 - [Генератор шрифта - Transfonter](https://transfonter.org/)
