@@ -4,12 +4,8 @@ include ../btn/btn
 
 mixin page-header(props = {})
   -
-    const {
-      logo,
-      mainNav,
-      user
-    } = props;
-    
+    const { logo, mainNav, user } = props;
+  
   header.page-header.js-page-header(role="banner")&attributes(attributes)
     .page-header__inner
       .page-header__logo
