@@ -2,14 +2,14 @@ mixin btn(props = {})
   -
     const { 
       text = 'Кнопка',
-      attrs,
+      attrs = {},
       isPrimary = false,
       isOutline = false,
       isSimple = false,
       isSizeFull = false,
+      isSizeSmall = false,
       isWithIcon = false,
       isHover = false,
-      isLink = false
     } = props;
 
     let btnClassName = 'btn';
@@ -17,15 +17,16 @@ mixin btn(props = {})
     btnClassName += isOutline ? ' btn--theme-outline' : '';
     btnClassName += isSimple ? ' btn--theme-simple' : '';
     btnClassName += isSizeFull ? ' btn--size-full' : '';
+    btnClassName += isSizeSmall ? ' btn--size-small' : '';
     btnClassName += isHover ? ' btn--view-hovered' : '';
 
-  if (isLink)
-    a(class=btnClassName, href="#")&attributes(attrs || attributes)!= text
+  if (typeof(attrs.href) !== 'undefined' && attrs.href)
+    a(class=btnClassName)&attributes(attrs)!= text
       if (isWithIcon)
         img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block
   else
-    button(class=btnClassName, type="button")&attributes(attrs || attributes)!= text
+    button(class=btnClassName, type="button")&attributes(attrs)!= text
       if (isWithIcon)
         img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
       block

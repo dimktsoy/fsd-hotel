@@ -15,9 +15,8 @@
   font-weight: bold;
   font-family: $Montserrat;
   text-transform: uppercase;
-  padding: 0.875rem 1.25rem 0.9375rem 1.25rem;
+  padding: 0.875rem 1.21875rem 0.9375rem 1.21875rem;
   user-select: none;
-  transition: all .15s ease-in-out;
   text-align: center;
   cursor: pointer;
 
@@ -26,12 +25,11 @@
     box-shadow: 0 0 0 2px rgba(188,156,255, .5);
   }
 
-  /* Modifier theme primary */
+  /* Modifier Theme Primary */
 
   &--theme-primary {
     color: #fff;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    min-width: 6.1875rem;
 
     &:hover,
     &:focus,
@@ -40,14 +38,12 @@
     }
   }
 
-  /* Modifier theme outline */
+  /* Modifier Theme Outline */
 
   &--theme-outline {
     position: relative;
     z-index: 1;
     color: $primary-color;
-    padding: 0.875rem 1.125rem 0.9375rem 1.125rem;
-    min-width: 6.1875rem;
 
     &::before,
     &::after {
@@ -83,7 +79,7 @@
     }
   }
 
-  /* Modifier theme simple */
+  /* Modifier Theme Simple */
 
   &--theme-simple {
     padding: 0;
@@ -99,14 +95,18 @@
     }
   }
 
-  /* Modifier size full */
+  /* Modifier Size Full */
 
   &--size-full {
     display: block;
     width: 100%;
     position: relative;
-    padding-left: 2.75rem;
-    padding-right: 2.75rem;
+  }
+
+  /* Modifier Size Small */
+
+  &--size-small {
+    padding: 0.5625rem 1.25rem  0.625rem;
   }
 
   &__arrow {
@@ -115,4 +115,5 @@
     transform: translateY(-50%);
     right: 0.8125rem;
   }
+
 }

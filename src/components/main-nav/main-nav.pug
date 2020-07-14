@@ -1,0 +1,27 @@
+mixin main-nav(props = {})
+  -
+    const { list } = props;
+
+  nav.main-nav.js-main-nav&attributes(attributes)
+    ul.main-nav__list
+      each item in list
+        -
+          const { text, href, isActive, submenu } = item;
+
+          let classesItem = 'main-nav__item';
+          classesItem += isActive ? ' main-nav__item--active' : '';
+          classesItem += (typeof(submenu) !== 'undefined' && submenu) ? ' main-nav__item--dropdown js-main-nav__item--dropdown' : '';
+
+          let classesLink = 'main-nav__link';
+          classesLink += (typeof(submenu) !== 'undefined' && submenu) ? ' js-main-nav__link' : '';
+
+        li(class=classesItem)
+          a(class=classesLink, href=href)!= text
+          if (typeof(submenu) !== 'undefined' && submenu)
+            ul.main-nav__submenu-list
+              each item in submenu
+                -
+                  const { text, href } = item;
+                  
+                li.main-nav__submenu-item
+                  a.main-nav__submenu-link(href=href)!= text

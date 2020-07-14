@@ -1,0 +1,45 @@
+include ../logo/logo
+include ../social/social
+include ../subscribe/subscribe
+
+mixin page-footer(props = {})
+  -
+    const {
+      logo,
+      description,
+      social,
+      groupList,
+      subscribeTitle,
+      subscribeDescription,
+      subscribe,
+      copyright
+    } = props;
+
+  footer.page-footer(role="contentinfo")&attributes(attributes)
+    .page-footer__inner
+      .page-footer__left
+        .page-footer__logo
+          +logo(logo)
+        p.page-footer__description!= description
+      each item in groupList
+        -
+          const { title, navList } = item;
+
+        .page-footer__item
+          h3.page-footer__title!= title
+          ul.page-footer__list
+            each item in navList
+              - 
+                const { text, href } = item;
+                
+              li.page-footer__list-item
+                a(href=href)!= text
+      .page-footer__subscribe
+        h3.page-footer__title!= subscribeTitle
+        p.page-footer__subscribe-description!= subscribeDescription
+        +subscribe(subscribe)
+    .page-footer__bottom
+      .page-footer__bottom-inner
+        p.page-footer__copyright!= copyright
+        .page-footer__social
+          +social(social)

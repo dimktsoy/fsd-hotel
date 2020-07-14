@@ -1,0 +1,25 @@
+include ../logo/logo
+include ../main-nav/main-nav
+include ../btn/btn
+
+mixin page-header(props = {})
+  -
+    const { logo, mainNav, user } = props;
+  
+  header.page-header.js-page-header(role="banner")&attributes(attributes)
+    .page-header__inner
+      .page-header__logo
+        +logo(logo)
+      button.page-header__menu-trigger.js-page-header__menu-trigger(type="button")
+        img(src=require('../../components/page-header/img/page-header-menu.svg'), alt="menu")
+      .page-header__collapse.js-page-header__collapse
+        +main-nav(mainNav)
+        if (typeof(user.name) !== 'undefined' && user.name)
+          .page-header__user
+            a.page-header__user-name(href=user.href)!= user.name
+        else
+          .page-header__login-signup
+            .page-header__login
+              +btn(user.signInBtn)
+            .page-header__signup
+              +btn(user.signUpBtn)
