@@ -22,7 +22,9 @@ class Dropdown {
 
   bindEventHandlers() {
     $('.js-dropdown__trigger', this.$component).on('click', this.handleTriggerClick.bind(this));
+
     this.$list.on('click', '.js-dropdown__item-button', this.handleItemButtonClick.bind(this));
+
     $(document).on('click', this.handleDocumentClick).on('keydown', this.handleDocumentKeydown);
   }
 

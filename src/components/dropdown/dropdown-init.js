@@ -5,13 +5,7 @@ import DropdownDetails from './DropdownDetails';
 import './dropdown.scss';
 
 $(() => {
-  $('.js-dropdown-guests').each((index, node) => {
-    const dropdown = new DropdownGuests($(node));
-    return dropdown;
-  });
+  $('.js-dropdown-guests').each((index, node) => new DropdownGuests($(node)));
 
-  $('.js-dropdown-details').each((index, node) => {
-    const dropdown = new DropdownDetails($(node));
-    return dropdown;
-  });
+  $('.js-dropdown-details').each((index, node) => new DropdownDetails($(node)));
 });

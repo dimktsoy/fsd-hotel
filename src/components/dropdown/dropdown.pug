@@ -12,11 +12,11 @@ mixin dropdown(props = {})
       isButtons = false
     } = props;
 
-    let classes = 'dropdown js-dropdown';
+    let classes = 'js-dropdown';
     classes += isDetails ? ' js-dropdown-details' : ' js-dropdown-guests'
     classes += isOpen ? ' dropdown--open' : '';
 
-  div(class=classes)&attributes(attributes)
+  .dropdown(class=classes)&attributes(attributes)
     if (title & helpText)
       span.dropdown__title-wrap
         span.dropdown__title!= title
