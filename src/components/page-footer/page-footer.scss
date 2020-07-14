@@ -1,0 +1,165 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.page-footer {
+  background-color: #fff;
+
+  a {
+    color: $dark-shade-50;
+    text-decoration: none;
+
+    &:hover {
+      color: $dark-shade-75;
+      text-decoration: underline;
+    }
+  }
+
+  /* Inner */
+
+  &__inner {
+    max-width: 74.375rem;
+    margin: 0 auto;
+    padding: 7.5rem 0.9375rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr) minmax(auto, 16.25rem);
+      padding: 6.25rem 0.9375rem;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: minmax(auto, 16.25rem) repeat(3, 1fr) minmax(auto, 16.25rem);
+    }
+  }
+
+  /* Left */
+
+  &__left {
+    grid-column: 1 / 2;
+    margin-bottom: 1.25rem;
+    text-align: center;
+
+    @media (min-width: 758px) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width: 992px) {
+      margin-bottom: 1.875rem;
+      grid-column: 1 / 2;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  /* Description */
+
+  &__description {
+    margin: 1.0625rem 0 0;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  /* Item */
+
+  &__item {
+    margin-top: 0.25rem;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  /* List */
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.125;
+  }
+
+  &__list-item {
+    margin: 1.45rem 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Title */
+
+  &__title {
+    @include title-h3(1.125rem);
+  }
+
+  /* Subscribe */
+
+  &__subscribe {
+    margin-top: 0.25rem;
+    grid-column: 4 / 5;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      grid-column: 5 / 6;
+    }
+
+    &-description {
+      margin-top: 0;
+      margin-bottom: 1.4375rem;
+    }
+  }
+
+  /* Bottom */
+
+  &__bottom {
+    border-top: 0;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    padding: 0 0 7.5rem;
+
+    @media (min-width: 768px) {
+      border-top: 1px solid $dark-shade-10;
+      padding: 1.4375rem 0;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 74.375rem;
+      margin: 0 auto;
+      padding: 0 0.9375rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  /* Copyright */
+
+  &__copyright {
+    margin: 0;
+  }
+
+  /* Social */
+
+  &__social {
+    margin-left: 0;
+    margin-top: 1.5625rem;
+
+    @media (min-width: 768px) {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+}
