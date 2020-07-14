@@ -4,35 +4,30 @@ import './like-btn.scss';
 class LikeBtn {
   constructor($component) {
     this.$component = $component;
-    this.attachEventHandlers();
+    this.$count = $('.js-like-btn__count', this.$component);
+    this.bindEventHandlers();
   }
 
-  attachEventHandlers() {
-    this.$component.on('click', this.handleButtonClick);
+  bindEventHandlers() {
+    this.$component.on('click', this.handleLikeBtnClick.bind(this));
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  handleButtonClick(event) {
-    const $likeBtn = $(event.currentTarget);
-    const $likeBntCount = $likeBtn.find('.js-like-btn__count');
-    const oldValue = parseInt($likeBntCount.text(), 10);
+  handleLikeBtnClick() {
+    const oldValue = parseInt(this.$count.text(), 10);
     let newValue = 0;
 
-    $likeBtn.toggleClass('like-btn--active');
+    this.$component.toggleClass('like-btn--active');
 
-    if ($likeBtn.hasClass('like-btn--active')) {
+    if (this.$component.hasClass('like-btn--active')) {
       newValue = oldValue + 1;
     } else {
       newValue = oldValue - 1;
     }
 
-    $likeBntCount.text(newValue);
+    this.$count.text(newValue);
   }
 }
 
 $(() => {
-  $('.js-like-btn').each((index, node) => {
-    const likeBtn = new LikeBtn($(node));
-    return likeBtn;
-  });
+  $('.js-like-btn').each((index, node) => new LikeBtn($(node)));
 });
