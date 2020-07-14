@@ -2,31 +2,19 @@ import $ from 'jquery';
 import Dropdown from './Dropdown';
 
 class DropdownGuests extends Dropdown {
-  init() {
-    super.init();
-    this.$buttonClear = this.$component.find('.js-dropdown__button-clear');
-    this.$buttonApply = this.$component.find('.js-dropdown__button-apply');
-  }
-
-  render() {
-    super.render();
+  constructor($component) {
+    super($component);
     this.calculateResult();
   }
 
   bindEventHandlers() {
-    super.bindEventHandlers();
-    this.handleButtonClearClick = this.handleButtonClearClick.bind(this);
-    this.handleButtonApplyClick = this.handleButtonApplyClick.bind(this);
+    super.bindEventHandlers(this);
+    this.$buttonClear.on('click', this.handleButtonClearClick.bind(this));
+    this.$buttonApply.on('click', this.handleButtonApplyClick.bind(this));
   }
 
-  atachEventHandlers() {
-    super.atachEventHandlers();
-    this.$buttonClear.on('click', this.handleButtonClearClick);
-    this.$buttonApply.on('click', this.handleButtonApplyClick);
-  }
-
-  handleButtonIncrementDecrementClick(event) {
-    super.handleButtonIncrementDecrementClick(event);
+  handleItemButtonClick(event) {
+    super.handleItemButtonClick(event);
     this.calculateResult();
   }
 
@@ -35,7 +23,7 @@ class DropdownGuests extends Dropdown {
   }
 
   hideButtonClear() {
-    if (this.$buttonClear.is(':visible')) this.$buttonClear.hide();
+    this.$buttonClear.hide();
   }
 
   handleButtonClearClick(event) {

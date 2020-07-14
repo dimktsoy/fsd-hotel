@@ -1,21 +1,18 @@
+/* eslint-disable class-methods-use-this */
 import $ from 'jquery';
 
 class Dropdown {
   constructor($component) {
     this.$component = $component;
-    this.init();
-    this.render();
+    this.$input = $('.js-dropdown__input', this.$component);
+    this.$list = $('.js-dropdown__list', this.$component);
+    this.$buttonClear = $('.js-dropdown__button-clear', this.$component);
+    this.$buttonApply = $('.js-dropdown__button-apply', this.$component);
+    this.disableDecrementButtons();
     this.bindEventHandlers();
-    this.atachEventHandlers();
   }
 
-  init() {
-    this.$trigger = this.$component.find('.js-dropdown__trigger');
-    this.$input = this.$component.find('.js-dropdown__input');
-    this.$list = this.$component.find('.js-dropdown__list');
-  }
-
-  render() {
+  disableDecrementButtons() {
     this.$list.find('.js-dropdown__item-count').each((index, input) => {
       if (parseInt($(input).val(), 10) === 0) {
         $(input).prev('.js-dropdown__item-button').prop('disabled', true);
@@ -24,19 +21,12 @@ class Dropdown {
   }
 
   bindEventHandlers() {
-    this.handleTriggerClick = this.handleTriggerClick.bind(this);
-    this.handleButtonIncrementDecrementClick = this.handleButtonIncrementDecrementClick.bind(this);
+    $('.js-dropdown__trigger', this.$component).on('click', this.handleTriggerClick.bind(this));
+    this.$list.on('click', '.js-dropdown__item-button', this.handleItemButtonClick.bind(this));
+    $(document).on('click', this.handleDocumentClick).on('keydown', this.handleDocumentKeydown);
   }
 
-  atachEventHandlers() {
-    this.$trigger.on('click', this.handleTriggerClick);
-    this.$list.on('click', '.js-dropdown__item-button', this.handleButtonIncrementDecrementClick);
-    $(document)
-      .on('click', this.constructor.hadleOutsideClick)
-      .on('keydown', this.constructor.handlePressEsc);
-  }
-
-  handleButtonIncrementDecrementClick(event) {
+  handleItemButtonClick(event) {
     const $button = $(event.currentTarget);
     const $inputCount = $button.siblings('.js-dropdown__item-count');
     const oldValue = parseInt($inputCount.val(), 10);
@@ -44,12 +34,12 @@ class Dropdown {
 
     if ($button.text() === '+') {
       newValue = oldValue + 1;
-      this.constructor.enableButton($button);
+      $button.prevAll('.js-dropdown__item-button').prop('disabled', false);
     } else {
       newValue = oldValue - 1;
 
       if (oldValue === 1) {
-        this.constructor.disableButton($button);
+        $button.prop('disabled', true);
       }
     }
 
@@ -65,25 +55,17 @@ class Dropdown {
     }
   }
 
-  static handlePressEsc(event) {
+  handleDocumentKeydown(event) {
     if (event.keyCode === 27) {
       $('.js-dropdown').removeClass('dropdown--open');
     }
   }
 
-  static hadleOutsideClick(event) {
+  handleDocumentClick(event) {
     const $dropdown = $('.js-dropdown');
     if ($dropdown !== event.target && !$dropdown.has(event.target).length) {
       $dropdown.removeClass('dropdown--open');
     }
-  }
-
-  static enableButton($button) {
-    $button.prevAll('.js-dropdown__item-button').prop('disabled', false);
-  }
-
-  static disableButton($button) {
-    $button.prop('disabled', true);
   }
 
   static getNoun(number, one, two, five) {

@@ -1,8 +1,6 @@
 import $ from 'jquery';
 import Calendar from '../calendar/calendar';
 
-import './date-dropdown.scss';
-
 class DateDropdown extends Calendar {
   init() {
     const $inputStart = this.$component.find('.js-date-dropdown__input-start');

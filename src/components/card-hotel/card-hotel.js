@@ -8,16 +8,11 @@ import './card-hotel.scss';
 class CardHotel {
   constructor($component) {
     this.$component = $component;
-    this.init();
     this.render();
   }
 
-  init() {
-    this.$carousel = this.$component.find('.js-card-hotel__carousel');
-  }
-
   render() {
-    this.$carousel.slick({
+    $('.js-card-hotel__carousel', this.$component).slick({
       dots: true
     });
   }

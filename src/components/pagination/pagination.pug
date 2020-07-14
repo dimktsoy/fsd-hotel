@@ -2,14 +2,11 @@ mixin pagination(props = {})
   -
     const {
       mods = '',
-      title = '',
       text = ''
     } = props;
 
   .pagination(aria-label="Page navigation")&attributes(attributes)
     .pagination__inner
-      if (title)
-        .pagination__title!= title
       ul.pagination__list
         li.pagination__item
           a.pagination__link.pagination__link--active(href="#") 1

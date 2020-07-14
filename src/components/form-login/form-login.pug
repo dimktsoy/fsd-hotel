@@ -22,4 +22,5 @@ mixin form-login(props = {})
         +btn(btnSubmit)
         .form-login__registration
           p.form-login__registration-text!= registration.text
-          +btn(registration.btn)
+          .form-login__registration-btn
+            +btn(registration.btn)

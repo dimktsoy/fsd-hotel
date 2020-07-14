@@ -5,40 +5,28 @@ import './expand.scss';
 class Expand {
   constructor($component) {
     this.$component = $component;
-    this.init();
-    this.render();
+    this.$trigger = $('.js-expand__trigger', this.$component);
+    this.$content = $('.js-expand__content', this.$component);
+    this.closeExpand();
     this.bindEventHandlers();
-    this.atachEventHandlers();
   }
 
-  init() {
-    this.$trigger = this.$component.find('.js-expand__trigger');
-    this.$content = this.$component.find('.js-expand__content');
-  }
-
-  render() {
+  closeExpand() {
     if (!this.$component.hasClass('expand--open')) {
       this.$content.hide();
     }
   }
 
   bindEventHandlers() {
-    this.handleTrigerClick = this.handleTrigerClick.bind(this);
+    $('.js-expand__trigger', this.$component).on('click', this.handleTriggerClick.bind(this));
   }
 
-  atachEventHandlers() {
-    this.$trigger.on('click', this.handleTrigerClick);
-  }
-
-  handleTrigerClick() {
+  handleTriggerClick() {
     this.$component.toggleClass('expand--open');
     this.$content.slideToggle('fast');
   }
 }
 
 $(() => {
-  $('.js-expand').each((index, node) => {
-    const dropdown = new Expand($(node));
-    return dropdown;
-  });
+  $('.js-expand').each((index, node) => new Expand($(node)));
 });

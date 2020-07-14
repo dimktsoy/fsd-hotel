@@ -2,13 +2,13 @@ import $ from 'jquery';
 import Dropdown from './Dropdown';
 
 class DropdownDetails extends Dropdown {
-  render() {
-    super.render();
+  constructor($component) {
+    super($component);
     this.calculateResult();
   }
 
-  handleButtonIncrementDecrementClick(event) {
-    super.handleButtonIncrementDecrementClick(event);
+  handleItemButtonClick(event) {
+    super.handleItemButtonClick(event);
     this.calculateResult();
   }
 
@@ -16,9 +16,9 @@ class DropdownDetails extends Dropdown {
     const result = [];
 
     this.$component.find('.js-dropdown__item-count').each((index, input) => {
-      const data = $(input).data('dropdown');
+      const wordsList = $(input).data('dropdown');
       const count = parseInt($(input).val(), 10);
-      result.push(`${$(input).val()} ${this.constructor.getNoun(count, ...data)}`);
+      result.push(`${count} ${this.constructor.getNoun(count, ...wordsList)}`);
     });
 
     this.$input.val(`${result.slice(0, 2).join(', ')}...`);

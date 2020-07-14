@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import DateDropdown from './Date-dropdown';
-import DateDropdownFilter from './Date-dropdown-filter';
+import DateDropdown from './DateDropdown';
+import DateDropdownFilter from './DateDropdownFilter';
 
 import './date-dropdown.scss';
 
