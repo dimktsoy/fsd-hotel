@@ -14,7 +14,7 @@
   }
 
   &__title {
-    @include title;
+    @include title-h3;
 
     display: block;
   }
