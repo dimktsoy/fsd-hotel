@@ -7,7 +7,7 @@
   /* Trigger */
 
   &__trigger {
-    @include title(0);
+    @include title-h3(0);
 
     cursor: pointer;
     position: relative;
