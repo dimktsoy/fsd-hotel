@@ -17,7 +17,7 @@
   /* Grid */
 
   &__grid {
-    max-width: 74.25rem;
+    max-width: 74.375rem;
     padding: 0 0.9375rem;
     margin: 0 auto;
     display: grid;
@@ -36,7 +36,7 @@
     }
 
     @media (min-width: 1200px) {
-      grid-template-columns: 1fr 20rem 20rem;
+      grid-template-columns: 1fr 20rem 20.0625rem;
       grid-column-gap: 4.5rem;
     }
   }
@@ -48,7 +48,7 @@
       max-width: none;
 
       @media (min-width: 768px) {
-        max-width: 20rem;
+        max-width: 20.0625rem;
       }
     }
 
@@ -87,7 +87,7 @@
       }
   
       @media (min-width: 1200px) {
-        grid-template-columns: 1fr 20rem 20rem;
+        grid-template-columns: 1fr 20rem 20.0625rem;
         grid-column-gap: 4.5rem;
       }
     }
@@ -96,7 +96,7 @@
   /* Title */
 
   &__title {
-    @include title(1rem);
+    @include title-h3(1rem);
 
     &--bullet {
       margin-bottom: 0.8125rem;
@@ -107,30 +107,35 @@
 
   &__field-text-default {
     margin-bottom: 1.29rem;
+    padding-left: 1px;
   }
 
   /* Field Text Hover */
 
   &__field-text-hover {
     margin-bottom: 1.25rem;
+    padding-left: 1px;
   }
 
   /* Dropdown Default */
 
   &__dropdown-default {
     margin-bottom: 1.41rem;
+    padding-left: 1px;
   }
 
   /* Field Text Masked */
 
   &__field-text-masked {
     margin-bottom: 2.5rem;
+    padding-left: 1px;
   }
 
   /* Date Dropdown */
 
   &__date-dropdown {
     margin-bottom: 2.535rem;
+    padding-left: 1px;
   }
 
   /* Filter Date Dropdown */
@@ -138,9 +143,10 @@
   &__filter-date-dropdown {
     max-width: none;
     margin-bottom: 2.5625rem;
+    padding-left: 1px;
 
     @media (min-width: 768px) {
-      max-width: 16.625rem;
+      max-width: 16.6875rem;
     }
   }
 
@@ -150,7 +156,11 @@
     max-width: none;
 
     @media (min-width: 768px) {
-      max-width: 16.625rem;
+      max-width: 16.6875rem;
+    }
+
+    &-title {
+      @include title-h3();
     }
   }
 
@@ -211,23 +221,55 @@
 
   &__buttons {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 1.875rem;
+    padding-left: 1px;
 
-    > * + * {
-      margin-left: 1.25rem;
+    &-title {
+      @include title-h3(1rem);
+      flex: 0 0 100%;
+    }
+
+    #{$block-name}__buttons-item + #{$block-name}__buttons-item {
+      margin-left: 1.1875rem;
     }
 
     &--outline {
       margin-bottom: 1.9375rem;
+      padding-left: 0;
 
-      > * + * {
-        margin-left: 1.1rem;
+      #{$block-name}__buttons-item + #{$block-name}__buttons-item {
+        margin-left: 1.25rem;
+      }
+    }
+
+    &--link {
+      line-height: 1;
+
+      #{$block-name}__buttons-item + #{$block-name}__buttons-item {
+        margin-left: 1.25rem;
       }
     }
 
     &--full {
+      max-width: none;
       margin-bottom: 2.5rem;
+      padding-left: 0;
+
+      @media (min-width: 768px) {
+        max-width: 20rem;
+      }
+    }
+  }
+
+  /* Pagination */
+
+  &__pagination {
+    padding-left: 1px;
+    
+    &-title {
+      @include title-h3(1rem);
     }
   }
 
@@ -241,7 +283,15 @@
     }
 
     @media (min-width: 768px) {
-      max-width: 266px;
+      max-width: 16.625rem;
+    }
+  }
+
+  &__dropdown-column {
+    max-width: none;
+
+    @media (min-width: 768px) {
+      max-width: 20rem;
     }
   }
 

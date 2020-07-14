@@ -28,7 +28,10 @@ block content
   .page-form-elements
 
     .page-form-elements__header
-      +logo({ isSimple: true })
+      +logo({ 
+        isSimple: true,
+        href: 'index.html'
+      })
 
     .page-form-elements__grid
       .page-form-elements__item.page-form-elements__item--left
@@ -100,11 +103,13 @@ block content
             }
           })
         .page-form-elements__subscribe
+          h3.page-form-elements__subscribe-title Subscription text field
           +subscribe({
-            title: 'Subscription text field',
-            placeholder: 'Email'
+            attrs: {
+              placeholder: 'Email',
+              type: 'email'
+            }
           })
-
       .page-form-elements__item
         .page-form-elements__checkbox-buttons
           +field-checkbox({
@@ -180,45 +185,54 @@ block content
           +rating({
             currentStars: 5
           })
-
       .page-form-elements__item
         .page-form-elements__range-slider
           +range-slider({
             title: 'Range slider',
           })
-        h3.page-form-elements__title Buttons
         .page-form-elements__buttons
-          +btn({
-            text: 'Click me',
-            isPrimary: true
-          })
-          +btn({
-            text: 'Click me',
-            isPrimary: true,
-            isHover: true
-          })
+          h3.page-form-elements__buttons-title Buttons
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isPrimary: true
+            })
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isPrimary: true,
+              isHover: true
+            })
         .page-form-elements__buttons.page-form-elements__buttons--outline
-          +btn({
-            text: 'Click me',
-            isOutline: true
-          })
-          +btn({
-            text: 'Click me',
-            isOutline: true,
-            isHover: true
-          })
-        .page-form-elements__buttons
-          +btn({
-            text: 'Click me',
-            isSimple: true,
-            isLink: true
-          })
-          +btn({
-            text: 'Click me',
-            isSimple: true,
-            isHover: true,
-            isLink: true
-          })
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isOutline: true
+            })
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isOutline: true,
+              isHover: true
+            })
+        .page-form-elements__buttons.page-form-elements__buttons--link
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isSimple: true,
+              attrs: {
+                href: '/mock-adress/change-me'
+              }
+            })
+          .page-form-elements__buttons-item
+            +btn({
+              text: 'Click me',
+              isSimple: true,
+              isHover: true,
+              attrs: {
+                href: '/mock-adress/change-me'
+              }
+            })
         .page-form-elements__buttons.page-form-elements__buttons--full
           +btn({
             text: 'Перейти к оплате',
@@ -226,12 +240,13 @@ block content
             isSizeFull: true,
             isWithIcon: true
           })
-        +pagination({
-          title: 'Pagination',
-          text: '1 – 12 из 100+ вариантов аренды'
-        })
+        .page-form-elements__pagination
+          h3.page-form-elements__pagination-title Pagination
+          +pagination({
+            text: '1 – 12 из 100+ вариантов аренды'
+          })
       .page-form-elements__item.page-form-elements__item--dropdown
-        .page-form-elements__column
+        .page-form-elements__dropdown-column
           .page-form-elements__dropdown
             +dropdown({
               title: 'Dropdown',
@@ -281,7 +296,7 @@ block content
                 }
               ]
             })
-        .page-form-elements__column
+        .page-form-elements__dropdown-column
           +dropdown({
             title: 'Dropdown',
             placeholder: 'Сколько гостей',
@@ -304,7 +319,7 @@ block content
               }
             ]
           })
-        .page-form-elements__column
+        .page-form-elements__dropdown-column
           +dropdown({
             title: 'Dropdown',
             placeholder: 'Сколько гостей',
@@ -327,7 +342,6 @@ block content
               }
             ]
           })
-
       .page-form-elements__item.page-form-elements__item--left
         .page-form-elements__expand
           +expand({
