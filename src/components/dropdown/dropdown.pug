@@ -44,9 +44,15 @@ mixin dropdown(props = {})
           +btn({
             text: 'очистить',
             isSimple: true,
-            isHover: true
-          })(class="js-dropdown__button-clear")
+            isHover: true,
+            attrs: {
+              class: 'js-dropdown__button-clear'
+            }
+          })
           +btn({
             text: 'применить',
-            isSimple: true
-          })(class="js-dropdown__button-apply")
+            isSimple: true,
+            attrs: {
+              class: 'js-dropdown__button-apply'
+            }
+          })
