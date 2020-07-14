@@ -9,17 +9,17 @@ mixin pagination(props = {})
     .pagination__inner
       ul.pagination__list
         li.pagination__item
-          a.pagination__link.pagination__link--active(href="#") 1
+          a.pagination__link.pagination__link--active(href="/fsd-hotel/change-me") 1
         li.pagination__item
-          a.pagination__link(href="#") 2
+          a.pagination__link(href="/fsd-hotel/change-me") 2
         li.pagination__item
-          a.pagination__link(href="#") 3
+          a.pagination__link(href="/fsd-hotel/change-me") 3
         li.pagination__item
           span.pagination__more ...
         li.pagination__item
-          a.pagination__link(href="#") 15
+          a.pagination__link(href="/fsd-hotel/change-me") 15
         li.pagination__item
-          a.pagination__link.pagination__link--next(href="#")
+          a.pagination__link.pagination__link--next(href="/fsd-hotel/change-me")
             img.pagination__icon(src=require("../../components/pagination/img/pagination-arrow.svg"), alt="next")
       if (text)
         p.pagination__text!= text
