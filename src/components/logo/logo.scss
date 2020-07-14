@@ -2,6 +2,10 @@
   display: inline-block;
   vertical-align: top;
 
+  &:hover {
+    filter: brightness(1.2);
+  }
+
   &__img {
     display: block;
   }
