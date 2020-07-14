@@ -1,0 +1,23 @@
+mixin social(props = {})
+  -
+    const { list } = props
+  
+  ul.social&attributes(attributes)
+    each item in list
+      -
+        const { 
+          href,
+          image,
+          alt,
+          width,
+          height
+        } = item;
+
+      li.social__item&attributes(attributes)
+        a.social__link(href=href, target="_blank", rel="noopener noreferrer")
+          image.social__icon(
+            src=require(`../../components/social/img/${image}`),
+            alt=alt,
+            width=width,
+            height=height
+          )
