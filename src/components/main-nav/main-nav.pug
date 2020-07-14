@@ -6,7 +6,12 @@ mixin main-nav(props = {})
     ul.main-nav__list
       each item in list
         -
-          const { text, href, isActive, submenu } = item;
+          const {
+            text,
+            href,
+            isActive,
+            submenu
+          } = item;
 
           let classesItem = 'main-nav__item';
           classesItem += isActive ? ' main-nav__item--active' : '';
