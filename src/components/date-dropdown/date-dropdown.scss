@@ -27,7 +27,7 @@
   /* Title */
 
   &__title {
-    @include title;
+    @include title-h3;
 
     display: block;
   }
@@ -43,7 +43,7 @@
       cursor: pointer;
       position: absolute;
       top: 0;
-      right: 0;
+      right: 1px;
       bottom: 0;
       width: 2.75rem;
       background-image: url('./img/date-dropdown-arrow.svg');
