@@ -2,8 +2,6 @@
 @import '../../scss/mixins';
 
 .form-login {
-  $block-name: &;
-
   @include form-card;
 
   /* Title */

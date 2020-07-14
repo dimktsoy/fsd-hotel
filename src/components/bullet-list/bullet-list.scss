@@ -2,8 +2,6 @@
 @import '../../scss/mixins';
 
 .bullet-list {
-  $block-name: &;
-
   list-style: none;
   padding: 0;
   margin: 0;

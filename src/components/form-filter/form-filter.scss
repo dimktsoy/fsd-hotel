@@ -2,8 +2,6 @@
 @import '../../scss/mixins';
 
 .form-filter {
-  $block-name: &;
-
   @include form-card;
 
   /* Title */

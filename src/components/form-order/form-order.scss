@@ -2,8 +2,6 @@
 @import '../../scss/mixins';
 
 .form-order {
-  $block-name: &;
-
   @include form-card;
 
   /* Heading */
