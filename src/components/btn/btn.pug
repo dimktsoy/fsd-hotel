@@ -8,23 +8,21 @@ mixin btn(props = {})
       isSimple = false,
       isSizeFull = false,
       isSizeSmall = false,
-      isWithIcon = false,
       isHover = false,
+      isViewArrow = false
     } = props;
 
-    let classesBtn = 'btn';
-    classesBtn += isPrimary ? ' btn--theme-primary' : '';
-    classesBtn += isOutline ? ' btn--theme-outline' : '';
-    classesBtn += isSimple ? ' btn--theme-simple' : '';
+    let classesBtn = '';
+    classesBtn += isPrimary ? 'btn--theme-primary' : '';
+    classesBtn += isOutline ? 'btn--theme-outline' : '';
+    classesBtn += isSimple ? 'btn--theme-simple' : '';
     classesBtn += isSizeFull ? ' btn--size-full' : '';
     classesBtn += isSizeSmall ? ' btn--size-small' : '';
     classesBtn += isHover ? ' btn--view-hovered' : '';
+    classesBtn += isViewArrow ? ' btn--view-arrow' : '';
+    
 
   if (typeof(attrs.href) !== 'undefined' && attrs.href)
-    a(class=classesBtn)&attributes(attrs)!= text
-      if (isWithIcon)
-        img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
+    a.btn(class=classesBtn)&attributes(attrs)!= text
   else
-    button(class=classesBtn, type="button")&attributes(attrs)!= text
-      if (isWithIcon)
-        img.btn__arrow(src=require('../../components/btn/img/btn-arrow.svg'), alt="arrow", width="18", height="18")
+    button.btn(class=classesBtn, type="button")&attributes(attrs)!= text

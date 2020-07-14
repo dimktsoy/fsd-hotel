@@ -6,7 +6,7 @@
   display: inline-block;
   vertical-align: middle;
   border: 0;
-  background: transparent;
+  background-color: transparent;
   border-radius: 1.375rem;
   color: $primary-color;
   text-decoration: none;
@@ -18,7 +18,6 @@
   padding: 0.875rem 1.21875rem 0.9375rem 1.21875rem;
   user-select: none;
   text-align: center;
-  cursor: pointer;
 
   &:not([href]):focus {
     outline: 0;
@@ -86,12 +85,8 @@
 
     &:hover,
     &:focus,
-    &.btn--view-hovered {
+    &#{$block-name}--view-hovered {
       color: $dark-shade-50;
-    }
-
-    &:focus {
-      outline: -webkit-focus-ring-color auto 5px;
     }
   }
 
@@ -109,11 +104,22 @@
     padding: 0.5625rem 1.25rem  0.625rem;
   }
 
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0.8125rem;
-  }
+  /* Modifier View Arrow */
 
+  &--view-arrow {
+    position: relative;
+    padding: 0.875rem 2.75rem 0.9375rem 2.75rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2.75rem;
+      background-image: url('./img/btn-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
 }
