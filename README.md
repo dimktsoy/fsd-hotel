@@ -18,6 +18,12 @@
 - [UI kit. Colors & Type](https://dimktsoy.github.io/fsd-hotel/colors-type.html)
 - [UI kit. Form Elements](https://dimktsoy.github.io/fsd-hotel/form-elements.html)
 - [UI kit. Cards](https://dimktsoy.github.io/fsd-hotel/cards.html)
+- [UI kit. Headers & Footers](https://dimktsoy.github.io/fsd-hotel/headers-footers.html)
+- [Website pages. Landing page](https://dimktsoy.github.io/fsd-hotel/landing.html)
+- [Website pages. Search room](https://dimktsoy.github.io/fsd-hotel/search-room.html)
+- [Website pages. Room details](https://dimktsoy.github.io/fsd-hotel/room-details.html)
+- [Website pages. Registration](https://dimktsoy.github.io/fsd-hotel/registration.html)
+- [Website pages. Sign in](https://dimktsoy.github.io/fsd-hotel/sign-in.html)
 
 ## Используемые ресурсы и инструменты:
 - [Разработка и сборка проекта - Webpack 4.43.0](https://webpack.js.org/)
