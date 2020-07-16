@@ -64,6 +64,6 @@ p {
   margin-bottom: 1.25rem;
 }
 
-button:not(disabled) {
+button:not(:disabled) {
   cursor: pointer;
 }
