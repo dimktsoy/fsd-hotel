@@ -65,7 +65,7 @@ module.exports = {
         use: [
           {
             loader: 'pug-loader',
-            query: {
+            options: {
               pretty: true
             }
           }
