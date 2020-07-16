@@ -8,10 +8,19 @@
   &__group {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: 414px) {
+      flex-direction: row;
+    }
   }
 
   &__group &__label {
-    width: 50%;
+    width: 100%;
+
+    @media (min-width: 414px) {
+      width: 50%;
+    }
   }
 
   /* Label */
@@ -21,7 +30,12 @@
   }
 
   &__label + &__label {
-    margin-left: 1.25rem;
+    margin-top: 1.25rem;
+
+    @media (min-width: 414px) {
+      margin-top: 0;
+      margin-left: 1.25rem;
+    }
   }
 
   /* Title */

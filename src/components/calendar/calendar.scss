@@ -8,7 +8,14 @@
   width: 20rem;
   box-shadow: 0px 10px 20px $dark-shade-5;
   border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
   color: $dark-shade-50;
+
+  &.active {
+    @media (max-width: 320px) {  
+      left: 0!important;  
+    }
+  }
 }
 
 .datepicker--pointer {
@@ -143,7 +150,7 @@
 }
 
 .datepicker--content {
-  padding: 0 1.18375rem 1.25rem 1.325rem;
+  padding: 0 1.12125rem 1.25rem 1.2625rem;
 }
 
 /* Arrow buttons */
