@@ -1,6 +1,10 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
-.page-colors-type {
+.ui-kit-colors-type {
+  $block-name: &;
+
+  flex-grow: 1;
   
   /* Header */
 
@@ -11,9 +15,9 @@
     margin: 0 auto;
   }
 
-  /* Grid */
+  /* Content */
 
-  &__grid {
+  &__content {
     max-width: 73.125rem;
     padding: 0 0.9375rem 9.0625rem;
     margin: 0 auto;
@@ -42,7 +46,6 @@
   &__colors-item {
     margin-bottom: 1.25rem;
     display: flex;
-    align-items: center;
 
     &::before {
       content: '';
@@ -107,6 +110,7 @@
     font-weight: bold;
     line-height: 1.8125rem;
     color: $dark-shade-100;
+    padding-top: 0.4375rem;
 
     > span {
       display: block;
@@ -123,54 +127,55 @@
   }
 
   &__type-item {
-    margin-top: 3.125rem;
     position: relative;
     display: flex;
+    align-items: baseline;
+    margin-top: 3.125rem;
 
     &:first-child {
       margin-top: 0;
     }
+
+    &:last-child {
+      margin-top: 2.9375rem;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
   }
 
   &__type-item--h1 {
-    font-family: Quicksand, $font-family;
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 1.25;
-    color: $dark-shade-100;
+    #{$block-name}__type-title {
+      font-size: 1.5rem;
+    }
   }
 
   &__type-item--h2 {
-    font-family: Quicksand, $font-family;
-    font-weight: bold;
-    font-size: 1.1875rem;
-    line-height: 1.5rem;
-    color: $dark-shade-100;
+    #{$block-name}__type-title {
+      font-size: 1.1875rem;
+    }
   }
 
   &__type-item--h3 {
-    font-family: Montserrat, $font-family;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 1.25;
     text-transform: uppercase;
-    color: $dark-shade-100;
+
+    #{$block-name}__type-title {
+      font-size: 0.75rem;
+    }
   }
 
   &__type-item--body {
-    font-family: Montserrat, $font-family;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    color: $dark-shade-75;
-    margin-top: 2.9375rem;
+    #{$block-name}__type-title {
+      font-size: 0.875rem;
+    }
   }
 
   &__type-title {
-    font-family: Montserrat, $font-family;
-    font-weight: normal;
     color: $dark-shade-25;
     text-align: right;
     width: 4.375rem;
     padding-right: 1.875rem;
+    line-height: 1;
   }
 }
