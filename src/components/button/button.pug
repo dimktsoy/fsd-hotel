@@ -1,0 +1,28 @@
+mixin button(props = {})
+  -
+    const { 
+      text = 'Кнопка',
+      attrs = {},
+      isPrimary = false,
+      isOutline = false,
+      isSimple = false,
+      isSizeFull = false,
+      isSizeSmall = false,
+      isHover = false,
+      isViewArrow = false
+    } = props;
+
+    let buttonClassName = '';
+    buttonClassName += isPrimary ? 'button--theme-primary' : '';
+    buttonClassName += isOutline ? 'button--theme-outline' : '';
+    buttonClassName += isSimple ? 'button--theme-simple' : '';
+    buttonClassName += isSizeFull ? ' button--size-full' : '';
+    buttonClassName += isSizeSmall ? ' button--size-small' : '';
+    buttonClassName += isHover ? ' button--view-hovered' : '';
+    buttonClassName += isViewArrow ? ' button--view-arrow' : '';
+    
+
+  if (typeof(attrs.href) !== 'undefined' && attrs.href)
+    a.button(class=buttonClassName)&attributes(attrs)!= text
+  else
+    button.button(class=buttonClassName, type="button")&attributes(attrs)!= text

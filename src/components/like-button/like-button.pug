@@ -1,0 +1,9 @@
+mixin like-button(props = {})
+  -
+    const { isActive = false, count = 0 } = props;
+
+    let likeButtonClassName = '';
+    likeButtonClassName += isActive ? 'like-button--active' : '';
+
+  button.like-button.js-like-button(class=likeButtonClassName, type="button")&attributes(attributes)
+    span.like-button__count.js-like-button__count!= count

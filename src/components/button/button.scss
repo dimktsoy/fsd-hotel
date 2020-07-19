@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-.btn {
+.button {
   $block-name: &;
 
   display: inline-block;
@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus,
-    &.btn--view-hovered {
+    &#{$block-name}--view-hovered {
       opacity: 0.5;
     }
   }
@@ -71,7 +71,7 @@
 
     &:hover,
     &:focus,
-    &.btn--view-hovered {
+    &#{$block-name}--view-hovered {
       &::before {
         opacity: 0.5;
       }
@@ -117,7 +117,7 @@
       right: 0;
       bottom: 0;
       width: 2.75rem;
-      background-image: url('./img/btn-arrow.svg');
+      background-image: url('./img/button-arrow.svg');
       background-repeat: no-repeat;
       background-position: center center;
     }

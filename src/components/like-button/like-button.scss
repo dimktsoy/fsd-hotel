@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-.like-btn {
+.like-button {
   $block-name: &;
 
   display: inline-block;
@@ -34,7 +34,7 @@
       top: 0;
       bottom: 0;
       left: 0;
-      background-image: url('./img/like-btn-favorite-border.svg');
+      background-image: url('./img/like-button-favorite-border.svg');
       background-repeat: no-repeat;
       background-position: center center;
     }
@@ -75,7 +75,7 @@
 
     #{$block-name}__count {
       &::before {
-        background-image: url('./img/like-bth-favorite.svg');
+        background-image: url('./img/like-button-favorite.svg');
       }
     }
   }
