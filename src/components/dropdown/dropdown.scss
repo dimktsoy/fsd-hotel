@@ -8,7 +8,7 @@
   /* Title */
 
   &__title-wrap {
-    display: block;
+    display: flex;
   }
 
   &__title {
@@ -21,6 +21,8 @@
     @include help-text;
 
     display: block;
+    margin-left: auto;
+    padding-left: 1.25rem;
   }
 
   /* Trigger */
