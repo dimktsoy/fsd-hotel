@@ -1,0 +1,16 @@
+.registration {
+  flex: 1;
+  background-image: url('../../assets/img/bg-sign-in-up.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 1.1875rem 0.9375rem;
+
+  /* Form */
+
+  &__form {
+    max-width: 23.75rem;
+    width: 100%;
+    margin: auto;
+  }
+}

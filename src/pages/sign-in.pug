@@ -1,0 +1,46 @@
+extends ../templates/page/page
+include ../components/sign-in/sign-in
+
+block head
+  - const pageTitle = "Sign In";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +sign-in({
+    formLogin: {
+      title: 'Войти',
+      inputEmail: {
+        attrs: {
+          placeholder: 'Email',
+          type: 'email'
+        }
+      },
+      inputPassword: {
+        attrs: {
+          placeholder: 'Пароль',
+          type: 'password'
+        }
+      },
+      buttonSubmit: {
+        text: 'Войти',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      },
+      registration: {
+        text: 'Нет аккаунта на Toxin?',
+        button: {
+          text: 'Создать',
+          isOutline: true,
+          isSizeFull: true,
+          attrs: {
+            href: 'registration.html'
+          }
+        }
+      }
+    }
+  })

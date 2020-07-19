@@ -1,0 +1,91 @@
+extends ../templates/page/page
+include ../components/registration/registration
+
+block head
+  - const pageTitle = "Registration";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +registration({
+    formRegistration: {
+      title: 'Регистрация аккаунта',
+      inputFirstName: {
+        attrs: {
+          placeholder: 'Имя',
+          type: 'text'
+        }
+      },
+      inputLastName: {
+        attrs: {
+          placeholder: 'Фамилия',
+          type: 'text'
+        }
+      },
+      radioSex: {
+        radiobuttons: [
+          {
+            title: 'Мужчина',
+            attrs: {
+              checked: true,
+              name: 'sex'
+            }
+          },
+          {
+            title: 'Женщина',
+            attrs: {
+              name: 'sex'
+            }
+          }
+        ]
+      },
+      inputBirthDate: {
+        title: 'Дата рождения',
+        isMask: true,
+        attrs: {
+          placeholder: 'ДД.ММ.ГГГГ',
+          'data-inputmask': "'placeholder': 'ДД.ММ.ГГГГ', 'alias': 'datetime', 'inputFormat': 'dd.mm.yyyy'"
+        }
+      },
+      inputEmail: {
+        title: 'Данные для входа в сервис',
+        attrs: {
+          placeholder: 'Email',
+          type: 'email'
+        }
+      },
+      inputPassword: {
+        attrs: {
+          placeholder: 'Пароль',
+          type: 'password'
+        }
+      },
+      toggleSpecial: {
+        items: [
+          {
+            title: 'Получать спецпредложения'
+          }
+        ]
+      },
+      buttonSubmit: {
+        text: 'Перейти к оплате',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      },
+      login: {
+        text: 'Уже есть аккаунт на Toxin',
+        button: {
+          text: 'Войти',
+          isOutline: true,
+          isSizeFull: true,
+          attrs: {
+            href: 'sign-in.html'
+          }
+        }
+      }
+    }
+  })
