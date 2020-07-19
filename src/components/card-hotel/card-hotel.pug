@@ -13,7 +13,8 @@ mixin card-hotel(props = {})
   .card-hotel.js-card-hotel
     .card-hotel__carousel.js-card-hotel__carousel
       each item in images
-        img.card-hotel__carousel-img(src=require(`../../components/card-hotel/img/${item.name}`), alt=item.alt)
+        - const { name, alt } = item;
+        img.card-hotel__carousel-img(src=require(`../components/card-hotel/img/${name}`), alt=alt)
     .card-hotel__heading
       h3.card-hotel__title
         span.card-hotel__title-symbol &#8470;

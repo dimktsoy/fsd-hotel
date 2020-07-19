@@ -1,4 +1,4 @@
-include ../like-btn/like-btn
+include ../like-button/like-button
 
 mixin comment(props = {})
   -
@@ -7,14 +7,14 @@ mixin comment(props = {})
       text = 'Великолепный матрас на кровати в основной спальне!',
       avatar = 'comment-noavatar.gif',
       date = 'сегодня',
-      likeBtn = { count: 0 }
+      likeButton = { count: 0 }
     } = props;
 
   .comment&attributes(attributes)
     .comment__user-avatar-wrap
-      img.comment__user-avatar(src=require(`../../components/comment/img/${avatar}`), alt="avatar", width="48", height="48")
-      span.comment__like-btn
-        +like-btn(likeBtn)
+      img.comment__user-avatar(src=require(`../components/comment/img/${avatar}`), alt="avatar", width="48", height="48")
+      span.comment__like-button
+        +like-button(likeButton)
     .comment__body
       span.comment__user-name!= username
       span.comment__date!= date
