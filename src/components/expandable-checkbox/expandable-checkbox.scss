@@ -1,7 +1,7 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
-.expand {
+.expandable-checkbox {
   $block-name: &;
 
   /* Trigger */
@@ -20,7 +20,7 @@
       right: 1rem;
       margin-top: -0.25rem;
       position: absolute;
-      background-image: url('./img/expand-arrow.svg');
+      background-image: url('./img/expandable-checkbox-arrow.svg');
       background-repeat: no-repeat;
       background-position: 0 0;
       transition: transform .3s ease-in-out;

@@ -1,0 +1,17 @@
+include ../field-checkbox/field-checkbox
+
+mixin expandable-checkbox(props = {})
+  -
+    const {
+      title = 'Expand',
+      isOpen = false,
+      checkboxes = []
+    } = props;
+
+    let expandableCheckboxClassName = '';
+    expandableCheckboxClassName += isOpen ? 'expandable-checkbox--open' : '';
+
+  .expandable-checkbox.js-expandable-checkbox(class=expandableCheckboxClassName)&attributes(attributes)
+    .expandable-checkbox__trigger.js-expandable-checkbox__trigger!= title
+    .expandable-checkbox__content.js-expandable-checkbox__content
+      +field-checkbox({ checkboxes })
