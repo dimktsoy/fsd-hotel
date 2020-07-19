@@ -1,9 +1,9 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
-.page-cards {
+.ui-kit-cards {
   background-color: #E5E5E5;
-  flex: 1;
+  flex-grow: 1;
   padding-bottom: 8.125rem;
 
   /* Header */
@@ -15,9 +15,9 @@
     margin: 0 auto;
   }
 
-  /* Grid */
+  /* Content */
 
-  &__grid {
+  &__content {
     max-width: 74.375rem;
     padding: 0 0.9375rem;
     margin: 0 auto;
@@ -44,7 +44,7 @@
       margin-bottom: 2.5rem;
     }
 
-    &--calendar {
+    &--card-hotel {
       max-width: 16.875rem;
     }
   }

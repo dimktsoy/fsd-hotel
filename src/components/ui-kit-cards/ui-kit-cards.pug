@@ -1,0 +1,42 @@
+include ../logo/logo
+include ../form-filter/form-filter
+include ../form-registration/form-registration
+include ../form-order/form-order
+include ../form-login/form-login
+include ../calendar/calendar
+include ../card-hotel/card-hotel
+
+mixin ui-kit-cards(props = {})
+  -
+    const {
+      formFilter,
+      formRegistration,
+      formOrder,
+      formLogin,
+      cardHotels = []
+    } = props;
+
+  .ui-kit-cards
+    header.ui-kit-cards__header(role="banner")
+      +logo({ 
+        isSimple: true,
+        href: 'index.html'
+      })
+
+    main.ui-kit-cards__content(role="main")
+      .ui-kit-cards__item
+        .ui-kit-cards__component
+          +form-filter(formFilter)
+        .ui-kit-cards__component
+          +form-registration(formRegistration)
+      .ui-kit-cards__item
+        .ui-kit-cards__component
+          +form-order(formOrder)
+        .ui-kit-cards__component
+          +form-login(formLogin)
+      .ui-kit-cards__item
+        .ui-kit-cards__component.ui-kit-cards__component--calendar
+          +calendar()
+        each item in cardHotels
+          .ui-kit-cards__component.ui-kit-cards__component--card-hotel
+            +card-hotel(item)
