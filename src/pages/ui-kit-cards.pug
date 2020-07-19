@@ -1,0 +1,304 @@
+extends ../templates/base/base
+include ../components/ui-kit-cards/ui-kit-cards
+
+block head
+  - const pageTitle = "Cards";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +ui-kit-cards({
+    formFilter: {
+      title: 'Найдём номера под ваши&nbsp;пожелания',
+      dateDropdown: {
+        titleStart: 'Прибытие',
+        titleEnd: 'Выезд',
+        attrs: {
+          placeholder: 'дд.мм.гггг'
+        }
+      },
+      dropdown: {
+        title: 'Гости',
+        placeholder: 'Сколько гостей',
+        isButtons: true,
+        options: [
+          {
+            title: 'взрослые',
+            value: 0
+          },
+          {
+            title: 'дети',
+            value: 0
+          },
+          {
+            title: 'младенцы',
+            value: 0,
+            isBaby: true
+          }
+        ]
+      },
+      buttonSubmit: {
+        text: 'Подобрать номер',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      }
+    },
+    formRegistration: {
+      title: 'Регистрация аккаунта',
+      inputFirstName: {
+        attrs: {
+          placeholder: 'Имя',
+          type: 'text'
+        }
+      },
+      inputLastName: {
+        attrs: {
+          placeholder: 'Фамилия',
+          type: 'text'
+        }
+      },
+      radioSex: {
+        radiobuttons: [
+          {
+            title: 'Мужчина',
+            attrs: {
+              checked: true,
+              name: 'sex'
+            }
+          },
+          {
+            title: 'Женщина',
+            attrs: {
+              name: 'sex'
+            }
+          }
+        ]
+      },
+      inputBirthDate: {
+        title: 'Дата рождения',
+        isMask: true,
+        attrs: {
+          placeholder: 'ДД.ММ.ГГГГ',
+          'data-inputmask': "'placeholder': 'ДД.ММ.ГГГГ', 'alias': 'datetime', 'inputFormat': 'dd.mm.yyyy'"
+        }
+      },
+      inputEmail: {
+        title: 'Данные для входа в сервис',
+        attrs: {
+          placeholder: 'Email',
+          type: 'email'
+        }
+      },
+      inputPassword: {
+        attrs: {
+          placeholder: 'Пароль',
+          type: 'password'
+        }
+      },
+      toggleSpecial: {
+        items: [
+          {
+            title: 'Получать спецпредложения'
+          }
+        ]
+      },
+      buttonSubmit: {
+        text: 'Перейти к оплате',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      },
+      login: {
+        text: 'Уже есть аккаунт на Toxin',
+        button: {
+          text: 'Войти',
+          isOutline: true,
+          isSizeFull: true,
+          attrs: {
+            href: 'sign-in.html'
+          }
+        }
+      }
+    },
+    formOrder: {
+      title: {
+        symbol: '&#8470',
+        number: '888',
+        text: 'люкс'
+      },
+      cost: {
+        value: '9 990&#8381;',
+        text: 'в сутки'
+      },
+      dateDropdown: {
+        titleStart: 'Прибытие',
+        titleEnd: 'Выезд',
+        attrs: {
+          placeholder: 'дд.мм.гггг'
+        }
+      },
+      dropdown: {
+        title: 'Гости',
+        placeholder: 'Сколько гостей',
+        isButtons: true,
+        options: [
+          {
+            title: 'взрослые',
+            value: 2
+          },
+          {
+            title: 'дети',
+            value: 1
+          },
+          {
+            title: 'младенцы',
+            value: 0,
+            isBaby: true
+          }
+        ]
+      },
+      costList: [
+        {
+          description: '9 990&#8381; x 4 суток',
+          cost: '39 960&#8381;'
+        },
+        {
+          description: 'Сбор за услуги: скидка 2 179&#8381;',
+          cost: '0&#8381;',
+          isIcon: true
+        },
+        {
+          description: 'Сбор за дополнительные услуги',
+          cost: '300&#8381;',
+          isIcon: true
+        }
+      ],
+      totalCost: {
+        text: 'Итого',
+        value: '38 081&#8381;'
+      },
+      buttonSubmit: {
+        text: 'Забронировать',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      }
+    },
+    formLogin: {
+      title: 'Войти',
+      inputEmail: {
+        attrs: {
+          placeholder: 'Email',
+          type: 'email'
+        }
+      },
+      inputPassword: {
+        attrs: {
+          placeholder: 'Пароль',
+          type: 'password'
+        }
+      },
+      buttonSubmit: {
+        text: 'Войти',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      },
+      registration: {
+        text: 'Нет аккаунта на Toxin?',
+        button: {
+          text: 'Создать',
+          isOutline: true,
+          isSizeFull: true,
+          attrs: {
+            href: 'registration.html'
+          }
+        }
+      }
+    },
+    cardHotels: [
+      {
+        title: {
+          number: 888,
+          text: 'люкс'
+        },
+        cost: {
+          value: '9 990&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 5
+        },
+        reviews: {
+          count: 145,
+          text: 'Отзывов'
+        }
+      },
+      {
+        title: {
+          number: 840,
+          text: 'люкс'
+        },
+        cost: {
+          value: '9 990&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 4
+        },
+        reviews: {
+          count: 65,
+          text: 'Отзывов'
+        }
+      }
+    ]
+  })
