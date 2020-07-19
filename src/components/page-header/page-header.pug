@@ -1,6 +1,6 @@
 include ../logo/logo
 include ../main-nav/main-nav
-include ../btn/btn
+include ../button/button
 
 mixin page-header(props = {})
   -
@@ -11,7 +11,7 @@ mixin page-header(props = {})
       .page-header__logo
         +logo(logo)
       button.page-header__menu-trigger.js-page-header__menu-trigger(type="button")
-        img(src=require('../../components/page-header/img/page-header-menu.svg'), alt="menu")
+        img(src=require('../components/page-header/img/page-header-menu.svg'), alt="menu")
       .page-header__collapse.js-page-header__collapse
         +main-nav(mainNav)
         if (typeof(user.name) !== 'undefined' && user.name)
@@ -20,6 +20,6 @@ mixin page-header(props = {})
         else
           .page-header__login-signup
             .page-header__login
-              +btn(user.signInBtn)
+              +button(user.signInButton)
             .page-header__signup
-              +btn(user.signUpBtn)
+              +button(user.signUpButton)
