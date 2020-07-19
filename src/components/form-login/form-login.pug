@@ -1,5 +1,5 @@
 include ../field-text/field-text
-include ../btn/btn
+include ../button/button
 
 mixin form-login(props = {})
   -
@@ -7,7 +7,7 @@ mixin form-login(props = {})
       title,
       inputEmail,
       inputPassword,
-      btnSubmit,
+      buttonSubmit,
       registration
     } = props;
   
@@ -19,8 +19,8 @@ mixin form-login(props = {})
       .form-login__input-item
         +field-text(inputPassword)
       .form-login__footer
-        +btn(btnSubmit)
+        +button(buttonSubmit)
         .form-login__registration
           p.form-login__registration-text!= registration.text
-          .form-login__registration-btn
-            +btn(registration.btn)
+          .form-login__registration-button
+            +button(registration.button)

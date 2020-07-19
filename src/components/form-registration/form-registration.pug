@@ -1,7 +1,7 @@
 include ../field-text/field-text
 include ../field-radio/field-radio
 include ../toggle/toggle
-include ../btn/btn
+include ../button/button
 
 mixin form-registration(props = {})
   -
@@ -14,7 +14,7 @@ mixin form-registration(props = {})
       inputEmail,
       inputPassword,
       toggleSpecial,
-      btnSubmit,
+      buttonSubmit,
       login
     } = props;
 
@@ -38,8 +38,8 @@ mixin form-registration(props = {})
         .form-registration__input-item
           +toggle(toggleSpecial)
       .form-registration__footer
-        +btn(btnSubmit)
+        +button(buttonSubmit)
         .form-registration__login
           p.form-registration__login-text!= login.text
-          .form-registration__login-btn
-            +btn(login.btn)
+          .form-registration__login-button
+            +button(login.button)
