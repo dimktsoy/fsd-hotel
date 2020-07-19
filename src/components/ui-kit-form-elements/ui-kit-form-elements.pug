@@ -1,0 +1,135 @@
+include ../logo/logo
+include ../field-text/field-text
+include ../subscribe/subscribe
+include ../dropdown/dropdown
+include ../field-checkbox/field-checkbox
+include ../field-radio/field-radio
+include ../toggle/toggle
+include ../range-slider/range-slider
+include ../button/button
+include ../pagination/pagination
+include ../icon-text-list/icon-text-list
+include ../bullet-list/bullet-list
+include ../expandable-checkbox/expandable-checkbox
+include ../like-button/like-button
+include ../rating/rating
+include ../comment/comment
+include ../date-dropdown/date-dropdown
+
+mixin ui-kit-form-elements(props = {})
+  
+  -
+    const {
+      fieldTextDefault,
+      fieldTextHover,
+      dropdownGuestsDefaultNotSelected,
+      fieldTextMasked,
+      dateDropdown,
+      filterDateDropdown,
+      subscribe,
+      checkboxButtons,
+      radioButtons,
+      toggle,
+      likeButton,
+      rating,
+      rangeSlider,
+      buttons,
+      pagination,
+      dropdownDetailsDefault,
+      dropdownDetailsExpanded,
+      dropdownGuestsExpandedNotSelected,
+      dropdownGuestsExpanded,
+      expandableCheckbox,
+      expandableCheckboxOpen,
+      fieldCheckboxRich,
+      bulletList,
+      iconTextList,
+      comment
+    } = props;
+
+  .ui-kit-form-elements
+
+    header.ui-kit-form-elements__header(role="banner")
+      +logo({ 
+        isSimple: true,
+        href: 'index.html'
+      })
+
+    main.ui-kit-form-elements__content(role="main")
+      .ui-kit-form-elements__item.ui-kit-form-elements__item--left
+        .ui-kit-form-elements__field-text-default
+          +field-text(fieldTextDefault)
+        .ui-kit-form-elements__field-text-hover
+          +field-text(fieldTextHover)
+        .ui-kit-form-elements__dropdown-default
+          +dropdown(dropdownGuestsDefaultNotSelected)
+        .ui-kit-form-elements__field-text-masked
+          +field-text(fieldTextMasked)
+        .ui-kit-form-elements__date-dropdown
+          +date-dropdown(dateDropdown)
+        .ui-kit-form-elements__filter-date-dropdown
+          +date-dropdown(filterDateDropdown)
+        .ui-kit-form-elements__subscribe
+          h3.ui-kit-form-elements__subscribe-title!= subscribe.title
+          +subscribe(subscribe)
+      .ui-kit-form-elements__item
+        .ui-kit-form-elements__checkbox-buttons
+          +field-checkbox(checkboxButtons)
+        .ui-kit-form-elements__radio-buttons
+          +field-radio(radioButtons)
+        .ui-kit-form-elements__toggle
+          +toggle(toggle)
+        h3.ui-kit-form-elements__title!= likeButton.title
+        .ui-kit-form-elements__like-button
+          each item in likeButton.items
+            +like-button(item)
+        h3.ui-kit-form-elements__title!= rating.title
+        .ui-kit-form-elements__rating
+          each item in rating.items
+            +rating(item)
+      .ui-kit-form-elements__item
+        .ui-kit-form-elements__range-slider
+          +range-slider(rangeSlider)
+        .ui-kit-form-elements__buttons
+          h3.ui-kit-form-elements__buttons-title!= buttons.title
+          each item in buttons.primaryButtons
+            .ui-kit-form-elements__buttons-item
+              +button(item)
+        .ui-kit-form-elements__buttons.ui-kit-form-elements__buttons--outline
+          each item in buttons.outlineButtons
+            .ui-kit-form-elements__buttons-item
+              +button(item)
+        .ui-kit-form-elements__buttons.ui-kit-form-elements__buttons--link
+          each item in buttons.linkButtons
+            .ui-kit-form-elements__buttons-item
+              +button(item)
+        .ui-kit-form-elements__buttons.ui-kit-form-elements__buttons--full
+          +button(buttons.fullButton)
+        .ui-kit-form-elements__pagination
+          h3.ui-kit-form-elements__pagination-title!= pagination.title
+          +pagination(pagination)
+      .ui-kit-form-elements__item.ui-kit-form-elements__item--dropdown
+        .ui-kit-form-elements__dropdown-column
+          .ui-kit-form-elements__dropdown
+            +dropdown(dropdownDetailsDefault)
+          .ui-kit-form-elements__dropdown
+            +dropdown(dropdownDetailsExpanded)
+        .ui-kit-form-elements__dropdown-column
+          +dropdown(dropdownGuestsExpandedNotSelected)
+        .ui-kit-form-elements__dropdown-column
+          +dropdown(dropdownGuestsExpanded)
+      .ui-kit-form-elements__item.ui-kit-form-elements__item--left
+        .ui-kit-form-elements__expandable-checkbox
+          +expandable-checkbox(expandableCheckbox)
+        .ui-kit-form-elements__expandable-checkbox
+          +expandable-checkbox(expandableCheckboxOpen)
+      .ui-kit-form-elements__item
+        +field-checkbox(fieldCheckboxRich)
+      .ui-kit-form-elements__item
+        .ui-kit-form-elements__title.ui-kit-form-elements__title--bullet Bullet list
+        +bullet-list(bulletList)
+      .ui-kit-form-elements__item.ui-kit-form-elements__item--left
+        .ui-kit-form-elements__icon-text-list
+          +icon-text-list(iconTextList)
+      .ui-kit-form-elements__item.ui-kit-form-elements__item--comment
+        +comment(comment)
