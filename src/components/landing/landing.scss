@@ -1,14 +1,9 @@
-.page-landing {
-
-  /* Page Content */
-
-  &__page-content {
-    background-image: url('./img/landing-bg.jpg');
-    background-size: cover;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    padding: 4.375rem 0 1.125rem;
-  }
+.landing {
+  background-image: url('./img/landing-bg.jpg');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding: 4.375rem 0 1.125rem;
 
   /* Inner */
 
@@ -24,11 +19,10 @@
   &__form-filter {
     max-width: 23.75rem;
     width: 100%;
-    padding-bottom: 4.375rem;
-    margin: 0 auto;
+    margin: 0 auto 20rem;
 
     @media (min-width: 768px) {
-      margin: 0;
+      margin: 0 0 20rem;
     }
   }
 
@@ -36,7 +30,6 @@
 
   &__text {
     max-width: none;
-    padding: 15.625rem 0 0;
     margin: 0 0 0 auto;
     text-align: center;
 

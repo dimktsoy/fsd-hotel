@@ -1,0 +1,13 @@
+include ../page-header/page-header
+include ../page-footer/page-footer
+include ../form-filter/form-filter
+
+mixin landing(props = {})
+  -
+    const { formFilter, landingText } = props;
+
+  .landing
+    .landing__inner
+      .landing__form-filter
+        +form-filter(formFilter)
+      p.landing__text!= landingText
