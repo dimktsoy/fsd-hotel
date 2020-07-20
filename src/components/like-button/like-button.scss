@@ -1,0 +1,82 @@
+@import '../../scss/variables';
+
+.like-button {
+  $block-name: &;
+
+  display: inline-block;
+  vertical-align: top;
+  min-width: 2.5rem;
+  border: 1px solid $dark-shade-25;
+  border-radius: 0.625rem;
+  background-color: #fff;
+  font-size: 0.625rem;
+  line-height: 1.2;
+  color: $dark-shade-25;
+  position: relative;
+  padding: 0.1875rem 0.558125rem  0.1875rem 1.1875rem;
+  user-select: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(188,156,255, .5);
+  }
+
+  /* Count */
+
+  &__count {
+    text-align: center;
+
+    &::before {
+      content: '';
+      width: 1.25rem;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('./img/like-button-favorite-border.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  /* Modifier active */
+
+  &--active {
+    color: $primary-color;
+    z-index: 1;
+    border: 0;
+    padding: 0.25rem 0.558125rem  0.25rem 1.1875rem;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 2.2rem;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -2;
+      background: #BC9CFF;
+      background: linear-gradient(to bottom, #BC9CFF 0%,#8BA4F9 100%);
+    }
+
+    &::after {
+      top: 1px;  right: 1px; bottom: 1px;
+      left: 1px;
+      z-index: -1;
+      background-color: #fff;
+      opacity: 1;
+    }
+
+    #{$block-name}__count {
+      &::before {
+        background-image: url('./img/like-button-favorite.svg');
+      }
+    }
+  }
+}

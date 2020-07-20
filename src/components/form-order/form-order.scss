@@ -65,16 +65,17 @@
     list-style-type: none;
     padding: 0;
     margin: 1.285rem 0 0;
-    line-height: 1.2857;
+    line-height: 1.125rem;
     
     &-item {
       display: flex;
-      margin-top: 1.125rem;
+      margin-top: 0.9375rem;
     }
 
     &-left {
       padding-right: 1.5625rem;
       position: relative;
+      width: 100%;
 
       &--icon {
         &::after {

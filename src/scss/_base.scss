@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
   font-family: $Montserrat;
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -42,18 +42,23 @@ h1 {
   font-family: $Quicksand;
   font-size: $font-size-h1;
   line-height: $line-height-h1;
+  color: $dark-shade-100;
+  margin-top: 0.875em;
+  margin-bottom: 0.875em;
 }
 
 h2 {
   font-family: $Quicksand;
   font-size: $font-size-h2;
   line-height: $line-height-h2;
+  color: $dark-shade-100;
 }
 
 h3, h4, h5, h6 {
   font-family: $Montserrat;
   font-size: $font-size-h3;
   line-height: $line-height-h3;
+  color: $dark-shade-100;
 }
 
 p {

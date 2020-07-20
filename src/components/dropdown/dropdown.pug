@@ -1,4 +1,4 @@
-include ../btn/btn
+include ../button/button
 
 mixin dropdown(props = {})
   -
@@ -12,12 +12,12 @@ mixin dropdown(props = {})
       isButtons = false
     } = props;
 
-    let classes = 'js-dropdown';
-    classes += isDetails ? ' js-dropdown-details' : ' js-dropdown-guests'
-    classes += isOpen ? ' dropdown--open' : '';
+    let dropdownClassName = '';
+    dropdownClassName += isDetails ? 'js-dropdown-details' : 'js-dropdown-guests'
+    dropdownClassName += isOpen ? ' dropdown--open' : '';
 
-  .dropdown(class=classes)&attributes(attributes)
-    if (title & helpText)
+  .dropdown.js-dropdown(class=dropdownClassName)&attributes(attributes)
+    if (title && helpText)
       span.dropdown__title-wrap
         span.dropdown__title!= title
         span.dropdown__help-text!= helpText
@@ -30,18 +30,18 @@ mixin dropdown(props = {})
         each option in options
           -
             const { title = '', value = '', isBaby = false, data } = option;
-            let classes = 'dropdown__item-count js-dropdown__item-count';
-            classes += isBaby ? ' js-dropdown__item-count-baby' : '';
+            let itemCountClassName = '';
+            itemCountClassName += isBaby ? ' js-dropdown__item-count-baby' : '';
 
           li.dropdown__item
             span.dropdown__item-title!= title
             span.dropdown__item-controls
               button.dropdown__item-button.js-dropdown__item-button(type="button") -
-              input(class=classes, type="text", value=value, readonly=true, tabindex="-1" data-dropdown=data)
+              input.dropdown__item-count.js-dropdown__item-count(class=itemCountClassName, type="text", value=value, readonly=true, tabindex="-1" data-dropdown=data)
               button.dropdown__item-button.js-dropdown__item-button(type="button") +
       if (isButtons)
         .dropdown__buttons-group
-          +btn({
+          +button({
             text: 'очистить',
             isSimple: true,
             isHover: true,
@@ -49,7 +49,7 @@ mixin dropdown(props = {})
               class: 'js-dropdown__button-clear'
             }
           })
-          +btn({
+          +button({
             text: 'применить',
             isSimple: true,
             attrs: {

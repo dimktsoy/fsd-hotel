@@ -11,15 +11,16 @@ const prodMode = process.env.NODE_ENV === 'production';
 
 const generateHtmlPlugins = (templateDir) => {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  return templateFiles
-    .filter((page) => page !== '.DS_Store')
-    .map((page) => {
-      return new HtmlWebpackPlugin({
-        filename: `${page}.html`,
-        template: path.resolve(__dirname, `${templateDir}/${page}/${page}.pug`),
-        minify: false
-      });
+  return templateFiles.map((item) => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      minify: false
     });
+  });
 };
 
 const htmlPlugins = generateHtmlPlugins('./src/pages');

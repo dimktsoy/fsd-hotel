@@ -1,0 +1,11 @@
+mixin pages-list(props = {})
+  -
+    const { items = [] } = props;
+  
+  main.pages-list(role="main")
+    .pages-list__inner
+      ul.pages-list__list
+        each item in items
+          - const { href, text } = item;
+          li.pages-list__item
+            a.pages-list__link(href=href)!= text

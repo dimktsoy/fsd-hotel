@@ -1,0 +1,60 @@
+include ../logo/logo
+
+mixin ui-kit-colors-type(props = {})
+  -
+    const { colorsList = [], typeList = [] } = props;
+
+  .ui-kit-colors-type
+    header.ui-kit-colors-type__header(role="banner")
+      +logo({
+        isSimple: true,
+        href: 'index.html'
+      })
+
+    main.ui-kit-colors-type__content(role="main")
+
+      ul.ui-kit-colors-type__colors-list          
+        each item in colorsList
+          -
+            const { 
+              text,
+              hexCode,
+              modifier
+            } = item;
+
+            let colorsItemClassName = '';
+            colorsItemClassName += (modifier === 'dark-shade-100') ? ' ui-kit-colors-type__colors-item--dark-100' : '';
+            colorsItemClassName += (modifier === 'dark-shade-75') ? ' ui-kit-colors-type__colors-item--dark-75' : '';
+            colorsItemClassName += (modifier === 'dark-shade-50') ? ' ui-kit-colors-type__colors-item--dark-50' : '';
+            colorsItemClassName += (modifier === 'dark-shade-25') ? ' ui-kit-colors-type__colors-item--dark-25' : '';
+            colorsItemClassName += (modifier === 'dark-shade-5') ? ' ui-kit-colors-type__colors-item--dark-5' : '';
+            colorsItemClassName += (modifier === 'purple') ? ' ui-kit-colors-type__colors-item--purple' : '';
+            colorsItemClassName += (modifier === 'green') ? ' ui-kit-colors-type__colors-item--green' : '';
+
+          li.ui-kit-colors-type__colors-item(class=colorsItemClassName)
+            .ui-kit-colors-type__colors-text!= text
+              span!= hexCode
+
+      ul.ui-kit-colors-type__type-list
+        each item in typeList
+          -
+            const { text, tag } = item;
+            const modifier = tag.toLowerCase();
+            let typeItemClassName = '';
+
+            typeItemClassName += (modifier === 'h1') ? ' ui-kit-colors-type__type-item--h1' : '';
+            typeItemClassName += (modifier === 'h2') ? ' ui-kit-colors-type__type-item--h2' : '';
+            typeItemClassName += (modifier === 'h3') ? ' ui-kit-colors-type__type-item--h3' : '';
+            typeItemClassName += (modifier === 'body') ? ' ui-kit-colors-type__type-item--body' : '';
+
+          li.ui-kit-colors-type__type-item(class=typeItemClassName)
+            span.ui-kit-colors-type__type-title!= tag
+            case tag.toLowerCase()
+              when 'h1'
+                h1!= text
+              when 'h2'
+                h2!= text
+              when 'h3'
+                h3!= text
+              when 'body'
+                p!= text

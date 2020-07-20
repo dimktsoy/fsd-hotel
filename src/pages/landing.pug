@@ -1,0 +1,51 @@
+extends ../templates/page/page
+include ../components/landing/landing
+
+block head
+  - const pageTitle = "Главная";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +landing({
+    formFilter: {
+      title: 'Найдём номера под ваши&nbsp;пожелания',
+      dateDropdown: {
+        titleStart: 'Прибытие',
+        titleEnd: 'Выезд',
+        attrs: {
+          placeholder: 'дд.мм.гггг'
+        }
+      },
+      dropdown: {
+        title: 'Гости',
+        placeholder: 'Сколько гостей',
+        isButtons: true,
+        options: [
+          {
+            title: 'взрослые',
+            value: 0
+          },
+          {
+            title: 'дети',
+            value: 0
+          },
+          {
+            title: 'младенцы',
+            value: 0,
+            isBaby: true
+          }
+        ]
+      },
+      buttonSubmit: {
+        text: 'Подобрать номер',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      }
+    },
+    landingText: 'Лучшие номера для вашей работы, отдыха и просто вдохновения'
+  })

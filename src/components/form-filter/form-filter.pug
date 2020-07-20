@@ -1,4 +1,4 @@
-include ../btn/btn
+include ../button/button
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 
@@ -8,7 +8,7 @@ mixin form-filter(props = {})
       title,
       dateDropdown,
       dropdown,
-      btnSubmit
+      buttonSubmit
     } = props;
 
   .form-filter&attributes(attributes)
@@ -20,4 +20,4 @@ mixin form-filter(props = {})
       .form-filter__input-group
         +dropdown(dropdown)
       .form-filter__footer
-        +btn(btnSubmit)
+        +button(buttonSubmit)

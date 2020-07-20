@@ -1,0 +1,9 @@
+include ../form-registration/form-registration
+
+mixin registration(props = {})
+  -
+    const { formRegistration } = props;
+
+  main.registration(role="main")
+    .registration__form
+      +form-registration(formRegistration)

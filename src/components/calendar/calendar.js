@@ -10,7 +10,7 @@ import './calendar.scss';
 class Calendar {
   constructor($component) {
     this.$component = $component;
-    this.$btnApply = $(
+    this.$buttonApply = $(
       '<span class="datepicker--button datepicker--button-apply">Применить</span>'
     );
     this.init();
@@ -26,7 +26,7 @@ class Calendar {
   }
 
   render() {
-    this.datepicker.$datepicker.find('.datepicker--buttons').append(this.$btnApply);
+    this.datepicker.$datepicker.find('.datepicker--buttons').append(this.$buttonApply);
   }
 
   bindEventHandlers() {
@@ -34,7 +34,7 @@ class Calendar {
   }
 
   atachEventHandlers() {
-    this.$btnApply.on('click', this.handleApplyButtonClick);
+    this.$buttonApply.on('click', this.handleApplyButtonClick);
   }
 
   // eslint-disable-next-line class-methods-use-this

@@ -1,0 +1,49 @@
+extends ../templates/base/base
+include ../components/pages-list/pages-list
+
+block head
+  - const pageTitle = "Список страниц";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +pages-list({
+    items: [
+      {
+        text: 'UI-kit Colors & Type',
+        href: 'ui-kit-colors-type.html'
+      },
+      {
+        text: 'UI-kit Form Elements',
+        href: 'ui-kit-form-elements.html'
+      },
+      {
+        text: 'UI-kit Cards',
+        href: 'ui-kit-cards.html'
+      },
+      {
+        text: 'UI-kit Headers & Footers',
+        href: 'ui-kit-headers-footers.html'
+      },
+      {
+        text: 'Landing page',
+        href: 'landing.html'
+      },
+      {
+        text: 'Search room',
+        href: 'search-room.html'
+      },
+      {
+        text: 'Room details',
+        href: 'room-details.html'
+      },
+      {
+        text: 'Registration',
+        href: 'registration.html'
+      },
+      {
+        text: 'Sign in',
+        href: 'sign-in.html'
+      }
+    ]
+  })

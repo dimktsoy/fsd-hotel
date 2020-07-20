@@ -1,0 +1,51 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.ui-kit-cards {
+  background-color: #E5E5E5;
+  flex-grow: 1;
+  padding-bottom: 8.125rem;
+
+  /* Header */
+
+  &__header {
+    padding: 1.875rem 0.9375rem 4.5rem;
+    max-width: 88.125rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Content */
+
+  &__content {
+    max-width: 74.375rem;
+    padding: 0 0.9375rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 1fr 1fr 20rem;
+      grid-column-gap: 2.5rem;
+    }
+  }
+
+  /* Component */
+
+  &__component {
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 2.5rem;
+    }
+
+    &--card-hotel {
+      max-width: 16.875rem;
+    }
+  }
+}

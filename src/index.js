@@ -9,3 +9,4 @@ function importAll(r) {
 
 importAll(require.context('./components', true, /\.js$/));
 importAll(require.context('./pages', true, /\.js$/));
+importAll(require.context('./templates', true, /\.js$/));

@@ -1,0 +1,90 @@
+@import '../../scss/variables';
+
+.search-room {
+  padding-top: 1.875rem;
+  padding-bottom: 4.375rem;
+  border-bottom: 1px solid $dark-shade-25;
+
+  /* Inner */
+
+  &__inner {
+    max-width: 74.375rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+    display: grid;
+    grid-template-areas: 'sidebar' 'content';
+    grid-template-columns: 1fr;
+    grid-column-gap: 1.75rem;
+
+    @media (min-width: 576px) {
+      grid-template-areas: 'sidebar content';
+      grid-template-columns: 16.625rem 1fr;
+    }
+
+    @media (min-width: 992px) {
+      grid-column-gap: 3.75rem;
+    }
+  }
+
+  /* Sidebar */
+
+  &__sidebar {
+    grid-area: sidebar;
+  }
+
+  /* Input Item */
+
+  &__input-item {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Input Group */
+
+  &__input-group {
+    margin-bottom: 1.875rem;
+  }
+
+  /* Content */
+
+  &__content {
+    grid-area: content;
+  }
+
+  /* Page Title */
+
+  &__page-title {
+    margin-top: 0;
+  }
+
+  /* Cards Hotel */
+
+  &__cards-hotel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 1.25rem;
+
+    @media (min-width: 415px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Pagination */
+
+  &__pagination {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+}

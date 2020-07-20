@@ -8,7 +8,7 @@ mixin icon-text-list(props = {})
         const { title, text, imageName, width, height } = item;
       li.icon-text-list__item(class=allMods)
         span.icon-text-list__icon-wrap
-          img.icon-text-list__icon(src=require(`../../components/icon-text-list/img/${imageName}`), alt=title, width=width, height=height)
+          img.icon-text-list__icon(src=require(`../components/icon-text-list/img/${imageName}`), alt=title, width=width, height=height)
         span.icon-text-list__text-wrap
           span.icon-text-list__title!= title
           span.icon-text-list__text!= text

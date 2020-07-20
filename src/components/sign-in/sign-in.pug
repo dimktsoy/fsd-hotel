@@ -1,0 +1,9 @@
+include ../form-login/form-login
+
+mixin sign-in(props = {})
+  -
+    const { formLogin } = props;
+
+  main.sign-in(role="main")
+    .sign-in__form
+      +form-login(formLogin)

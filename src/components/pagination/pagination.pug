@@ -1,9 +1,6 @@
 mixin pagination(props = {})
   -
-    const {
-      mods = '',
-      text = ''
-    } = props;
+    const { text = '' } = props;
 
   .pagination(aria-label="Page navigation")&attributes(attributes)
     .pagination__inner
@@ -20,6 +17,6 @@ mixin pagination(props = {})
           a.pagination__link(href="/fsd-hotel/change-me") 15
         li.pagination__item
           a.pagination__link.pagination__link--next(href="/fsd-hotel/change-me")
-            img.pagination__icon(src=require("../../components/pagination/img/pagination-arrow.svg"), alt="next")
+            img.pagination__icon(src=require("../components/pagination/img/pagination-arrow.svg"), alt="next")
       if (text)
         p.pagination__text!= text

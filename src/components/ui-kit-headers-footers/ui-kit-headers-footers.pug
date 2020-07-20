@@ -1,0 +1,25 @@
+include ../logo/logo
+include ../page-header/page-header
+include ../page-footer/page-footer
+
+mixin ui-kit-headers-footers(props = {})
+  -
+    const {
+      pageHeader,
+      pageHeaderUserAuthorized,
+      pageFooter
+    } = props;
+
+  .ui-kit-headers-footers
+    header.ui-kit-headers-footers__header(role="banner")
+      +logo({
+        isSimple: true,
+        href: 'index.html'
+      })
+    main.ui-kit-headers-footers__content(role="main")
+      .ui-kit-headers-footers__component
+        +page-header(pageHeader)
+      .ui-kit-headers-footers__component
+        +page-header(pageHeaderUserAuthorized)
+      .ui-kit-headers-footers__component
+        +page-footer(pageFooter)

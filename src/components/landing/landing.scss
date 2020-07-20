@@ -1,0 +1,41 @@
+.landing {
+  background-image: url('./img/landing-bg.jpg');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding: 4.375rem 0 1.125rem;
+
+  /* Inner */
+
+  &__inner {
+    max-width: 74.375rem;
+    padding: 0 0.9375rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Form Filter */
+
+  &__form-filter {
+    max-width: 23.75rem;
+    width: 100%;
+    margin: 0 auto 20rem;
+
+    @media (min-width: 768px) {
+      margin: 0 0 20rem;
+    }
+  }
+
+  /* Text */
+
+  &__text {
+    max-width: none;
+    margin: 0 0 0 auto;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      max-width: 18.5625rem;
+      text-align: right;
+    }
+  }
+}
