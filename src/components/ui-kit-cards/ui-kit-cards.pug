@@ -13,7 +13,7 @@ mixin ui-kit-cards(props = {})
       formRegistration,
       formOrder,
       formLogin,
-      cardHotels = []
+      cardsHotel = []
     } = props;
 
   .ui-kit-cards
@@ -37,6 +37,6 @@ mixin ui-kit-cards(props = {})
       .ui-kit-cards__item
         .ui-kit-cards__component.ui-kit-cards__component--calendar
           +calendar()
-        each item in cardHotels
+        each item in cardsHotel
           .ui-kit-cards__component.ui-kit-cards__component--card-hotel
             +card-hotel(item)

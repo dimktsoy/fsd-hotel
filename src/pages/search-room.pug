@@ -1,0 +1,559 @@
+extends ../templates/page/page
+include ../components/search-room/search-room
+
+block head
+  - const pageTitle = "Search Room";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +search-room({
+    pageTitle: 'Номера, которые мы для вас подобрали',
+    cardsHotel: [
+      {
+        title: {
+          number: 888,
+          text: 'люкс'
+        },
+        cost: {
+          value: '9 990&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 5
+        },
+        reviews: {
+          count: 145,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 840,
+        },
+        cost: {
+          value: '9 990&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-05.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 4
+        },
+        reviews: {
+          count: 65,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 980,
+          text: 'люкс'
+        },
+        cost: {
+          value: '8 500&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-05.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-06.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 3
+        },
+        reviews: {
+          count: 35,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 856,
+        },
+        cost: {
+          value: '7 300&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-04.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-05.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-06.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-07.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 5
+        },
+        reviews: {
+          count: 19,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 740,
+        },
+        cost: {
+          value: '6 000&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-05.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-06.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-07.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-08.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 4
+        },
+        reviews: {
+          count: 44,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 982,
+        },
+        cost: {
+          value: '5 800&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-06.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-07.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-08.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-09.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 3
+        },
+        reviews: {
+          count: 56,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 678,
+        },
+        cost: {
+          value: '5 500&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-07.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-08.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-09.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-10.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 5
+        },
+        reviews: {
+          count: 45,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 450,
+        },
+        cost: {
+          value: '5 300&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-08.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-09.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-10.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-11.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 4
+        },
+        reviews: {
+          count: 39,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 350,
+        },
+        cost: {
+          value: '5 000&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-09.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-10.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-11.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-12.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 3
+        },
+        reviews: {
+          count: 77,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 666,
+        },
+        cost: {
+          value: '5 000&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-10.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-11.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-12.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 5
+        },
+        reviews: {
+          count: 25,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 444,
+        },
+        cost: {
+          value: '5 000&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-11.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-12.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 3
+        },
+        reviews: {
+          count: 15,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      },
+      {
+        title: {
+          number: 352,
+        },
+        cost: {
+          value: '5 000&#8381;',
+          text: 'в сутки'
+        },
+        images: [
+          {
+            name: 'card-hotel-12.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-01.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-02.jpg',
+            alt: 'hotel image'
+          },
+          {
+            name: 'card-hotel-03.jpg',
+            alt: 'hotel image'
+          }
+        ],
+        rating: {
+          currentStars: 3
+        },
+        reviews: {
+          count: 55,
+          text: 'Отзывов'
+        },
+        href: 'room-details.html'
+      }
+    ],
+    pagination: {
+      text: '1 – 12 из 100+ вариантов аренды'
+    },
+    filterDateDropdown: {
+      isFilter: true,
+      titleFilter: 'Даты пребывания в отеле',
+      attrs: {
+        placeholder: 'дд мм - дд мм',
+        value: '19 авг - 23 авг'
+      }
+    },
+    dropdownGuests: {
+      title: 'Гости',
+      placeholder: 'Сколько гостей',
+      isButtons: true,
+      options: [
+        {
+          title: 'взрослые',
+          value: 2
+        },
+        {
+          title: 'дети',
+          value: 1
+        },
+        {
+          title: 'младенцы',
+          value: 1,
+          isBaby: true
+        }
+      ]
+    },
+    rangeSlider: {
+      title: 'Диапазон цены',
+      helpText: 'Стоимость за сутки пребывания в номере'
+    },
+    fieldCheckbox: {
+      title: 'Checkbox Buttons',
+      checkboxes: [
+        {
+          title: 'Можно курить'
+        },
+        {
+          title: 'Можно с питомцами',
+          attrs: {
+            checked: true
+          }
+        },
+        {
+          title: 'Можно пригласить гостей<br>(до 10 человек)',
+          attrs: {
+            checked: true
+          }
+        }
+      ]
+    },
+    fieldCheckboxRich: {
+      isRich: true,
+      title: 'Доступность',
+      checkboxes: [
+        {
+          title: 'Широкий коридор',
+          text: 'Ширина коридоров в номере<br>не менее 91 см.'
+        },
+        {
+          title: 'Помощник для инвалидов',
+          text: 'На 1 этаже вас встретит специалист<br>и проводит до номера.'
+        }
+      ]
+    },
+    dropdownDetails: {
+      title: 'Удобства номера',
+      placeholder: 'Выбрать',
+      isDetails: true,
+      options: [
+        {
+          title: 'спальни',
+          value: 2,
+          data: ['спальня', 'спальни', 'спален'],
+        },
+        {
+          title: 'кровати',
+          value: 2,
+          data: ['кровать', 'кровати', 'кроватей'],
+        },
+        {
+          title: 'ванные комнаты',
+          value: 0,
+          data: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+        }
+      ]
+    },
+    expandableCheckbox: {
+      title: 'Дополнительные удобства',
+      checkboxes: [
+        {
+          title: 'Завтрак',
+        },
+        {
+          title: 'Письменный стол',
+          attrs: {
+            checked: true
+          }
+        },
+        {
+          title: 'Стул для кормления',
+          attrs: {
+            checked: true
+          }
+        },
+        {
+          title: 'Кроватка',
+          attrs: {
+            checked: true
+          }
+        },
+        {
+          title: 'Телевизор'
+        },
+        {
+          title: 'Шампунь'
+        }
+      ]
+    }
+  })

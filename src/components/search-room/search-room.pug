@@ -1,0 +1,48 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../range-slider/range-slider
+include ../field-checkbox/field-checkbox
+include ../expandable-checkbox/expandable-checkbox
+include ../card-hotel/card-hotel
+include ../pagination/pagination
+
+mixin search-room(props = {})
+  -
+    const {
+      pageTitle,
+      cardsHotel = [],
+      pagination,
+      filterDateDropdown,
+      dropdownGuests,
+      rangeSlider,
+      fieldCheckbox,
+      fieldCheckboxRich,
+      dropdownDetails,
+      expandableCheckbox
+    } = props;
+
+  main.search-room(role="main")
+    .search-room__inner
+      aside.search-room__sidebar
+        .search-room__input-group
+          .search-room__input-item
+            +date-dropdown(filterDateDropdown)
+          .search-room__input-item
+            +dropdown(dropdownGuests)
+        .search-room__input-group
+          +range-slider(rangeSlider)
+        .search-room__input-group
+          +field-checkbox(fieldCheckbox)
+        .search-room__input-group
+          +field-checkbox(fieldCheckboxRich)
+        .search-room__input-group
+          +dropdown(dropdownDetails)
+        .search-room__input-group 
+          +expandable-checkbox(expandableCheckbox)
+      section.search-room__content
+        h1.search-room__page-title!= pageTitle
+        .search-room__cards-hotel
+          each item in cardsHotel
+            +card-hotel(item)
+        footer.search-room__pagination
+          +pagination(pagination)
