@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="notranslate" name="google">
+    <title>Search Room</title>
+    <meta name="description" content="Макет страниц по поиску номеров в отеле">
+    <meta name="keywords" content="Toxin, отель, отели">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/site.webmanifest">
+    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+  <link href="styles/vendors~main.b25ab5f62f09ea20d4ba.css" rel="stylesheet"><link href="styles/main.6d58e763303ce26da71f.css" rel="stylesheet"></head>
+  <body>
+    <div class="page__inner">
+      <div class="page__content">
+        <header class="page-header js-page-header" role="banner">
+          <div class="page-header__inner">
+            <div class="page-header__logo"><a class="logo" href="index.html"><img class="logo__img" src="images/logo.svg" alt="logo" width="106" height="40"></a>
+            </div>
+            <button class="page-header__menu-trigger js-page-header__menu-trigger" type="button"><img src="images/page-header-menu.svg" alt="menu"></button>
+            <div class="page-header__collapse js-page-header__collapse">
+              <nav class="main-nav js-main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item main-nav__item--active"><a class="main-nav__link" href="/fsd-hotel/change-me">О нас</a>
+                  </li>
+                  <li class="main-nav__item main-nav__item--dropdown js-main-nav__item--dropdown"><a class="main-nav__link js-main-nav__link" href="/fsd-hotel/change-me">Услуги</a>
+                    <ul class="main-nav__submenu-list">
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Обслуживание номеров 24/7</a></li>
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Химчистка/ Прачечная</a></li>
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Трансфер из аэропорта</a></li>
+                    </ul>
+                  </li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="/fsd-hotel/change-me">Вакансии</a>
+                  </li>
+                  <li class="main-nav__item"><a class="main-nav__link" href="/fsd-hotel/change-me">Новости</a>
+                  </li>
+                  <li class="main-nav__item main-nav__item--dropdown js-main-nav__item--dropdown"><a class="main-nav__link js-main-nav__link" href="/fsd-hotel/change-me">Соглашения</a>
+                    <ul class="main-nav__submenu-list">
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Ваучер</a></li>
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Заказ</a></li>
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Исполнитель</a></li>
+                      <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="/fsd-hotel/change-me">Комиссия</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div class="page-header__login-signup">
+                <div class="page-header__login"><a class="button button--theme-outline button--size-small" href="sign-in.html">Войти</a>
+                </div>
+                <div class="page-header__signup"><a class="button button--theme-primary button--size-small" href="registration.html">Зарегистрироваться</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="search-room" role="main">
+          <div class="search-room__inner">
+            <aside class="search-room__sidebar">
+              <div class="search-room__input-group">
+                <div class="search-room__input-item">
+                  <div class="date-dropdown js-date-dropdown-filter">
+                    <label class="date-dropdown__label"><span class="date-dropdown__title">Даты пребывания в отеле</span><span class="date-dropdown__input-wrap">
+                        <input class="date-dropdown__input js-date-dropdown__input-filter" type="text" readonly placeholder="дд мм - дд мм" value="19 авг - 23 авг"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="search-room__input-item">
+                  <div class="dropdown js-dropdown js-dropdown-guests"><span class="dropdown__title">Гости</span><span class="dropdown__trigger js-dropdown__trigger">
+                      <input class="dropdown__input js-dropdown__input" type="text" readonly placeholder="Сколько гостей"></span>
+                    <div class="dropdown__content js-dropdown__content">
+                      <ul class="dropdown__list js-dropdown__list">
+                        <li class="dropdown__item"><span class="dropdown__item-title">взрослые</span><span class="dropdown__item-controls">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                            <input class="dropdown__item-count js-dropdown__item-count" type="text" value="2" readonly tabindex="-1">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                        <li class="dropdown__item"><span class="dropdown__item-title">дети</span><span class="dropdown__item-controls">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                            <input class="dropdown__item-count js-dropdown__item-count" type="text" value="1" readonly tabindex="-1">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                        <li class="dropdown__item"><span class="dropdown__item-title">младенцы</span><span class="dropdown__item-controls">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                            <input class="dropdown__item-count js-dropdown__item-count  js-dropdown__item-count-baby" type="text" value="1" readonly tabindex="-1">
+                            <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                      </ul>
+                      <div class="dropdown__buttons-group">
+                        <button class="button button--theme-simple button--view-hovered js-dropdown__button-clear" type="button">очистить</button>
+                        <button class="button button--theme-simple js-dropdown__button-apply" type="button">применить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-room__input-group">
+                <div class="range-slider js-range-slider">
+                  <div class="range-slider__text-wrap"><span class="range-slider__title">Диапазон цены</span><span class="range-slider__value js-range-slider__value"></span></div>
+                  <div class="range-slider__control js-range-slider__control"></div>
+                  <p class="range-slider__help-text">Стоимость за сутки пребывания в номере</p>
+                </div>
+              </div>
+              <div class="search-room__input-group">
+                <div class="field-checkbox">
+                  <div class="field-checkbox__title">Checkbox Buttons</div>
+                  <div class="field-checkbox__input-wrap">
+                    <label class="field-checkbox__label">
+                      <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Можно курить</span>
+                    </label>
+                  </div>
+                  <div class="field-checkbox__input-wrap">
+                    <label class="field-checkbox__label">
+                      <input class="field-checkbox__input" type="checkbox" checked><span class="field-checkbox__text">Можно с питомцами</span>
+                    </label>
+                  </div>
+                  <div class="field-checkbox__input-wrap">
+                    <label class="field-checkbox__label">
+                      <input class="field-checkbox__input" type="checkbox" checked><span class="field-checkbox__text">Можно пригласить гостей<br>(до 10 человек)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="search-room__input-group">
+                <div class="field-checkbox field-checkbox--rich">
+                  <div class="field-checkbox__title">Доступность</div>
+                  <div class="field-checkbox__input-wrap">
+                    <label class="field-checkbox__label">
+                      <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Широкий коридор</span><span class="field-checkbox__add-text">Ширина коридоров в номере<br>не менее 91 см.</span>
+                    </label>
+                  </div>
+                  <div class="field-checkbox__input-wrap">
+                    <label class="field-checkbox__label">
+                      <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Помощник для инвалидов</span><span class="field-checkbox__add-text">На 1 этаже вас встретит специалист<br>и проводит до номера.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="search-room__input-group">
+                <div class="dropdown js-dropdown js-dropdown-details"><span class="dropdown__title">Удобства номера</span><span class="dropdown__trigger js-dropdown__trigger">
+                    <input class="dropdown__input js-dropdown__input" type="text" readonly placeholder="Выбрать"></span>
+                  <div class="dropdown__content js-dropdown__content">
+                    <ul class="dropdown__list js-dropdown__list">
+                      <li class="dropdown__item"><span class="dropdown__item-title">спальни</span><span class="dropdown__item-controls">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                          <input class="dropdown__item-count js-dropdown__item-count" type="text" value="2" readonly tabindex="-1" data-dropdown="[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                      <li class="dropdown__item"><span class="dropdown__item-title">кровати</span><span class="dropdown__item-controls">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                          <input class="dropdown__item-count js-dropdown__item-count" type="text" value="2" readonly tabindex="-1" data-dropdown="[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                      <li class="dropdown__item"><span class="dropdown__item-title">ванные комнаты</span><span class="dropdown__item-controls">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">-</button>
+                          <input class="dropdown__item-count js-dropdown__item-count" type="text" value="0" readonly tabindex="-1" data-dropdown="[&quot;ванная комната&quot;,&quot;ванные комнаты&quot;,&quot;ванных комнат&quot;]">
+                          <button class="dropdown__item-button js-dropdown__item-button" type="button">+</button></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="search-room__input-group"> 
+                <div class="expandable-checkbox js-expandable-checkbox">
+                  <div class="expandable-checkbox__trigger js-expandable-checkbox__trigger">Дополнительные удобства</div>
+                  <div class="expandable-checkbox__content js-expandable-checkbox__content">
+                    <div class="field-checkbox">
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Завтрак</span>
+                        </label>
+                      </div>
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox" checked><span class="field-checkbox__text">Письменный стол</span>
+                        </label>
+                      </div>
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox" checked><span class="field-checkbox__text">Стул для кормления</span>
+                        </label>
+                      </div>
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox" checked><span class="field-checkbox__text">Кроватка</span>
+                        </label>
+                      </div>
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Телевизор</span>
+                        </label>
+                      </div>
+                      <div class="field-checkbox__input-wrap">
+                        <label class="field-checkbox__label">
+                          <input class="field-checkbox__input" type="checkbox"><span class="field-checkbox__text">Шампунь</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <section class="search-room__content">
+              <h1 class="search-room__page-title">Номера, которые мы для вас подобрали</h1>
+              <div class="search-room__cards-hotel">
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-01.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-02.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-03.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-04.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">888</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">888</span>
+                        <spam class="card-hotel__title-text">люкс</spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">9 990&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">145</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-02.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-03.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-04.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-05.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">840</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">840</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">9 990&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">65</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-03.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-04.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-05.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-06.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">980</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">980</span>
+                        <spam class="card-hotel__title-text">люкс</spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">8 500&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">35</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-04.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-05.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-06.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-07.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">856</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">856</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">7 300&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">19</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-05.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-06.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-07.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-08.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">740</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">740</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">6 000&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">44</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-06.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-07.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-08.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-09.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">982</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">982</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 800&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">56</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-07.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-08.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-09.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-10.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">678</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">678</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 500&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">45</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-08.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-09.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-10.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-11.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">450</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">450</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 300&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">39</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-09.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-10.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-11.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-12.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">350</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">350</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 000&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">77</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-10.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-11.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-12.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-01.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">666</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">666</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 000&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">25</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-11.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-12.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-01.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-02.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">444</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">444</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 000&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">15</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-hotel js-card-hotel">
+                  <div class="card-hotel__carousel js-card-hotel__carousel"><img class="card-hotel__carousel-img" src="images/card-hotel-12.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-01.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-02.jpg" alt="hotel image"><img class="card-hotel__carousel-img" src="images/card-hotel-03.jpg" alt="hotel image">
+                  </div>
+                  <div class="card-hotel__body"><a class="card-hotel__overlay-link" href="room-details.html">352</a>
+                    <div class="card-hotel__heading">
+                      <h3 class="card-hotel__title"><span class="card-hotel__title-symbol">&#8470;</span><span class="card-hotel__title-number">352</span>
+                        <spam class="card-hotel__title-text"></spam>
+                      </h3>
+                      <div class="card-hotel__cost"><span class="card-hotel__cost-value">5 000&#8381;</span><span class="card-hotel__cost-text">в сутки</span></div>
+                    </div>
+                    <div class="card-hotel__meta">
+                      <div class="card-hotel__rating">
+                        <div class="rating"><span class="rating__group-static"><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static rating__star-static--active"></span><span class="rating__star-static"></span><span class="rating__star-static"></span></span>
+                        </div>
+                      </div><a class="card-hotel__reviews" href="/fsd-hotel/change-me"><span class="card-hotel__reviews-count">55</span><span class="card-hotel__reviews-text">Отзывов</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="search-room__pagination">
+                <div class="pagination" aria-label="Page navigation">
+                  <div class="pagination__inner">
+                    <ul class="pagination__list">
+                      <li class="pagination__item"><a class="pagination__link pagination__link--active" href="/fsd-hotel/change-me">1</a></li>
+                      <li class="pagination__item"><a class="pagination__link" href="/fsd-hotel/change-me">2</a></li>
+                      <li class="pagination__item"><a class="pagination__link" href="/fsd-hotel/change-me">3</a></li>
+                      <li class="pagination__item"><span class="pagination__more">...</span></li>
+                      <li class="pagination__item"><a class="pagination__link" href="/fsd-hotel/change-me">15</a></li>
+                      <li class="pagination__item"><a class="pagination__link pagination__link--next" href="/fsd-hotel/change-me"><img class="pagination__icon" src="images/pagination-arrow.svg" alt="next"></a></li>
+                    </ul>
+                    <p class="pagination__text">1 – 12 из 100+ вариантов аренды</p>
+                  </div>
+                </div>
+              </footer>
+            </section>
+          </div>
+        </main>
+      </div>
+      <div class="page__footer-wrapper">
+        <footer class="page-footer" role="contentinfo">
+          <div class="page-footer__inner">
+            <div class="page-footer__left">
+              <div class="page-footer__logo"><a class="logo" href="index.html"><img class="logo__img" src="images/logo.svg" alt="logo" width="106" height="40"></a>
+              </div>
+              <p class="page-footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+            </div>
+            <div class="page-footer__item">
+              <h3 class="page-footer__title">Навигация</h3>
+              <ul class="page-footer__list">
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">О нас</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Новости</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Служба поддержки</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Услуги</a></li>
+              </ul>
+            </div>
+            <div class="page-footer__item">
+              <h3 class="page-footer__title">О нас</h3>
+              <ul class="page-footer__list">
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">О сервисе</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Наша команда</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Вакансии</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Инвесторы</a></li>
+              </ul>
+            </div>
+            <div class="page-footer__item">
+              <h3 class="page-footer__title">Служба поддержки</h3>
+              <ul class="page-footer__list">
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Соглашения</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Сообщества</a></li>
+                <li class="page-footer__list-item"><a href="/fsd-hotel/change-me">Связь с нами</a></li>
+              </ul>
+            </div>
+            <div class="page-footer__subscribe">
+              <h3 class="page-footer__title">Подписка</h3>
+              <p class="page-footer__subscribe-description">Получайте специальные предложения и новости сервиса</p>
+              <div class="subscribe">
+                <form class="subscribe__form"><span class="subscribe__input-wrap">
+                    <input class="subscribe__input" type="email" placeholder="Email">
+                    <button class="subscribe__button" type="submit"></button></span></form>
+              </div>
+            </div>
+          </div>
+          <div class="page-footer__bottom">
+            <div class="page-footer__bottom-inner">
+              <p class="page-footer__copyright">Copyright &copy; 2018 Toxin отель. Все права зачищены.</p>
+              <div class="page-footer__social">
+                <ul class="social">
+                  <li class="social__item"><a class="social__link" href="fsd-hotel/change-me" target="_blank" rel="noopener noreferrer">
+                      <image class="social__icon" src="images/social-twitter.svg" alt="twitter" width="24" height="20"></image></a></li>
+                  <li class="social__item"><a class="social__link" href="fsd-hotel/change-me" target="_blank" rel="noopener noreferrer">
+                      <image class="social__icon" src="images/social-facebook.svg" alt="facebook" width="22" height="22"></image></a></li>
+                  <li class="social__item"><a class="social__link" href="fsd-hotel/change-me" target="_blank" rel="noopener noreferrer">
+                      <image class="social__icon" src="images/social-instagram.svg" alt="instagram" width="22" height="22"></image></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  <script src="js/vendors~main.de8f871b3e07ff7282c5.js"></script><script src="js/main.d8382d2317249782fe9c.js"></script></body>
+</html>
