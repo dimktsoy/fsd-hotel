@@ -7,7 +7,8 @@ mixin card-hotel(props = {})
       cost,
       images,
       rating,
-      reviews
+      reviews,
+      href
     } = props;
     
   .card-hotel.js-card-hotel
@@ -15,17 +16,19 @@ mixin card-hotel(props = {})
       each item in images
         - const { name, alt } = item;
         img.card-hotel__carousel-img(src=require(`../components/card-hotel/img/${name}`), alt=alt)
-    .card-hotel__heading
-      h3.card-hotel__title
-        span.card-hotel__title-symbol &#8470;
-        span.card-hotel__title-number!= title.number
-        spam.card-hotel__title-text!= title.text
-      .card-hotel__cost
-        span.card-hotel__cost-value!= cost.value
-        span.card-hotel__cost-text!= cost.text
-    .card-hotel__meta
-      .card-hotel__rating
-        +rating(rating)
-      a.card-hotel__reviews(href="/fsd-hotel/change-me")
-        span.card-hotel__reviews-count!= reviews.count
-        span.card-hotel__reviews-text!= reviews.text
+    .card-hotel__body
+      a.card-hotel__overlay-link(href=href)!= title.number
+      .card-hotel__heading
+        h3.card-hotel__title
+          span.card-hotel__title-symbol &#8470;
+          span.card-hotel__title-number!= title.number
+          spam.card-hotel__title-text!= title.text
+        .card-hotel__cost
+          span.card-hotel__cost-value!= cost.value
+          span.card-hotel__cost-text!= cost.text
+      .card-hotel__meta
+        .card-hotel__rating
+          +rating(rating)
+        a.card-hotel__reviews(href="/fsd-hotel/change-me")
+          span.card-hotel__reviews-count!= reviews.count
+          span.card-hotel__reviews-text!= reviews.text
