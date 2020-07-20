@@ -21,6 +21,13 @@
     @include help-text;
   }
 
+  &__help-text {
+    font-size: 0.75rem;
+    line-height: 1.1667;
+    color: $dark-shade-50;
+    margin: 0.8475rem 0 0;
+  }
+
   /* Overwrite styles */
 
   .noUi-target {

@@ -1,9 +1,11 @@
 mixin range-slider(props = {})
   -
-    const { title = '' } = props;
+    const { title = '', helpText = '' } = props;
 
   .range-slider.js-range-slider&attributes(attributes)
     .range-slider__text-wrap
       span.range-slider__title!= title
       span.range-slider__value.js-range-slider__value
     .range-slider__control.js-range-slider__control
+    if (helpText)
+      p.range-slider__help-text!= helpText
