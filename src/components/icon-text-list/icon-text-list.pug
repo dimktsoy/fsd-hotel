@@ -2,11 +2,22 @@ mixin icon-text-list(props = {})
   -
     const { items = [] } = props;
 
-  ul.icon-text-list(class=allMods)&attributes(attributes)
+  ul.icon-text-list&attributes(attributes)
     each item in items
       -
-        const { title, text, imageName, width, height } = item;
-      li.icon-text-list__item(class=allMods)
+        const {
+          title,
+          text,
+          imageName,
+          width,
+          height,
+          isNoneLine = false
+        } = item;
+
+        let itemClassName = '';
+        itemClassName += isNoneLine ? 'icon-text-list__item--not-line' : '';
+
+      li.icon-text-list__item(class=itemClassName)
         span.icon-text-list__icon-wrap
           img.icon-text-list__icon(src=require(`../components/icon-text-list/img/${imageName}`), alt=title, width=width, height=height)
         span.icon-text-list__text-wrap

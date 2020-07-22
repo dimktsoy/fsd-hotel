@@ -1,36 +1,25 @@
 mixin field-checkbox(props = {})
   -
     const { 
-      isRich = false,
-      title = '',
-      checkboxes = [
-        { 
-          title: 'Можно с питомцами',
-        },
-        { 
-          title: 'Можно с питомцами',
-          attrs: {
-              checked: true
-          }
-        }
-      ]
+      isModRich = false,
+      title,
+      items = []
     } = props;
 
-    let fieldCheckboxClassName = 'field-checkbox';
-    fieldCheckboxClassName += isRich ? ' field-checkbox--rich' : '';
+    let fieldCheckboxClassName = '';
+    fieldCheckboxClassName += isModRich ? 'field-checkbox--rich' : '';
 
-  div(class=fieldCheckboxClassName)&attributes(attributes)
-    if (title)
-      .field-checkbox__title!= title
-    each checkbox in checkboxes
+  .field-checkbox(class=fieldCheckboxClassName)&attributes(attributes)
+    .field-checkbox__title!= title
+    each item in items
       -
         const { 
           title = '',
           text = '',
           attrs
-        } = checkbox;
+        } = item;
 
-      .field-checkbox__input-wrap(class=allMods)
+      .field-checkbox__input-wrap
         label.field-checkbox__label
           input.field-checkbox__input(type="checkbox")&attributes(attrs)
           span.field-checkbox__text!= title
