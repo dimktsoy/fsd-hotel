@@ -1,0 +1,48 @@
+include ../icon-text-list/icon-text-list
+include ../form-order/form-order
+include ../comment/comment
+include ../bullet-list/bullet-list
+include ../chart/chart
+
+mixin room-details(props = {})
+  -
+    const {
+      iconTextList,
+      formOrder,
+      comments,
+      bulletList,
+      chart,
+      cancel
+    } = props;
+  
+  main.room-details(role="main")
+    section.room-details__gallery
+      .room-details__gallery-item-1
+        img(src=require(`../components/room-details/img/room-details-image-1.jpg`), alt="photo 1")
+      .room-details__gallery-item-2
+        img(src=require(`../components/room-details/img/room-details-image-2.jpg`), alt="photo 2")
+      .room-details__gallery-item-3
+        img(src=require(`../components/room-details/img/room-details-image-3.jpg`), alt="photo 3")
+    section.room-details__content
+      section.room-details__icon-text-list
+        h2.room-details__title!= iconTextList.title
+        +icon-text-list(iconTextList)
+      section.room-details__chart
+        h2.room-details__title!= chart.title
+        +chart()
+      section.room-details__form-order
+        +form-order(formOrder)
+      section.room-details__comments
+        header.room-details__comments-heading
+          h2.room-details__title!= comments.title
+          span.room-details__comments-count!= comments.count
+        ul.room-details__comments-list
+          each item in comments.items
+            li.room-details__comments-item
+              +comment(item)
+      section.room-details__rules
+        h2.room-details__title.room-details__title--rules!= bulletList.title
+        +bullet-list(bulletList)
+      section.room-details__cancel
+        h2.room-details__title!= cancel.title
+        p!= cancel.text

@@ -1,0 +1,175 @@
+@import '../../scss/variables';
+
+.room-details {
+  $block-name: &;
+
+  flex: 1;
+  border: 1px solid $dark-shade-25;
+  padding-bottom: 4.375rem;
+
+  /* Gallery */
+
+  &__gallery {
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 68.06% 31.94%;
+      grid-template-areas: 'item1 item2'
+      'item1 item3';
+    }                     
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &-item-1 {
+      grid-area: item1;
+    }
+
+    &-item-2 {
+      grid-area: item2;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    &-item-3 {
+      grid-area: item3;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  /* Content */
+
+  &__content {
+    max-width: 74.375rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4.375rem 0.9375rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 70px;
+    grid-template-areas: 'form-order'
+                         'icons-text-list'
+                         'chart'
+                         'comments'
+                         'rules'
+                         'cancel';
+    grid-row-gap: 30px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'form-order form-order'
+      'icons-text-list chart'
+      'comments comments'
+      'rules cancel';
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 23.75rem;
+      grid-template-areas: 'icons-text-list form-order'
+      'chart form-order'
+      'comments form-order'
+      'rules form-order'
+      'cancel form-order';
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 17.5rem 1fr 23.75rem;
+      grid-template-areas: 'icons-text-list chart form-order'
+                           'comments comments form-order'
+                           'rules cancel form-order';
+    }
+  }
+  
+  /* Icon Text List */
+
+  &__icon-text-list {
+    grid-area: icons-text-list;
+    max-width: 17.5rem;
+  }
+
+  /* Chart */
+
+  &__chart {
+    grid-area: chart;
+    padding-left: 0.6875rem;
+  }
+
+  /* Form order */
+
+  &__form-order {
+    grid-area: form-order;
+    max-width: 23.75rem;
+
+    @media (max-width: 991px) {
+      justify-self: center;
+      align-content: center;
+    }
+  }
+
+  /* Comments */
+
+  &__comments {
+    grid-area: comments;
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      margin-bottom: 1.375rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-heading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+
+      #{$block-name}__title {
+        padding-right: 1.25rem;
+      }
+    }
+
+    &-count {
+      color: $dark-shade-50;
+      margin-bottom: 0.9375rem;
+    }
+  }
+
+  /* Rules */
+
+  &__rules {
+    grid-area: rules;
+  }
+
+  /* Cancel */
+
+  &__cancel {
+    grid-area: cancel;
+    padding-left: 0.6875rem;
+  }
+
+  /* Title */
+
+  &__title {
+    margin-top: 0;
+
+    &--rules {
+      padding-left: 1.3125rem;
+    }
+  }
+}
