@@ -15,10 +15,10 @@
 - Деплой на github pages: `npm run deploy`
 
 ## Демо:
-- [UI kit. Colors & Type](https://dimktsoy.github.io/fsd-hotel/colors-type.html)
-- [UI kit. Form Elements](https://dimktsoy.github.io/fsd-hotel/form-elements.html)
-- [UI kit. Cards](https://dimktsoy.github.io/fsd-hotel/cards.html)
-- [UI kit. Headers & Footers](https://dimktsoy.github.io/fsd-hotel/headers-footers.html)
+- [UI kit. Colors & Type](https://dimktsoy.github.io/fsd-hotel/ui-kit-colors-type.html)
+- [UI kit. Form Elements](https://dimktsoy.github.io/fsd-hotel/ui-kit-form-elements.html)
+- [UI kit. Cards](https://dimktsoy.github.io/fsd-hotel/ui-kit-cards.html)
+- [UI kit. Headers & Footers](https://dimktsoy.github.io/fsd-hotel/ui-kit-headers-footers.html)
 - [Website pages. Landing page](https://dimktsoy.github.io/fsd-hotel/landing.html)
 - [Website pages. Search room](https://dimktsoy.github.io/fsd-hotel/search-room.html)
 - [Website pages. Room details](https://dimktsoy.github.io/fsd-hotel/room-details.html)
@@ -37,3 +37,4 @@
 - [Air Datepicker 2.2.3](http://t1m0n.name/air-datepicker/docs/index-ru.html)
 - [noUiSlider 14.5.0](https://refreshless.com/nouislider/)
 - [inputmask 5.0.3](https://github.com/RobinHerbots/Inputmask)
+- [slick-carousel 1.8.1](https://kenwheeler.github.io/slick/)
