@@ -1,0 +1,145 @@
+extends ../templates/page/page
+include ../components/room-details/room-details
+
+block head
+  - const pageTitle = "Room Details";
+  - const pageDescription = "Макет страниц по поиску номеров в отеле";
+  - const pageKeywords = "Toxin, отель, отели";
+
+block content
+  +room-details({
+    iconTextList: {
+      title: 'Сведения о номере',
+      items: [
+        {
+          title: 'Комфорт',
+          text: 'Шумопоглощающие стены',
+          imageName: 'icon-text-list-emoticon.svg',
+          width: 40,
+          height: 40
+        },
+        {
+          title: 'Удобство',
+          text: 'Окно в каждой из спален',
+          imageName: 'icon-text-list-city.svg',
+          width: 36,
+          height: 38
+        },
+        {
+          title: 'Уют',
+          text: 'Номер оснащён камином',
+          imageName: 'icon-text-list-whatshot.svg',
+          isNoneLine: true,
+          width: 34,
+          height: 43
+        }
+      ]
+    },
+    chart: {
+      title: 'Впечатления от номера'
+    },
+    formOrder: {
+      title: {
+        symbol: '&#8470',
+        number: '888',
+        text: 'люкс'
+      },
+      cost: {
+        value: '9 990&#8381;',
+        text: 'в сутки'
+      },
+      dateDropdown: {
+        titleStart: 'Прибытие',
+        titleEnd: 'Выезд',
+        attrs: {
+          placeholder: 'дд.мм.гггг'
+        }
+      },
+      dropdown: {
+        title: 'Гости',
+        placeholder: 'Сколько гостей',
+        isButtons: true,
+        options: [
+          {
+            title: 'взрослые',
+            value: 2
+          },
+          {
+            title: 'дети',
+            value: 1
+          },
+          {
+            title: 'младенцы',
+            value: 0,
+            isBaby: true
+          }
+        ]
+      },
+      costList: [
+        {
+          description: '9 990&#8381; x 4 суток',
+          cost: '39 960&#8381;'
+        },
+        {
+          description: 'Сбор за услуги: скидка 2 179&#8381;',
+          cost: '0&#8381;',
+          isIcon: true
+        },
+        {
+          description: 'Сбор за дополнительные услуги',
+          cost: '300&#8381;',
+          isIcon: true
+        }
+      ],
+      totalCost: {
+        text: 'Итого',
+        value: '38 081&#8381;'
+      },
+      buttonSubmit: {
+        text: 'Забронировать',
+        isPrimary: true,
+        isSizeFull: true,
+        isViewArrow: true,
+        attrs: {
+          type: 'submit'
+        }
+      }
+    },
+    comments: {
+      title: 'Отзывы посетителей номера',
+      count: '2 отзыва',
+      items: [
+        {
+          username: 'Мурад Сарафанов',
+          date: '5 дней назад',
+          avatar: 'comment-murad.jpg',
+          text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+          likeButton: {
+            isActive: true,
+            count: 12
+          }
+        },
+        {
+          username: 'Патрисия Стёклышкова',
+          date: 'Неделю назад',
+          avatar: 'comment-patricia.jpg',
+          text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+          likeButton: {
+            count: 2
+          }
+        }
+      ]
+    },
+    bulletList: {
+      title: 'Правила',
+      list: [
+        'Нельзя с питомцами',
+        'Без вечеринок и мероприятий',
+        'Время прибытия — после 13:00, а&nbsp;выезд&nbsp;до 12:00'
+      ]
+    },
+    cancel: {
+      title: 'Отмена',
+      text: 'Бесплатная отмена в течение 48 ч. После этого&nbsp;при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.'
+    }
+  })

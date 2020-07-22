@@ -52,6 +52,8 @@ h2 {
   font-size: $font-size-h2;
   line-height: $line-height-h2;
   color: $dark-shade-100;
+  margin-top: 1.0524em;
+  margin-bottom: 1.0524em;
 }
 
 h3, h4, h5, h6 {
@@ -59,11 +61,13 @@ h3, h4, h5, h6 {
   font-size: $font-size-h3;
   line-height: $line-height-h3;
   color: $dark-shade-100;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
 }
 
 p {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-top: 0.875em;
+  margin-bottom: 0.875em;
 }
 
 button:not(:disabled) {

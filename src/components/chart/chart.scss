@@ -1,0 +1,86 @@
+@import '../../scss/variables';
+
+.chart {
+
+  &__figure {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__svg-wrap {
+    margin-right: 1.875rem;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      border-radius: 50%;
+      left: 0;
+      top: 7px;
+    }
+
+    &--sumptuously {
+      &::before {
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      }
+    }
+
+    &--good {
+      &::before {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      }
+    }
+
+    &--satisfactorily {
+      &::before {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      }
+    }
+
+    &--disappointed {
+      &::before {
+        background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+      }
+    }
+  }
+
+  &__text {
+    fill: #BC9CFF;
+    transform: translateY(0.25em);
+    font-weight: bold;
+  }
+
+  &__number {
+    font-size: 24px;
+    font-family: $Quicksand;
+    line-height: 30px;
+    text-anchor: middle;
+    transform: translateY(-0.25em);
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 15px;
+    font-family: $Montserrat;
+    text-transform: uppercase;
+    text-anchor: middle;
+    transform: translateY(1em);
+  }
+}
