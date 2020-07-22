@@ -1,0 +1,32 @@
+mixin chart()
+  .chart
+    figure.chart__figure
+      .chart__svg-wrap
+        svg(width="120" height="120" viewBox="0 0 120 120" fill="none")
+          defs
+            linearGradient(id="chart-gradient-sumptuously", x1="0%", y1="0%", x2="0%", y2="100%")
+              stop(offset="0%", stop-color="#FFE39C")
+              stop(offset="100%", stop-color="#FFBA9C")
+            linearGradient(id="chart-gradient-good", x1="0%", y1="0%", x2="0%", y2="100%")
+              stop(offset="0%", stop-color="#6FCF97")
+              stop(offset="100%", stop-color="#66D2EA")
+            linearGradient(id="chart-gradient-satisfactorily", x1="0%", y1="0%", x2="0%", y2="100%")
+              stop(offset="0%", stop-color="#BC9CFF")
+              stop(offset="100%", stop-color="#8BA4F9")
+            linearGradient(id="chart-gradient-disappointed", x1="0%", y1="0%", x2="0%", y2="100%")
+              stop(offset="0%", stop-color="#919191")
+              stop(offset="100%", stop-color="#3D4975")
+          circle(cx="60", cy="60", r="60", fill="white")
+          circle(cx="60", cy="60", r="58", stroke="url(#chart-gradient-sumptuously)", stroke-width="4", stroke-dasharray="180.212373908208 184.212373908208" stroke-dashoffset="-92.106186954104")
+          circle(cx="60", cy="60", r="58", stroke="url(#chart-gradient-good)", stroke-width="4", stroke-dasharray="89.106186954104 275.318560862312", stroke-dashoffset="-1")
+          circle(cx="60", cy="60", r="58", stroke="url(#chart-gradient-satisfactorily)", stroke-width="4", stroke-dasharray="89.106186954104 275.318560862312", stroke-dashoffset="90.106186954104")
+          circle(cx="60", cy="60", r="58", stroke="url(#chart-gradient-disappointed)", stroke-width="4", stroke-dasharray="0 364.424747816416", stroke-dashoffset="92.106186954104")
+          g.chart__text
+            text(x="50%" y="50%" class="chart__number") 260
+            text(x="50%" y="50%" class="chart__label") голосов
+      figcaption.chart__figcaption
+        ul.chart__list
+          li.chart__item.chart__item--sumptuously Великолепно
+          li.chart__item.chart__item--good Хорошо
+          li.chart__item.chart__item--satisfactorily Удовлетворительно
+          li.chart__item.chart__item--disappointed Разочарован
